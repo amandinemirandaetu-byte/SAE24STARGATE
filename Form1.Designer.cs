@@ -40,17 +40,19 @@
             this.btnNouvMission = new System.Windows.Forms.Button();
             this.BtnInfosPlan = new System.Windows.Forms.Button();
             this.grpTableauBord = new System.Windows.Forms.GroupBox();
+            this.btnFutur = new System.Windows.Forms.Button();
+            this.btnPasse = new System.Windows.Forms.Button();
+            this.btnEnCours = new System.Windows.Forms.Button();
             this.grpMissionsTDB = new System.Windows.Forms.GroupBox();
             this.grpDecouvRaces = new System.Windows.Forms.GroupBox();
             this.grpNouvMission = new System.Windows.Forms.GroupBox();
             this.grpInfosPlan = new System.Windows.Forms.GroupBox();
-            this.btnPresent = new System.Windows.Forms.Button();
-            this.btnPasse = new System.Windows.Forms.Button();
-            this.btnFutur = new System.Windows.Forms.Button();
+            this.ucMission1 = new SAE24STARGATE.UCMission();
             this.tabMenu.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
+            this.grpMissionsTDB.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -257,7 +259,7 @@
             this.grpTableauBord.BackColor = System.Drawing.Color.Black;
             this.grpTableauBord.Controls.Add(this.btnFutur);
             this.grpTableauBord.Controls.Add(this.btnPasse);
-            this.grpTableauBord.Controls.Add(this.btnPresent);
+            this.grpTableauBord.Controls.Add(this.btnEnCours);
             this.grpTableauBord.Controls.Add(this.grpMissionsTDB);
             this.grpTableauBord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpTableauBord.Location = new System.Drawing.Point(193, 13);
@@ -269,8 +271,50 @@
             this.grpTableauBord.TabStop = false;
             this.grpTableauBord.Visible = false;
             // 
+            // btnFutur
+            // 
+            this.btnFutur.BackColor = System.Drawing.Color.Black;
+            this.btnFutur.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.btnFutur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFutur.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnFutur.Location = new System.Drawing.Point(409, 18);
+            this.btnFutur.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFutur.Name = "btnFutur";
+            this.btnFutur.Size = new System.Drawing.Size(170, 50);
+            this.btnFutur.TabIndex = 4;
+            this.btnFutur.Text = "Missions futures";
+            this.btnFutur.UseVisualStyleBackColor = false;
+            // 
+            // btnPasse
+            // 
+            this.btnPasse.BackColor = System.Drawing.Color.Black;
+            this.btnPasse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.btnPasse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasse.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPasse.Location = new System.Drawing.Point(54, 18);
+            this.btnPasse.Name = "btnPasse";
+            this.btnPasse.Size = new System.Drawing.Size(170, 50);
+            this.btnPasse.TabIndex = 3;
+            this.btnPasse.Text = "Missions passées";
+            this.btnPasse.UseVisualStyleBackColor = false;
+            this.btnPasse.Click += new System.EventHandler(this.btnPasse_Click);
+            // 
+            // btnEnCours
+            // 
+            this.btnEnCours.BackColor = System.Drawing.Color.Black;
+            this.btnEnCours.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.btnEnCours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnCours.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEnCours.Location = new System.Drawing.Point(233, 18);
+            this.btnEnCours.Name = "btnEnCours";
+            this.btnEnCours.Size = new System.Drawing.Size(170, 50);
+            this.btnEnCours.TabIndex = 2;
+            this.btnEnCours.Text = "Missions en cours";
+            this.btnEnCours.UseVisualStyleBackColor = false;
+            // 
             // grpMissionsTDB
             // 
+            this.grpMissionsTDB.Controls.Add(this.ucMission1);
             this.grpMissionsTDB.Location = new System.Drawing.Point(54, 69);
             this.grpMissionsTDB.MaximumSize = new System.Drawing.Size(525, 450);
             this.grpMissionsTDB.MinimumSize = new System.Drawing.Size(525, 450);
@@ -279,6 +323,7 @@
             this.grpMissionsTDB.Size = new System.Drawing.Size(525, 450);
             this.grpMissionsTDB.TabIndex = 0;
             this.grpMissionsTDB.TabStop = false;
+            this.grpMissionsTDB.Enter += new System.EventHandler(this.grpMissionsTDB_Enter);
             // 
             // grpDecouvRaces
             // 
@@ -316,32 +361,15 @@
             this.grpInfosPlan.TabStop = false;
             this.grpInfosPlan.Visible = false;
             // 
-            // btnPresent
+            // ucMission1
             // 
-            this.btnPresent.Location = new System.Drawing.Point(233, 18);
-            this.btnPresent.Name = "btnPresent";
-            this.btnPresent.Size = new System.Drawing.Size(170, 50);
-            this.btnPresent.TabIndex = 2;
-            this.btnPresent.Text = "button1";
-            this.btnPresent.UseVisualStyleBackColor = true;
-            // 
-            // btnPasse
-            // 
-            this.btnPasse.Location = new System.Drawing.Point(54, 18);
-            this.btnPasse.Name = "btnPasse";
-            this.btnPasse.Size = new System.Drawing.Size(170, 50);
-            this.btnPasse.TabIndex = 3;
-            this.btnPasse.Text = "button2";
-            this.btnPasse.UseVisualStyleBackColor = true;
-            // 
-            // btnFutur
-            // 
-            this.btnFutur.Location = new System.Drawing.Point(409, 18);
-            this.btnFutur.Name = "btnFutur";
-            this.btnFutur.Size = new System.Drawing.Size(170, 50);
-            this.btnFutur.TabIndex = 4;
-            this.btnFutur.Text = "button3";
-            this.btnFutur.UseVisualStyleBackColor = true;
+            this.ucMission1.AutoSize = true;
+            this.ucMission1.Location = new System.Drawing.Point(11, 22);
+            this.ucMission1.MaximumSize = new System.Drawing.Size(375, 150);
+            this.ucMission1.MinimumSize = new System.Drawing.Size(375, 150);
+            this.ucMission1.Name = "ucMission1";
+            this.ucMission1.Size = new System.Drawing.Size(375, 150);
+            this.ucMission1.TabIndex = 0;
             // 
             // frmAccueil
             // 
@@ -361,6 +389,8 @@
             this.tabPageMenu.ResumeLayout(false);
             this.tabPagePrincipal.ResumeLayout(false);
             this.grpTableauBord.ResumeLayout(false);
+            this.grpMissionsTDB.ResumeLayout(false);
+            this.grpMissionsTDB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,9 +413,10 @@
         private System.Windows.Forms.GroupBox grpNouvMission;
         private System.Windows.Forms.GroupBox grpInfosPlan;
         private System.Windows.Forms.GroupBox grpMissionsTDB;
-        private System.Windows.Forms.Button btnPresent;
+        private System.Windows.Forms.Button btnEnCours;
         private System.Windows.Forms.Button btnFutur;
         private System.Windows.Forms.Button btnPasse;
+        private UCMission ucMission1;
     }
 }
 

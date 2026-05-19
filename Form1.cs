@@ -101,5 +101,15 @@ namespace SAE24STARGATE
             grpInfosPlan.Visible = true;
             // AMANDINE
         }
+
+        private void btnPasse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpMissionsTDB_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
