@@ -102,14 +102,17 @@ namespace SAE24STARGATE
             // AMANDINE
         }
 
+        /// <summary>
+        /// Léo
+        /// pour l'instant je m'en sert pas mais ça va venir
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void btnPasse_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void grpMissionsTDB_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

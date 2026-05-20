@@ -17,5 +17,10 @@ namespace SAE24STARGATE
             InitializeComponent();
         }
 
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

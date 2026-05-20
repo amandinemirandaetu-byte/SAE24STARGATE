@@ -44,10 +44,10 @@
             this.btnPasse = new System.Windows.Forms.Button();
             this.btnEnCours = new System.Windows.Forms.Button();
             this.grpMissionsTDB = new System.Windows.Forms.GroupBox();
+            this.ucmDeBase = new SAE24STARGATE.UCMission();
             this.grpDecouvRaces = new System.Windows.Forms.GroupBox();
             this.grpNouvMission = new System.Windows.Forms.GroupBox();
             this.grpInfosPlan = new System.Windows.Forms.GroupBox();
-            this.ucMission1 = new SAE24STARGATE.UCMission();
             this.tabMenu.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
@@ -314,7 +314,7 @@
             // 
             // grpMissionsTDB
             // 
-            this.grpMissionsTDB.Controls.Add(this.ucMission1);
+            this.grpMissionsTDB.Controls.Add(this.ucmDeBase);
             this.grpMissionsTDB.Location = new System.Drawing.Point(54, 69);
             this.grpMissionsTDB.MaximumSize = new System.Drawing.Size(525, 450);
             this.grpMissionsTDB.MinimumSize = new System.Drawing.Size(525, 450);
@@ -323,7 +323,17 @@
             this.grpMissionsTDB.Size = new System.Drawing.Size(525, 450);
             this.grpMissionsTDB.TabIndex = 0;
             this.grpMissionsTDB.TabStop = false;
-            this.grpMissionsTDB.Enter += new System.EventHandler(this.grpMissionsTDB_Enter);
+            // 
+            // ucmDeBase
+            // 
+            this.ucmDeBase.AutoSize = true;
+            this.ucmDeBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ucmDeBase.Location = new System.Drawing.Point(12, 15);
+            this.ucmDeBase.MaximumSize = new System.Drawing.Size(500, 150);
+            this.ucmDeBase.MinimumSize = new System.Drawing.Size(500, 150);
+            this.ucmDeBase.Name = "ucmDeBase";
+            this.ucmDeBase.Size = new System.Drawing.Size(500, 150);
+            this.ucmDeBase.TabIndex = 0;
             // 
             // grpDecouvRaces
             // 
@@ -360,16 +370,6 @@
             this.grpInfosPlan.TabIndex = 6;
             this.grpInfosPlan.TabStop = false;
             this.grpInfosPlan.Visible = false;
-            // 
-            // ucMission1
-            // 
-            this.ucMission1.AutoSize = true;
-            this.ucMission1.Location = new System.Drawing.Point(11, 22);
-            this.ucMission1.MaximumSize = new System.Drawing.Size(375, 150);
-            this.ucMission1.MinimumSize = new System.Drawing.Size(375, 150);
-            this.ucMission1.Name = "ucMission1";
-            this.ucMission1.Size = new System.Drawing.Size(375, 150);
-            this.ucMission1.TabIndex = 0;
             // 
             // frmAccueil
             // 
@@ -416,7 +416,7 @@
         private System.Windows.Forms.Button btnEnCours;
         private System.Windows.Forms.Button btnFutur;
         private System.Windows.Forms.Button btnPasse;
-        private UCMission ucMission1;
+        private UCMission ucmDeBase;
     }
 }
 
