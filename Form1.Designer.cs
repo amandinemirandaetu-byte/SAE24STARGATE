@@ -222,6 +222,7 @@
             this.btnFutur.TabIndex = 4;
             this.btnFutur.Text = "Futur";
             this.btnFutur.UseVisualStyleBackColor = true;
+            this.btnFutur.Click += new System.EventHandler(this.btnFutur_Click);
             // 
             // btnPasse
             // 
@@ -235,6 +236,7 @@
             this.btnPasse.TabIndex = 3;
             this.btnPasse.Text = "Passe";
             this.btnPasse.UseVisualStyleBackColor = true;
+            this.btnPasse.Click += new System.EventHandler(this.btnPasse_Click);
             // 
             // btnPresent
             // 
@@ -248,6 +250,7 @@
             this.btnPresent.TabIndex = 2;
             this.btnPresent.Text = "En Cours";
             this.btnPresent.UseVisualStyleBackColor = true;
+            this.btnPresent.Click += new System.EventHandler(this.btnPresent_Click);
             // 
             // grpMissionsTDB
             // 

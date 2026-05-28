@@ -962,5 +962,38 @@ namespace SAE24STARGATE
                 MessageBox.Show(resultat, "Budget pour la mission " + cboChoixMission.Text);
             }
         }
+        ///Leo
+        
+        private void selectBtn(Control parent,Button cible)
+        {
+            foreach (Control item in parent.Controls)
+            {
+                if(item is Button btn)
+                {
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(36, 107, 255);
+                }
+            }
+            if (parent.Controls.Contains(cible))
+            {
+                cible.FlatAppearance.BorderColor = Color.FromArgb(31, 234, 204);
+            }
+        }
+        private void btnFutur_Click(object sender, EventArgs e)
+        {
+            grpMissionsTDB.Controls.Clear();
+            selectBtn(grpTableauBord, btnFutur);
+        }
+
+        private void btnPresent_Click(object sender, EventArgs e)
+        {
+            grpMissionsTDB.Controls.Clear();
+            selectBtn(grpTableauBord, btnPresent);
+        }
+
+        private void btnPasse_Click(object sender, EventArgs e)
+        {
+            grpMissionsTDB.Controls.Clear();
+            selectBtn(grpTableauBord, btnPasse);
+        }
     }
 }
