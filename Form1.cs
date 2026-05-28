@@ -278,6 +278,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Tableau de Bord)
+            selectBtn(tabPagePrincipal, btnTbBord);
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpNouvMission.Visible = false;
@@ -289,6 +290,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Découverte des Races)
+            selectBtn(tabPagePrincipal, btnDecouvRaces);
             grpInfosPlan.Visible = false;
             grpNouvMission.Visible = false;
             grpTableauBord.Visible = false;
@@ -300,6 +302,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Nouvelle Mission)
+            selectBtn(tabPagePrincipal, btnNouvMission);
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
@@ -311,6 +314,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Infos Planètes)
+            selectBtn(tabPagePrincipal, BtnInfosPlan);
             grpDecouvRaces.Visible = false;
             grpNouvMission.Visible = false;
             grpTableauBord.Visible = false;
@@ -374,46 +378,6 @@ namespace SAE24STARGATE
             // AMANDINE
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
