@@ -212,29 +212,41 @@
             // 
             // btnFutur
             // 
+            this.btnFutur.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.btnFutur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFutur.Font = new System.Drawing.Font("Orbitron", 8.25F);
+            this.btnFutur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnFutur.Location = new System.Drawing.Point(409, 18);
             this.btnFutur.Name = "btnFutur";
             this.btnFutur.Size = new System.Drawing.Size(170, 50);
             this.btnFutur.TabIndex = 4;
-            this.btnFutur.Text = "button3";
+            this.btnFutur.Text = "Futur";
             this.btnFutur.UseVisualStyleBackColor = true;
             // 
             // btnPasse
             // 
+            this.btnPasse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.btnPasse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasse.Font = new System.Drawing.Font("Orbitron", 8.25F);
+            this.btnPasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnPasse.Location = new System.Drawing.Point(54, 18);
             this.btnPasse.Name = "btnPasse";
             this.btnPasse.Size = new System.Drawing.Size(170, 50);
             this.btnPasse.TabIndex = 3;
-            this.btnPasse.Text = "button2";
+            this.btnPasse.Text = "Passe";
             this.btnPasse.UseVisualStyleBackColor = true;
             // 
             // btnPresent
             // 
+            this.btnPresent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.btnPresent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPresent.Font = new System.Drawing.Font("Orbitron", 8.25F);
+            this.btnPresent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnPresent.Location = new System.Drawing.Point(233, 18);
             this.btnPresent.Name = "btnPresent";
             this.btnPresent.Size = new System.Drawing.Size(170, 50);
             this.btnPresent.TabIndex = 2;
-            this.btnPresent.Text = "button1";
+            this.btnPresent.Text = "En Cours";
             this.btnPresent.UseVisualStyleBackColor = true;
             // 
             // grpMissionsTDB
