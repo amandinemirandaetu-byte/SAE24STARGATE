@@ -17,10 +17,9 @@ namespace SAE24STARGATE
             InitializeComponent();
         }
 
-        public UCMission(String nomMission, int numMission, DateTime dateDepart, DateTime dateArrivee, String chef, int nbrMembres, String Planete)
+        public UCMission(String Planete, int numMission, String dateDepart, String dateArrivee, String chef, int nbrMembres)
         {
             InitializeComponent();
-            lblNomMission.Text = nomMission;
             lblNumMission.Text = numMission.ToString();
             lblDateDepart.Text = dateDepart.ToString();
             lblDateArrivee.Text = dateArrivee.ToString();
@@ -29,15 +28,11 @@ namespace SAE24STARGATE
             lblPlanete.Text = Planete;
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        private void btnDetails_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblDateArrivee_Click(object sender, EventArgs e)
-        {
-
+            btnDetails.BackColor = Color.FromArgb(255, 0, 255);
+            btnDetails.ForeColor = Color.FromArgb(0, 255,0);
+            btnDetails.Text = "a venir";
         }
     }
 }
