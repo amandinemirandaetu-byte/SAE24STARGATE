@@ -29,8 +29,9 @@ namespace SAE24STARGATE
         private void frmAccueil_Load(object sender, EventArgs e)
         {
 
-            grpTableauBord.Visible = true;
-
+            grpTableauBord.Visible = true;      //a verifier mais je crois qu'on peut enlever ça
+            
+            
             //AMANDINE
             //permet d'initialiser le mode déconnecté de la base de données et de mettre la base de données dans monDS, le dataSet
             maConnec.ConnectionString = connecString;
@@ -50,6 +51,8 @@ namespace SAE24STARGATE
 
                 da.Fill(monDS, nomTable);
             }
+
+            btnTbBord_Click(sender, e); // Léo : ouvre le form sur le tableau de bord comme demandé
 
             //AMANDINE
 
@@ -278,6 +281,8 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Tableau de Bord)
+            selectBtn(tabPagePrincipal, btnTbBord);
+            btnToutesMissions_Click(sender,e);
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpNouvMission.Visible = false;
@@ -289,6 +294,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Découverte des Races)
+            selectBtn(tabPagePrincipal, btnDecouvRaces);
             grpInfosPlan.Visible = false;
             grpNouvMission.Visible = false;
             grpTableauBord.Visible = false;
@@ -300,6 +306,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Nouvelle Mission)
+            selectBtn(tabPagePrincipal, btnNouvMission);
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
@@ -311,6 +318,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Infos Planètes)
+            selectBtn(tabPagePrincipal, BtnInfosPlan);
             grpDecouvRaces.Visible = false;
             grpNouvMission.Visible = false;
             grpTableauBord.Visible = false;
@@ -378,50 +386,9 @@ namespace SAE24STARGATE
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void trierParNom(object sender, EventArgs e, String txtRecherche)
         {
             int compteur = 0;
-
             int top = 5;
             int left = 10;
 
@@ -511,17 +478,6 @@ namespace SAE24STARGATE
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -622,14 +578,6 @@ namespace SAE24STARGATE
 
 
 
-
-
-
-
-
-
-
-
         private void toutAfficher(object sender, EventArgs e)
         {
             int compteur = 0;
@@ -720,11 +668,6 @@ namespace SAE24STARGATE
                 }
             }
         }
-
-
-
-
-
 
 
         private void trierParNomEtParCouleur(object sender, EventArgs e, String txtRecherche, String couleurChoisie)
@@ -962,5 +905,201 @@ namespace SAE24STARGATE
                 MessageBox.Show(resultat, "Budget pour la mission " + cboChoixMission.Text);
             }
         }
+        ///Leo
+        //                                          TABLEAU DE BORD
+        //              EVENTS
+        private void btnFutur_Click(object sender, EventArgs e)
+        {
+            pnlTDBMission.Controls.Clear();
+            selectBtn(grpTableauBord, btnFutur);
+            chargerMissions(1);
+        }
+
+        private void btnPresent_Click(object sender, EventArgs e)
+        {
+            pnlTDBMission.Controls.Clear();
+            selectBtn(grpTableauBord, btnPresent);
+            chargerMissions(0);
+
+        }
+
+        private void btnPasse_Click(object sender, EventArgs e)
+        {
+            pnlTDBMission.Controls.Clear();
+            selectBtn(grpTableauBord, btnPasse);
+            chargerMissions(-1);
+        }
+
+        private void btnToutesMissions_Click(object sender, EventArgs e)
+        {
+            pnlTDBMission.Controls.Clear();
+            selectBtn(grpTableauBord, btnToutesMissions);
+            chargerMissions();
+        }
+
+        //              Fonctions customs
+        private void selectBtn(Control parent, Button cible)
+        {
+            foreach (Control item in parent.Controls)
+            {
+                if (item is Button btn)
+                {
+                    btn.FlatAppearance.BorderColor = Color.FromArgb(36, 107, 255);
+                }
+            }
+            if (parent.Controls.Contains(cible))
+            {
+                cible.FlatAppearance.BorderColor = Color.FromArgb(31, 234, 204);
+            }
+        }
+
+        private void chargerMissions()
+        {
+            DataTable table = monDS.Tables["Mission"];
+            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());
+
+            int top = 10 - new UCMission().Height;
+            int left = 12;
+
+            String planete;
+            int numMission;
+            String dateDepart;
+            String dateArrivee;
+            String nomChef;
+            int nbrMembres;
+            foreach (DataRow row in table.Rows)
+            {
+                top += new UCMission().Height + 10;
+                planete = row["nomPlanete"].ToString();
+                numMission = Int32.Parse(row["numero"].ToString());
+                dateDepart = formaterDate(row["dateDepart"].ToString());
+                dateArrivee = formaterDate(row["dateRetour"].ToString());
+                nomChef = row["matriculeChef"].ToString();
+                nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+
+                UCMission mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
+                mission.Top = top;
+                mission.Left = left;
+
+
+                if (DateTime.Parse(aujoudhui) > DateTime.Parse(dateArrivee))
+                {
+                    mission.ForeColor = Color.Red;
+                }
+
+
+
+
+                pnlTDBMission.Controls.Add(mission);
+            }
+        }
+        private void chargerMissions(double temp)
+        {
+            DataTable table = monDS.Tables["Mission"];
+            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());           
+
+            int top = 10 - new UCMission().Height;
+            int left = 12;
+
+            String planete;
+            int numMission;
+            String dateDepart;
+            String dateArrivee;
+            String nomChef;
+            int nbrMembres;
+            UCMission mission;
+            foreach (DataRow row in table.Rows)
+            {
+                dateDepart = formaterDate(row["dateDepart"].ToString());
+                dateArrivee = formaterDate(row["dateRetour"].ToString());
+                //mission futur
+                if (temp > 0 && DateTime.Parse(dateDepart) > DateTime.Parse(aujoudhui))
+                {
+                    top += new UCMission().Height + 10;
+                    planete = row["nomPlanete"].ToString();
+                    numMission = Int32.Parse(row["numero"].ToString());
+                    nomChef = row["matriculeChef"].ToString();
+                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+
+                    MessageBox.Show(aujoudhui + " " + dateDepart);
+
+                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
+                    mission.Top = top;
+                    mission.Left = left;
+                    pnlTDBMission.Controls.Add(mission);
+                }
+                //mission passe
+                else if(temp < 0 && DateTime.Parse(dateArrivee) < DateTime.Parse(aujoudhui))
+                {
+                    top += new UCMission().Height + 10;
+                    planete = row["nomPlanete"].ToString();
+                    numMission = Int32.Parse(row["numero"].ToString());
+                    nomChef = row["matriculeChef"].ToString();
+                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+
+                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
+                    mission.Top = top;
+                    mission.Left = left;
+                    pnlTDBMission.Controls.Add(mission);
+                }
+                //mission en cours
+                else if(temp == 0 && DateTime.Parse(dateDepart) < DateTime.Parse(aujoudhui) && DateTime.Parse(dateArrivee) > DateTime.Parse(aujoudhui))
+                {
+                    top += new UCMission().Height + 10;
+                    planete = row["nomPlanete"].ToString();
+                    numMission = Int32.Parse(row["numero"].ToString());
+                    nomChef = row["matriculeChef"].ToString();
+                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+
+                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
+                    mission.Top = top;
+                    mission.Left = left;
+                    pnlTDBMission.Controls.Add(mission);
+                }
+                
+            }
+        }
+
+
+        //                              gestion format dates 
+        public String formaterDate(DateTime date)
+        {
+            String strDate = date.Date.ToShortDateString();
+            formaterDate(strDate);
+            return strDate;
+        }
+        public String formaterDate(String strDate)
+        {
+            strDate = strDate.Replace("-","/");
+
+            String[] parties;
+            if (isDate(strDate))
+            {
+                parties = strDate.Split('/');
+
+                if (parties[0].Length == 4)
+                {
+                    strDate = parties[0] + "/" + parties[1] + "/" + parties[2];
+                    return strDate;
+                }
+            }
+            
+            return strDate;
+        }
+
+        public bool isDate(String date)
+        {
+            String[] tbdate = date.Split('/');
+
+            bool bonneLongueur = tbdate.Length == 3;
+            bool annee1er = tbdate[0].Length == 4 && tbdate[1].Length == 2 && tbdate[2].Length == 2;
+            bool annee3eme = tbdate[2].Length == 4 && tbdate[1].Length == 2 && tbdate[0].Length == 2;
+            return bonneLongueur && (annee1er || annee3eme) ;
+
+        }
+        ///                                             FIN TABLEAU DE BORD
+
+
     }
+
 }
