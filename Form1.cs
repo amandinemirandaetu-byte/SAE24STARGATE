@@ -328,6 +328,8 @@ namespace SAE24STARGATE
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
             grpNouvMission.Visible = true;
+            frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.ShowDialog();
             // AMANDINE
         }
 
@@ -1114,5 +1116,10 @@ namespace SAE24STARGATE
             MessageBox.Show(resultat);
         }
 
+        private void btnAuthentifier_Click(object sender, EventArgs e)
+        {
+            frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.ShowDialog();
+        }
     }
 }

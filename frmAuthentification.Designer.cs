@@ -30,12 +30,12 @@
         {
             this.lblTitreAuthentification = new System.Windows.Forms.Label();
             this.grpAuthentification = new System.Windows.Forms.GroupBox();
+            this.btnMontrerMdp = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtMDP = new System.Windows.Forms.TextBox();
             this.lblMDP = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnMontrerMdp = new System.Windows.Forms.Button();
             this.grpAuthentification.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,21 @@
             this.grpAuthentification.TabIndex = 1;
             this.grpAuthentification.TabStop = false;
             // 
+            // btnMontrerMdp
+            // 
+            this.btnMontrerMdp.BackgroundImage = global::SAE24STARGATE.Properties.Resources.iconeOeilFerme;
+            this.btnMontrerMdp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMontrerMdp.FlatAppearance.BorderSize = 0;
+            this.btnMontrerMdp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnMontrerMdp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnMontrerMdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMontrerMdp.Location = new System.Drawing.Point(636, 162);
+            this.btnMontrerMdp.Name = "btnMontrerMdp";
+            this.btnMontrerMdp.Size = new System.Drawing.Size(60, 60);
+            this.btnMontrerMdp.TabIndex = 5;
+            this.btnMontrerMdp.UseVisualStyleBackColor = true;
+            this.btnMontrerMdp.Click += new System.EventHandler(this.btnMontrerMdp_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -78,6 +93,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Se connecter";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtMDP
             // 
@@ -119,18 +135,6 @@
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login :";
             // 
-            // btnMontrerMdp
-            // 
-            this.btnMontrerMdp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMontrerMdp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnMontrerMdp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnMontrerMdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMontrerMdp.Location = new System.Drawing.Point(636, 162);
-            this.btnMontrerMdp.Name = "btnMontrerMdp";
-            this.btnMontrerMdp.Size = new System.Drawing.Size(60, 60);
-            this.btnMontrerMdp.TabIndex = 5;
-            this.btnMontrerMdp.UseVisualStyleBackColor = true;
-            // 
             // frmAuthentification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -139,7 +143,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grpAuthentification);
             this.Controls.Add(this.lblTitreAuthentification);
+            this.MaximumSize = new System.Drawing.Size(822, 506);
+            this.MinimumSize = new System.Drawing.Size(822, 506);
             this.Name = "frmAuthentification";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Authentifiez-vous pour créer une nouvelle mission";
             this.grpAuthentification.ResumeLayout(false);
             this.grpAuthentification.PerformLayout();
