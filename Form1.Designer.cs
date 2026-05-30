@@ -59,6 +59,15 @@
             this.btnInfosPlanete = new System.Windows.Forms.Button();
             this.tabPageStatistiques = new System.Windows.Forms.TabPage();
             this.grpStatistiques = new System.Windows.Forms.GroupBox();
+            this.btnRechercherInformateur = new System.Windows.Forms.Button();
+            this.cboChoixMissionInformateur = new System.Windows.Forms.ComboBox();
+            this.lblInformateur = new System.Windows.Forms.Label();
+            this.btnRechercherBudgetMission = new System.Windows.Forms.Button();
+            this.cboChoixMissionBudget = new System.Windows.Forms.ComboBox();
+            this.lblDepensesMissions = new System.Windows.Forms.Label();
+            this.btnRechercherPlaneteMission = new System.Windows.Forms.Button();
+            this.cboPlanetes = new System.Windows.Forms.ComboBox();
+            this.lblPlanetesMissions = new System.Windows.Forms.Label();
             this.btnRechercherBudget = new System.Windows.Forms.Button();
             this.btnRechercheCoequipiers = new System.Windows.Forms.Button();
             this.lblLstDepenses = new System.Windows.Forms.Label();
@@ -68,9 +77,6 @@
             this.lblCoequipiersTitre = new System.Windows.Forms.Label();
             this.lblTitreStats = new System.Windows.Forms.Label();
             this.btnMenuStats = new System.Windows.Forms.Button();
-            this.btnRechercherPlaneteMission = new System.Windows.Forms.Button();
-            this.cboPlanetes = new System.Windows.Forms.ComboBox();
-            this.lblPlanetesMissions = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
@@ -302,7 +308,7 @@
             // 
             // btnRechercherAliens
             // 
-            this.btnRechercherAliens.BackgroundImage = global::SAE24STARGATE.Properties.Resources.iconeLoupe1;
+            this.btnRechercherAliens.BackgroundImage = global::SAE24STARGATE.Properties.Resources.iconeLoupe;
             this.btnRechercherAliens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRechercherAliens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherAliens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -498,6 +504,12 @@
             // 
             // grpStatistiques
             // 
+            this.grpStatistiques.Controls.Add(this.btnRechercherInformateur);
+            this.grpStatistiques.Controls.Add(this.cboChoixMissionInformateur);
+            this.grpStatistiques.Controls.Add(this.lblInformateur);
+            this.grpStatistiques.Controls.Add(this.btnRechercherBudgetMission);
+            this.grpStatistiques.Controls.Add(this.cboChoixMissionBudget);
+            this.grpStatistiques.Controls.Add(this.lblDepensesMissions);
             this.grpStatistiques.Controls.Add(this.btnRechercherPlaneteMission);
             this.grpStatistiques.Controls.Add(this.cboPlanetes);
             this.grpStatistiques.Controls.Add(this.lblPlanetesMissions);
@@ -514,6 +526,123 @@
             this.grpStatistiques.Size = new System.Drawing.Size(1200, 725);
             this.grpStatistiques.TabIndex = 9;
             this.grpStatistiques.TabStop = false;
+            // 
+            // btnRechercherInformateur
+            // 
+            this.btnRechercherInformateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechercherInformateur.Font = new System.Drawing.Font("Orbitron Black", 10F);
+            this.btnRechercherInformateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.btnRechercherInformateur.Location = new System.Drawing.Point(715, 538);
+            this.btnRechercherInformateur.Name = "btnRechercherInformateur";
+            this.btnRechercherInformateur.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherInformateur.TabIndex = 20;
+            this.btnRechercherInformateur.Text = "Rechercher";
+            this.btnRechercherInformateur.UseVisualStyleBackColor = true;
+            this.btnRechercherInformateur.Click += new System.EventHandler(this.btnRechercherInformateur_Click);
+            // 
+            // cboChoixMissionInformateur
+            // 
+            this.cboChoixMissionInformateur.BackColor = System.Drawing.Color.White;
+            this.cboChoixMissionInformateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboChoixMissionInformateur.Font = new System.Drawing.Font("Orbitron SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.cboChoixMissionInformateur.ForeColor = System.Drawing.Color.Black;
+            this.cboChoixMissionInformateur.FormattingEnabled = true;
+            this.cboChoixMissionInformateur.IntegralHeight = false;
+            this.cboChoixMissionInformateur.Location = new System.Drawing.Point(667, 476);
+            this.cboChoixMissionInformateur.Name = "cboChoixMissionInformateur";
+            this.cboChoixMissionInformateur.Size = new System.Drawing.Size(350, 33);
+            this.cboChoixMissionInformateur.TabIndex = 18;
+            // 
+            // lblInformateur
+            // 
+            this.lblInformateur.AutoSize = true;
+            this.lblInformateur.BackColor = System.Drawing.Color.Transparent;
+            this.lblInformateur.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.lblInformateur.Location = new System.Drawing.Point(652, 395);
+            this.lblInformateur.Name = "lblInformateur";
+            this.lblInformateur.Size = new System.Drawing.Size(377, 60);
+            this.lblInformateur.TabIndex = 19;
+            this.lblInformateur.Text = "Les informateurs les moins\r\nfortunés pour la mission :\r\n";
+            this.lblInformateur.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnRechercherBudgetMission
+            // 
+            this.btnRechercherBudgetMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechercherBudgetMission.Font = new System.Drawing.Font("Orbitron Black", 10F);
+            this.btnRechercherBudgetMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.btnRechercherBudgetMission.Location = new System.Drawing.Point(191, 538);
+            this.btnRechercherBudgetMission.Name = "btnRechercherBudgetMission";
+            this.btnRechercherBudgetMission.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherBudgetMission.TabIndex = 17;
+            this.btnRechercherBudgetMission.Text = "Rechercher";
+            this.btnRechercherBudgetMission.UseVisualStyleBackColor = true;
+            this.btnRechercherBudgetMission.Click += new System.EventHandler(this.btnRechercherBudgetMission_Click);
+            // 
+            // cboChoixMissionBudget
+            // 
+            this.cboChoixMissionBudget.BackColor = System.Drawing.Color.White;
+            this.cboChoixMissionBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboChoixMissionBudget.Font = new System.Drawing.Font("Orbitron SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.cboChoixMissionBudget.ForeColor = System.Drawing.Color.Black;
+            this.cboChoixMissionBudget.FormattingEnabled = true;
+            this.cboChoixMissionBudget.IntegralHeight = false;
+            this.cboChoixMissionBudget.Location = new System.Drawing.Point(143, 476);
+            this.cboChoixMissionBudget.Name = "cboChoixMissionBudget";
+            this.cboChoixMissionBudget.Size = new System.Drawing.Size(350, 33);
+            this.cboChoixMissionBudget.TabIndex = 15;
+            // 
+            // lblDepensesMissions
+            // 
+            this.lblDepensesMissions.AutoSize = true;
+            this.lblDepensesMissions.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepensesMissions.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepensesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.lblDepensesMissions.Location = new System.Drawing.Point(148, 395);
+            this.lblDepensesMissions.Name = "lblDepensesMissions";
+            this.lblDepensesMissions.Size = new System.Drawing.Size(340, 60);
+            this.lblDepensesMissions.TabIndex = 16;
+            this.lblDepensesMissions.Text = "Les dépenses les plus\r\nélevées pour la mission :\r\n";
+            this.lblDepensesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnRechercherPlaneteMission
+            // 
+            this.btnRechercherPlaneteMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechercherPlaneteMission.Font = new System.Drawing.Font("Orbitron Black", 10F);
+            this.btnRechercherPlaneteMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.btnRechercherPlaneteMission.Location = new System.Drawing.Point(871, 244);
+            this.btnRechercherPlaneteMission.Name = "btnRechercherPlaneteMission";
+            this.btnRechercherPlaneteMission.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherPlaneteMission.TabIndex = 14;
+            this.btnRechercherPlaneteMission.Text = "Rechercher";
+            this.btnRechercherPlaneteMission.UseVisualStyleBackColor = true;
+            this.btnRechercherPlaneteMission.Click += new System.EventHandler(this.btnRechercherPlaneteMission_Click);
+            // 
+            // cboPlanetes
+            // 
+            this.cboPlanetes.BackColor = System.Drawing.Color.White;
+            this.cboPlanetes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboPlanetes.Font = new System.Drawing.Font("Orbitron SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.cboPlanetes.ForeColor = System.Drawing.Color.Black;
+            this.cboPlanetes.FormattingEnabled = true;
+            this.cboPlanetes.IntegralHeight = false;
+            this.cboPlanetes.Location = new System.Drawing.Point(881, 182);
+            this.cboPlanetes.Name = "cboPlanetes";
+            this.cboPlanetes.Size = new System.Drawing.Size(225, 33);
+            this.cboPlanetes.TabIndex = 13;
+            // 
+            // lblPlanetesMissions
+            // 
+            this.lblPlanetesMissions.AutoSize = true;
+            this.lblPlanetesMissions.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlanetesMissions.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanetesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.lblPlanetesMissions.Location = new System.Drawing.Point(815, 136);
+            this.lblPlanetesMissions.Name = "lblPlanetesMissions";
+            this.lblPlanetesMissions.Size = new System.Drawing.Size(360, 30);
+            this.lblPlanetesMissions.TabIndex = 12;
+            this.lblPlanetesMissions.Text = "Mission(s) pour la planète :";
+            this.lblPlanetesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnRechercherBudget
             // 
@@ -629,44 +758,6 @@
             this.btnMenuStats.UseVisualStyleBackColor = true;
             this.btnMenuStats.Click += new System.EventHandler(this.btnMenuStats_Click);
             // 
-            // btnRechercherPlaneteMission
-            // 
-            this.btnRechercherPlaneteMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRechercherPlaneteMission.Font = new System.Drawing.Font("Orbitron Black", 10F);
-            this.btnRechercherPlaneteMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercherPlaneteMission.Location = new System.Drawing.Point(871, 244);
-            this.btnRechercherPlaneteMission.Name = "btnRechercherPlaneteMission";
-            this.btnRechercherPlaneteMission.Size = new System.Drawing.Size(244, 46);
-            this.btnRechercherPlaneteMission.TabIndex = 14;
-            this.btnRechercherPlaneteMission.Text = "Rechercher";
-            this.btnRechercherPlaneteMission.UseVisualStyleBackColor = true;
-            // 
-            // cboPlanetes
-            // 
-            this.cboPlanetes.BackColor = System.Drawing.Color.White;
-            this.cboPlanetes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboPlanetes.Font = new System.Drawing.Font("Orbitron SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.cboPlanetes.ForeColor = System.Drawing.Color.Black;
-            this.cboPlanetes.FormattingEnabled = true;
-            this.cboPlanetes.IntegralHeight = false;
-            this.cboPlanetes.Location = new System.Drawing.Point(881, 182);
-            this.cboPlanetes.Name = "cboPlanetes";
-            this.cboPlanetes.Size = new System.Drawing.Size(225, 33);
-            this.cboPlanetes.TabIndex = 13;
-            // 
-            // lblPlanetesMissions
-            // 
-            this.lblPlanetesMissions.AutoSize = true;
-            this.lblPlanetesMissions.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlanetesMissions.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanetesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblPlanetesMissions.Location = new System.Drawing.Point(815, 136);
-            this.lblPlanetesMissions.Name = "lblPlanetesMissions";
-            this.lblPlanetesMissions.Size = new System.Drawing.Size(360, 30);
-            this.lblPlanetesMissions.TabIndex = 12;
-            this.lblPlanetesMissions.Text = "Mission(s) pour la planète :";
-            this.lblPlanetesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // frmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -740,6 +831,11 @@
         private System.Windows.Forms.Button btnRechercherPlaneteMission;
         private System.Windows.Forms.ComboBox cboPlanetes;
         private System.Windows.Forms.Label lblPlanetesMissions;
+        private System.Windows.Forms.Button btnRechercherBudgetMission;
+        private System.Windows.Forms.ComboBox cboChoixMissionBudget;
+        private System.Windows.Forms.Label lblDepensesMissions;
+        private System.Windows.Forms.Button btnRechercherInformateur;
+        private System.Windows.Forms.ComboBox cboChoixMissionInformateur;
+        private System.Windows.Forms.Label lblInformateur;
     }
 }
-
