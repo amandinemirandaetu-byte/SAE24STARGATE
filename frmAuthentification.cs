@@ -1,0 +1,108 @@
+﻿using BCrypt.Net;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SQLite;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SAE24STARGATE
+{
+    public partial class frmAuthentification : Form
+    {
+        public frmAuthentification()
+        {
+            InitializeComponent();
+        }
+
+        SQLiteConnection maConnec = new SQLiteConnection();
+        string connecString = @"Data Source = Stargate.db";
+
+        bool oeilFerme = true;
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar == (char)Keys.Return))
+            {
+                e.Handled = false;
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = false;
+                btnLogin.PerformClick();
+            }
+
+            if (!(char.IsLetter(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMDP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void btnMontrerMdp_Click(object sender, EventArgs e)
+        {
+            if (oeilFerme)
+            {
+                btnMontrerMdp.BackgroundImage = Image.FromFile("../../Resources/iconeOeilOuvert.png");
+                oeilFerme = false;
+                txtMDP.PasswordChar = '\0';
+            }
+            else
+            {
+                btnMontrerMdp.BackgroundImage = Image.FromFile("../../Resources/iconeOeilFerme.png");
+                oeilFerme = true;
+                txtMDP.PasswordChar = '★';
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                maConnec.ConnectionString = connecString;
+                maConnec.Open();
+                string sql = $"SELECT mdp FROM Admin WHERE login = '{txtLogin.Text}'";
+                SQLiteCommand cmd = new SQLiteCommand(sql, maConnec);
+                object resultat = cmd.ExecuteScalar();
+
+                MessageBox.Show(resultat.ToString());
+
+                if (resultat != DBNull.Value && resultat != null)
+                {
+                    string mdpStocke = resultat.ToString();
+
+                    bool valide = BCrypt.Net.BCrypt.Verify(txtMDP.Text, mdpStocke);
+
+                    if (valide)
+                    {
+                        MessageBox.Show("Accès autorisé", "Authentification");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Accès refusé", "Authentification");
+                    }
+                }
+            }
+            catch(Exception erreur)
+            {
+                MessageBox.Show(erreur.GetType().ToString());
+            }
+            finally
+            {
+                maConnec.Close();
+            }
+        }
+    }
+}

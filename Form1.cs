@@ -229,13 +229,23 @@ namespace SAE24STARGATE
                     }
                 }
 
-                if (nbPersonnesMission < 10)// Temporairement inversé pour tester les stats
+                if (nbPersonnesMission > 10)// Temporairement inversé pour tester les stats
                 {
                     cboChoixMission.Items.Add(ligne["MissionPlanete"]);
                 }
+
+                cboChoixMissionBudget.Items.Add(ligne["MissionPlanete"]);
+                cboChoixMissionInformateur.Items.Add(ligne["MissionPlanete"]);
             }
 
             //Note : y'a pas de mission qui correspond sur la DB de base, mais après avoir fait une mission test et l'avoir supprimé, mon code marche ! -Am
+
+
+            DataView vueTrieePlanete = monDS.Tables["Planete"].DefaultView;
+            vueTrieePlanete.Sort = "nom ASC";
+
+            cboPlanetes.DataSource = vueTrieePlanete;
+            cboPlanetes.DisplayMember = "nom";
 
         }
 
@@ -246,6 +256,9 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Tableau de Bord)
             tabMenu.SelectedTab = tabPagePrincipal;
+            grpDecouvRaces.Visible = false;
+            grpInfosPlan.Visible = false;
+            grpNouvMission.Visible = false;
             grpTableauBord.Visible = true;
             // AMANDINE
         }
@@ -255,6 +268,9 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Decouverte des Races)
             tabMenu.SelectedTab = tabPagePrincipal;
+            grpInfosPlan.Visible = false;
+            grpNouvMission.Visible = false;
+            grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = true;
             // AMANDINE
         }
@@ -264,7 +280,12 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Nouvelle Mission)
             tabMenu.SelectedTab = tabPagePrincipal;
+            grpDecouvRaces.Visible = false;
+            grpInfosPlan.Visible = false;
+            grpTableauBord.Visible = false;
             grpNouvMission.Visible = true;
+            frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.ShowDialog();
             // AMANDINE
         }
 
@@ -273,6 +294,9 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Infos Planètes)
             tabMenu.SelectedTab = tabPagePrincipal;
+            grpNouvMission.Visible = false;
+            grpTableauBord.Visible = false;
+            grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = true;
             // AMANDINE
         }
@@ -311,6 +335,8 @@ namespace SAE24STARGATE
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
             grpNouvMission.Visible = true;
+            frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.ShowDialog();
             // AMANDINE
         }
 
@@ -859,9 +885,9 @@ namespace SAE24STARGATE
 
         private void btnRechercherBudget_Click(object sender, EventArgs e)
         {
-            if(cboChoixMission.Text == "")
+            if (cboChoixMission.Text == "")
             {
-                MessageBox.Show("Mission nulle");
+                MessageBox.Show("Veuillez choisir une mission");
             }
 
             else
@@ -905,6 +931,141 @@ namespace SAE24STARGATE
                 MessageBox.Show(resultat, "Budget pour la mission " + cboChoixMission.Text);
             }
         }
+
+        private void btnRechercherPlaneteMission_Click(object sender, EventArgs e)
+        {
+            string resultat = "";
+            int nbMissions = 0;
+
+            foreach (DataRow ligne in monDS.Tables["Mission"].Rows)
+            {
+                if (cboPlanetes.Text == ligne["nomPlanete"].ToString())
+                {
+                    nbMissions++;
+                    resultat += "Mission " + ligne["nomPlanete"] + ligne["numero"] + " :\n\n" + ligne["nbMembreRequis"] + " membres requis\nDate de départ : " + ligne["dateDepart"] + "\nDate de retour : " + ligne["dateRetour"] + "\nMatricule du chef : " + ligne["matriculeChef"] + "\nFeuille de route : " + ligne["feuilleDeRoute"] + "\nObjectif databaz : " + ligne["objectifDatabaz"] + "\nBudget initial : " + ligne["budget"] + "\n\n";
+                }
+            }
+
+            resultat += "\nNombre de missions sur la planete " + cboPlanetes.Text + " : " + nbMissions.ToString();
+
+            MessageBox.Show(resultat, "Nombre de missions pour " + cboPlanetes.Text);
+        }
+
+        private void btnRechercherBudgetMission_Click(object sender, EventArgs e)
+        {
+            if (cboChoixMissionBudget.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une mission");
+            }
+
+            else
+            {
+
+                string resultat = "Voici les 3 dépenses les plus élevées pour la mission " + cboChoixMissionBudget.Text + "\n\n";
+
+                DataView vueTrieeBudget = monDS.Tables["Depense"].DefaultView;
+                vueTrieeBudget.Sort = "montant DESC";
+
+                DataTable tableTriee = vueTrieeBudget.ToTable();
+
+                int compteur = 0;
+
+                for (int i = 0; i < tableTriee.Rows.Count && compteur < 3; i++)
+                {
+                    string mission = tableTriee.Rows[i]["nomPlanete"].ToString() + " " + tableTriee.Rows[i]["numeroMission"].ToString();
+
+                    if (mission == cboChoixMissionBudget.Text)
+                    {
+                        string depense = tableTriee.Rows[i]["dateD"].ToString() + " - " + tableTriee.Rows[i]["motif"].ToString() + " - " + tableTriee.Rows[i]["montant"].ToString() + "€";
+
+                        resultat += depense + "\n";
+
+                        compteur++;
+                    }
+                }
+
+                MessageBox.Show(resultat, "Dépenses les plus importantes pour la mission " + cboChoixMissionBudget.Text);
+            }
+        }
+
+        private void btnRechercherInformateur_Click(object sender, EventArgs e)
+        {
+            if (cboChoixMissionInformateur.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une mission");
+                return;
+            }
+
+            string mission = cboChoixMissionInformateur.Text;
+
+            Dictionary<string, int> sommesTotalesInformateurs = new Dictionary<string, int>();
+
+
+            foreach (DataRow ligne in monDS.Tables["Contact"].Rows)
+            {
+                if (ligne["nomPlanete"].ToString() + " " + ligne["numeroMission"].ToString() == mission)
+                {
+                    string code = ligne["nomCodeInformateur"].ToString();
+                    int somme = Convert.ToInt32(ligne["sommeVersee"]);
+
+                    if (sommesTotalesInformateurs.ContainsKey(code))
+                    {
+                        sommesTotalesInformateurs[code] += somme;
+                    }
+                    else
+                    {
+                        sommesTotalesInformateurs.Add(code, somme);
+                    }
+                }
+            }
+
+
+            var dictionnaireTrie = sommesTotalesInformateurs
+                .OrderBy(kvp => kvp.Value)
+                .ToList();
+
+            int min = dictionnaireTrie[0].Value;
+
+            string resultat =
+                "Voici le informateur le moins fortuné pour la mission "
+                + mission + " :\n\n";
+
+
+            foreach (var kvp in dictionnaireTrie)
+            {
+                if (kvp.Value != min) break;
+
+                string origineInformateur = "";
+
+                foreach (DataRow ligne in monDS.Tables["Informateur"].Rows)
+                {
+                    if (ligne["nomCode"].ToString() == kvp.Key)
+                    {
+                        foreach (DataRow ligne2 in monDS.Tables["Espece"].Rows)
+                        {
+                            if (ligne["idEspeceEnnemi"].ToString() == ligne2["id"].ToString())
+                            {
+                                origineInformateur = ligne2["couleur"].ToString();
+                            }
+                        }
+                    }
+                }
+
+                resultat += "Nom de code : " + kvp.Key + "\n"
+                         + "Espèce de l'informateur : " + origineInformateur + "\n"
+                         + "Somme totale reçue : " + kvp.Value + "\n\n";
+            }
+
+            MessageBox.Show(resultat);
+        }
+
+        private void btnAuthentifier_Click(object sender, EventArgs e)
+        {
+            frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.ShowDialog();
+        }
+    
+        
         ///Leo
         //                                          TABLEAU DE BORD
         //              EVENTS

@@ -139,5 +139,15 @@ namespace SAE24STARGATE.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconeOeilFerme {
+            get {
+                object obj = ResourceManager.GetObject("iconeOeilFerme", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
