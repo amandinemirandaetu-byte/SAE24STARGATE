@@ -1116,7 +1116,8 @@ namespace SAE24STARGATE
 
         private void chargerMissions()
         {
-            DataTable table = monDS.Tables["Mission"];
+            DataTable tbMembres = monDS.Tables["Membre"];
+            DataTable tbMissions = monDS.Tables["Mission"];
             String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());
 
             int top = 10 - new UCMission().Height;
@@ -1128,14 +1129,19 @@ namespace SAE24STARGATE
             String dateArrivee;
             String nomChef;
             int nbrMembres;
-            foreach (DataRow row in table.Rows)
+            foreach (DataRow row in tbMissions.Rows)
             {
+                DataRow drChef = tbMembres.Select("matricule = '" + row["matriculeChef"] + "'")[0];
+                nomChef = drChef["nom"] + " " + drChef["prenom"];
+                //nomChef = row["matriculeChef"].ToString();
+
+
+
                 top += new UCMission().Height + 10;
                 planete = row["nomPlanete"].ToString();
                 numMission = Int32.Parse(row["numero"].ToString());
                 dateDepart = formaterDate(row["dateDepart"].ToString());
                 dateArrivee = formaterDate(row["dateRetour"].ToString());
-                nomChef = row["matriculeChef"].ToString();
                 nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
 
                 UCMission mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);

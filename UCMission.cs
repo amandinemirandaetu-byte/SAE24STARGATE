@@ -12,6 +12,9 @@ namespace SAE24STARGATE
 {
     public partial class UCMission : UserControl
     {
+        
+        DataSet monDS = new DataSet();
+
         public UCMission()
         {
             InitializeComponent();
