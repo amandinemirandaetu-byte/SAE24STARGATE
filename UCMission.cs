@@ -13,29 +13,52 @@ namespace SAE24STARGATE
     public partial class UCMission : UserControl
     {
         
-        DataSet monDS = new DataSet();
-
+        DataSet m_monDS = new DataSet();
+        Mission m_mission;
+        String m_planete;
+        int m_numMission;
+        String m_dateDepart;
+        String m_dateArrivee;
+        String m_chef;
+        int m_nbrMembres;
         public UCMission()
         {
             InitializeComponent();
         }
 
-        public UCMission(String Planete, int numMission, String dateDepart, String dateArrivee, String chef, int nbrMembres)
+        
+        public UCMission(Mission mission, DataSet ds)
         {
             InitializeComponent();
-            lblNumMission.Text = numMission.ToString();
-            lblDateDepart.Text = dateDepart.ToString();
-            lblDateArrivee.Text = dateArrivee.ToString();
-            lblChefMission.Text = chef;
-            lblNbrMembres.Text = nbrMembres.ToString();
-            lblPlanete.Text = Planete;
+            m_numMission = mission.getNumMission();
+            m_dateDepart = mission.getDateDepart();
+            m_dateArrivee = mission.getDateArrivee();
+            m_chef = mission.getChefMission();
+            m_nbrMembres = mission.getNbrMembres();
+            m_planete = mission.getPlanete();
+            m_monDS = ds;
+            m_mission = mission;
+
+            lblNumMission.Text = m_numMission.ToString();
+            lblDateDepart.Text = m_dateDepart;
+            lblDateArrivee.Text = m_dateArrivee;
+            lblChefMission.Text = m_chef;
+            lblNbrMembres.Text = m_nbrMembres.ToString();
+            lblPlanete.Text = m_planete;
         }
 
+        // getters/setters
+
+        public Mission GetMission() { return this.m_mission; }
+
+        //fonctions customs
+        
         private void btnDetails_Click(object sender, EventArgs e)
         {
             btnDetails.BackColor = Color.FromArgb(255, 0, 255);
             btnDetails.ForeColor = Color.FromArgb(0, 255,0);
             btnDetails.Text = "a venir";
+            
         }
     }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace SAE24STARGATE
 {
@@ -1116,65 +1117,36 @@ namespace SAE24STARGATE
 
         private void chargerMissions()
         {
-            DataTable tbMembres = monDS.Tables["Membre"];
             DataTable tbMissions = monDS.Tables["Mission"];
-            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());
 
             int top = 10 - new UCMission().Height;
             int left = 12;
 
-            String planete;
-            int numMission;
-            String dateDepart;
-            String dateArrivee;
-            String nomChef;
-            int nbrMembres;
             foreach (DataRow row in tbMissions.Rows)
             {
-                DataRow drChef = tbMembres.Select("matricule = '" + row["matriculeChef"] + "'")[0];
-                nomChef = drChef["nom"] + " " + drChef["prenom"];
-                //nomChef = row["matriculeChef"].ToString();
-
-
 
                 top += new UCMission().Height + 10;
-                planete = row["nomPlanete"].ToString();
-                numMission = Int32.Parse(row["numero"].ToString());
-                dateDepart = formaterDate(row["dateDepart"].ToString());
-                dateArrivee = formaterDate(row["dateRetour"].ToString());
-                nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+                Mission mission = new Mission(row, monDS);
+                UCMission UC = new UCMission(mission,monDS);
+                UC.Top = top;
+                UC.Left = left;
 
-                UCMission mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
-                mission.Top = top;
-                mission.Left = left;
-
-
-                if (DateTime.Parse(aujoudhui) > DateTime.Parse(dateArrivee))
-                {
-                    mission.ForeColor = Color.Red;
-                }
-
-
-
-
-                pnlTDBMission.Controls.Add(mission);
+                pnlTDBMission.Controls.Add(UC);
             }
         }
         private void chargerMissions(double temp)
         {
+            DataTable tbMembres = monDS.Tables["Membre"];
             DataTable table = monDS.Tables["Mission"];
             String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());           
 
             int top = 10 - new UCMission().Height;
             int left = 12;
 
-            String planete;
-            int numMission;
+
             String dateDepart;
             String dateArrivee;
-            String nomChef;
-            int nbrMembres;
-            UCMission mission;
+
             foreach (DataRow row in table.Rows)
             {
                 dateDepart = formaterDate(row["dateDepart"].ToString());
@@ -1183,51 +1155,44 @@ namespace SAE24STARGATE
                 if (temp > 0 && DateTime.Parse(dateDepart) > DateTime.Parse(aujoudhui))
                 {
                     top += new UCMission().Height + 10;
-                    planete = row["nomPlanete"].ToString();
-                    numMission = Int32.Parse(row["numero"].ToString());
-                    nomChef = row["matriculeChef"].ToString();
-                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+                    Mission mission = new Mission(row, monDS);
+                    UCMission UC = new UCMission(mission, monDS);
+                    UC.Top = top;
+                    UC.Left = left;
 
-                    MessageBox.Show(aujoudhui + " " + dateDepart);
-
-                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
-                    mission.Top = top;
-                    mission.Left = left;
-                    pnlTDBMission.Controls.Add(mission);
+                    pnlTDBMission.Controls.Add(UC);
                 }
                 //mission passe
                 else if(temp < 0 && DateTime.Parse(dateArrivee) < DateTime.Parse(aujoudhui))
                 {
                     top += new UCMission().Height + 10;
-                    planete = row["nomPlanete"].ToString();
-                    numMission = Int32.Parse(row["numero"].ToString());
-                    nomChef = row["matriculeChef"].ToString();
-                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+                    Mission mission = new Mission(row, monDS);
+                    UCMission UC = new UCMission(mission, monDS);
+                    UC.Top = top;
+                    UC.Left = left;
 
-                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
-                    mission.Top = top;
-                    mission.Left = left;
-                    pnlTDBMission.Controls.Add(mission);
+                    pnlTDBMission.Controls.Add(UC);
                 }
                 //mission en cours
                 else if(temp == 0 && DateTime.Parse(dateDepart) < DateTime.Parse(aujoudhui) && DateTime.Parse(dateArrivee) > DateTime.Parse(aujoudhui))
                 {
                     top += new UCMission().Height + 10;
-                    planete = row["nomPlanete"].ToString();
-                    numMission = Int32.Parse(row["numero"].ToString());
-                    nomChef = row["matriculeChef"].ToString();
-                    nbrMembres = Int32.Parse(row["nbMembreRequis"].ToString());
+                    Mission mission = new Mission(row, monDS);
+                    UCMission UC = new UCMission(mission, monDS);
+                    UC.Top = top;
+                    UC.Left = left;
 
-                    mission = new UCMission(planete, numMission, dateDepart, dateArrivee, nomChef, nbrMembres);
-                    mission.Top = top;
-                    mission.Left = left;
-                    pnlTDBMission.Controls.Add(mission);
+                    pnlTDBMission.Controls.Add(UC);
                 }
                 
             }
+
+           
+
         }
+        //                                              Fonctions customs
 
-
+        
         //                              gestion format dates 
         public String formaterDate(DateTime date)
         {
@@ -1237,7 +1202,7 @@ namespace SAE24STARGATE
         }
         public String formaterDate(String strDate)
         {
-            strDate = strDate.Replace("-","/");
+            strDate = strDate.Replace("-", "/");
 
             String[] parties;
             if (isDate(strDate))
@@ -1250,7 +1215,7 @@ namespace SAE24STARGATE
                     return strDate;
                 }
             }
-            
+
             return strDate;
         }
 
@@ -1261,9 +1226,10 @@ namespace SAE24STARGATE
             bool bonneLongueur = tbdate.Length == 3;
             bool annee1er = tbdate[0].Length == 4 && tbdate[1].Length == 2 && tbdate[2].Length == 2;
             bool annee3eme = tbdate[2].Length == 4 && tbdate[1].Length == 2 && tbdate[0].Length == 2;
-            return bonneLongueur && (annee1er || annee3eme) ;
+            return bonneLongueur && (annee1er || annee3eme);
 
         }
+
         ///                                             FIN TABLEAU DE BORD
 
 

@@ -81,6 +81,7 @@
     <Compile Include="frmPlanete.Designer.cs">
       <DependentUpon>frmPlanete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mission.cs" />
     <Compile Include="Planete.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCDetailsMission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDetailsMission.Designer.cs">
+      <DependentUpon>UCDetailsMission.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMission.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +127,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCDetailsMission.resx">
+      <DependentUpon>UCDetailsMission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMission.resx">
       <DependentUpon>UCMission.cs</DependentUpon>
     </EmbeddedResource>
