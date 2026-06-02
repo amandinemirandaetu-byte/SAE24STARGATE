@@ -22,10 +22,11 @@ namespace SAE24STARGATE
         public Planete(String nom, int top, int left, DataSet DS)
         {
             InitializeComponent();
-            MessageBox.Show(nom + " param UCplanete");
+            //MessageBox.Show(nom + " param UCplanete");
 
             monDS = DS;
-            this.m_nom = nom;
+            m_nom = nom;
+            //MessageBox.Show("this.m_nom : " + this.m_nom.ToString());
 
             if (nom == "La 9ème planète")
             {
@@ -34,6 +35,7 @@ namespace SAE24STARGATE
             this.Top = top;
             this.Left = left;
             String path = "../../Resources/" + m_nom + ".png";
+            //MessageBox.Show("chemin image : " + path);
             this.BackgroundImage = Image.FromFile(path);
             lblNomPlanete.Text = m_nom;
 
@@ -41,7 +43,8 @@ namespace SAE24STARGATE
 
         private void Planete_Click(object sender, EventArgs e)
         {
-            frmPlanete frmInfosPlanete = new frmPlanete(this.m_nom, monDS);
+            //MessageBox.Show("nom dans planete_click : " + m_nom);
+            frmPlanete frmInfosPlanete = new frmPlanete(m_nom, monDS);
             frmInfosPlanete.Show();
         }
     }

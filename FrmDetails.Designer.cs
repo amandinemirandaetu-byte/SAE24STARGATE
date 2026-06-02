@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlMembres = new System.Windows.Forms.Panel();
-            this.pntMission = new SAE24STARGATE.Planete();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -39,16 +38,6 @@
             this.pnlMembres.Name = "pnlMembres";
             this.pnlMembres.Size = new System.Drawing.Size(810, 240);
             this.pnlMembres.TabIndex = 1;
-            // 
-            // pntMission
-            // 
-            this.pntMission.BackColor = System.Drawing.Color.Black;
-            this.pntMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pntMission.Location = new System.Drawing.Point(11, 11);
-            this.pntMission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pntMission.Name = "pntMission";
-            this.pntMission.Size = new System.Drawing.Size(98, 118);
-            this.pntMission.TabIndex = 0;
             // 
             // btnQuitter
             // 
@@ -66,13 +55,12 @@
             // 
             // FrmDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(835, 538);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.pnlMembres);
-            this.Controls.Add(this.pntMission);
             this.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -83,8 +71,6 @@
         }
 
         #endregion
-
-        private Planete pntMission;
         private System.Windows.Forms.Panel pnlMembres;
         private System.Windows.Forms.Button btnQuitter;
     }
