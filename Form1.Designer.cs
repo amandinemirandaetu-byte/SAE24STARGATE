@@ -41,7 +41,7 @@
             this.grpTableauBord = new System.Windows.Forms.GroupBox();
             this.btnFutur = new System.Windows.Forms.Button();
             this.btnPasse = new System.Windows.Forms.Button();
-            this.btnPresent = new System.Windows.Forms.Button();
+            this.btnEnCours = new System.Windows.Forms.Button();
             this.grpMissionsTDB = new System.Windows.Forms.GroupBox();
             this.grpInfosPlan = new System.Windows.Forms.GroupBox();
             this.panelPlanetes = new System.Windows.Forms.Panel();
@@ -237,7 +237,7 @@
             this.grpTableauBord.BackColor = System.Drawing.Color.Black;
             this.grpTableauBord.Controls.Add(this.btnFutur);
             this.grpTableauBord.Controls.Add(this.btnPasse);
-            this.grpTableauBord.Controls.Add(this.btnPresent);
+            this.grpTableauBord.Controls.Add(this.btnEnCours);
             this.grpTableauBord.Controls.Add(this.grpMissionsTDB);
             this.grpTableauBord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpTableauBord.Location = new System.Drawing.Point(290, 20);
@@ -267,15 +267,15 @@
             this.btnPasse.Text = "button2";
             this.btnPasse.UseVisualStyleBackColor = true;
             // 
-            // btnPresent
+            // btnEnCours
             // 
-            this.btnPresent.Location = new System.Drawing.Point(350, 28);
-            this.btnPresent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPresent.Name = "btnPresent";
-            this.btnPresent.Size = new System.Drawing.Size(255, 77);
-            this.btnPresent.TabIndex = 2;
-            this.btnPresent.Text = "button1";
-            this.btnPresent.UseVisualStyleBackColor = true;
+            this.btnEnCours.Location = new System.Drawing.Point(350, 28);
+            this.btnEnCours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEnCours.Name = "btnEnCours";
+            this.btnEnCours.Size = new System.Drawing.Size(255, 77);
+            this.btnEnCours.TabIndex = 2;
+            this.btnEnCours.Text = "button1";
+            this.btnEnCours.UseVisualStyleBackColor = true;
             // 
             // grpMissionsTDB
             // 
