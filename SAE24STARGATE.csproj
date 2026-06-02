@@ -75,6 +75,12 @@
     <Compile Include="frmAuthentification.Designer.cs">
       <DependentUpon>frmAuthentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetails.Designer.cs">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +96,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCDetailsMission.cs">
+    <Compile Include="UCMembre.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCDetailsMission.Designer.cs">
-      <DependentUpon>UCDetailsMission.cs</DependentUpon>
+    <Compile Include="UCMembre.Designer.cs">
+      <DependentUpon>UCMembre.cs</DependentUpon>
     </Compile>
     <Compile Include="UCMission.cs">
       <SubType>UserControl</SubType>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuthentification.resx">
       <DependentUpon>frmAuthentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetails.resx">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanete.resx">
       <DependentUpon>frmPlanete.cs</DependentUpon>
@@ -127,8 +136,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UCDetailsMission.resx">
-      <DependentUpon>UCDetailsMission.cs</DependentUpon>
+    <EmbeddedResource Include="UCMembre.resx">
+      <DependentUpon>UCMembre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMission.resx">
       <DependentUpon>UCMission.cs</DependentUpon>

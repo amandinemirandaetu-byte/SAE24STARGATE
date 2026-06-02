@@ -18,12 +18,14 @@ namespace SAE24STARGATE
         }
 
         private DataSet monDS;
-
+        private String m_nom="";
         public Planete(String nom, int top, int left, DataSet DS)
         {
             InitializeComponent();
+            MessageBox.Show(nom + " param UCplanete");
 
             monDS = DS;
+            this.m_nom = nom;
 
             if (nom == "La 9ème planète")
             {
@@ -31,13 +33,15 @@ namespace SAE24STARGATE
             }
             this.Top = top;
             this.Left = left;
-            this.BackgroundImage = Image.FromFile("../../Resources/" + nom + ".png");
-            lblNomPlanete.Text = nom;
+            String path = "../../Resources/" + m_nom + ".png";
+            this.BackgroundImage = Image.FromFile(path);
+            lblNomPlanete.Text = m_nom;
+
         }
 
         private void Planete_Click(object sender, EventArgs e)
         {
-            frmPlanete frmInfosPlanete = new frmPlanete(lblNomPlanete.Text, monDS);
+            frmPlanete frmInfosPlanete = new frmPlanete(this.m_nom, monDS);
             frmInfosPlanete.Show();
         }
     }

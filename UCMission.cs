@@ -51,13 +51,24 @@ namespace SAE24STARGATE
 
         public Mission GetMission() { return this.m_mission; }
 
+
         //fonctions customs
-        
+        public UCMembre[] listeMembres()
+        {
+            UCMembre[] liste = new UCMembre[m_numMission];
+            
+
+            return liste;
+        }
+
+
         private void btnDetails_Click(object sender, EventArgs e)
         {
             btnDetails.BackColor = Color.FromArgb(255, 0, 255);
             btnDetails.ForeColor = Color.FromArgb(0, 255,0);
             btnDetails.Text = "a venir";
+            FrmDetails details = new FrmDetails(this.m_mission,this.m_monDS);
+            details.ShowDialog();
             
         }
     }

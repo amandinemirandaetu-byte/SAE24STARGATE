@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SAE24STARGATE
 {
@@ -49,6 +51,52 @@ namespace SAE24STARGATE
         public int getNbrMembres() { return m_nbrMembres; }
 
 
+        public List<UCMembre> listeMembres()
+        {
+            DataTable dtMembres = m_monDS.Tables["Membre"];
+            DataTable dtCivils = m_monDS.Tables["Civil"];
+            DataTable dtMilitaire = m_monDS.Tables["Militaire"];
+            List<UCMembre> liste = new List<UCMembre>();
+            List<String> idMembres= new List<String>();
+            foreach (DataRow dr in m_monDS.Tables["Composer"].Rows)
+            {
+                string planete = dr[0].ToString();
+                int mission = Convert.ToInt32(dr[1]);
+                if (planete == m_planete && mission == m_numMission)
+                {
+                    idMembres.Append(dr[2]);
+                }
+            }
+
+            foreach (String id in idMembres)
+            {
+                UCMembre membre = new UCMembre();
+                membre.setId(id);
+                if (id.StartsWith("M"))
+                {
+                    membre.setPlaneteOrigine("???");
+                    String metier = dtMilitaire.Select("matriculeMembre = " +id)[1].ToString();
+                    membre.setMetier(metier);
+
+                }
+                else
+                {
+                    String PlaneteOrigine = dtCivils.Select("matriculeMembre = " + id)[2].ToString();
+                    membre.setPlaneteOrigine(PlaneteOrigine);
+                    String metier = dtMilitaire.Select("matriculeMembre = " +id)[1].ToString();
+                    membre.setMetier(metier);
+                }
+                String nom = dtMembres.Select("matriculeMembre = " + id)[1].ToString();
+                membre.setNom(nom);
+                String prenom = dtMembres.Select("matriculeMembre = " + id)[2].ToString();
+                membre.setPrenom(prenom);
+                String dateNaissance = dtMembres.Select("matriculeMembre = " + id)[3].ToString();
+                membre.setDateNaissance(formaterDate(dateNaissance));
+                liste.Append(membre);
+            }
+
+            return liste;
+        }
 
 
         //                              gestion format dates 

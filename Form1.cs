@@ -1182,6 +1182,8 @@ namespace SAE24STARGATE
                     UC.Top = top;
                     UC.Left = left;
 
+                    UC.Click += new EventHandler(DetaillerMission);
+
                     pnlTDBMission.Controls.Add(UC);
                 }
                 
@@ -1191,7 +1193,10 @@ namespace SAE24STARGATE
 
         }
         //                                              Fonctions customs
-
+        public void DetaillerMission(object sender, EventArgs e) 
+        {
+            
+        }
         
         //                              gestion format dates 
         public String formaterDate(DateTime date)
