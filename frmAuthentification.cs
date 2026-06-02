@@ -26,18 +26,24 @@ namespace SAE24STARGATE
 
         private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar == (char)Keys.Return))
+            if (e.KeyChar == (char)13)
             {
-                e.Handled = false;
-            }
-
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = false;
                 btnLogin.PerformClick();
+                e.Handled = true;
+                return;
             }
 
-            if (!(char.IsLetter(e.KeyChar)))
+            if (e.KeyChar == ' ')
+            {
+                return;
+            }
+
+            if (e.KeyChar == (char)8)
+            {
+                return;
+            }
+
+            if (!char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -76,8 +82,6 @@ namespace SAE24STARGATE
                 string sql = $"SELECT mdp FROM Admin WHERE login = '{txtLogin.Text}'";
                 SQLiteCommand cmd = new SQLiteCommand(sql, maConnec);
                 object resultat = cmd.ExecuteScalar();
-
-                MessageBox.Show(resultat.ToString());
 
                 if (resultat != DBNull.Value && resultat != null)
                 {

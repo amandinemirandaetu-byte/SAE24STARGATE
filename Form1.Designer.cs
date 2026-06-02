@@ -35,6 +35,9 @@
             this.btnDecouvRaces = new System.Windows.Forms.Button();
             this.btnNouvMission = new System.Windows.Forms.Button();
             this.BtnInfosPlan = new System.Windows.Forms.Button();
+            this.grpNouvMission = new System.Windows.Forms.GroupBox();
+            this.btnAuthentifier = new System.Windows.Forms.Button();
+            this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
             this.grpTableauBord = new System.Windows.Forms.GroupBox();
             this.btnFutur = new System.Windows.Forms.Button();
             this.btnPasse = new System.Windows.Forms.Button();
@@ -50,7 +53,6 @@
             this.txtNomAliens = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomAlien = new System.Windows.Forms.Label();
-            this.grpNouvMission = new System.Windows.Forms.GroupBox();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.btnPageStatistiques = new System.Windows.Forms.Button();
             this.btnTableauBord = new System.Windows.Forms.Button();
@@ -77,15 +79,13 @@
             this.lblCoequipiersTitre = new System.Windows.Forms.Label();
             this.lblTitreStats = new System.Windows.Forms.Label();
             this.btnMenuStats = new System.Windows.Forms.Button();
-            this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
-            this.btnAuthentifier = new System.Windows.Forms.Button();
             this.tabMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
+            this.grpNouvMission.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
             this.grpInfosPlan.SuspendLayout();
             this.grpDecouvRaces.SuspendLayout();
             this.grpFiltres.SuspendLayout();
-            this.grpNouvMission.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPageStatistiques.SuspendLayout();
             this.grpStatistiques.SuspendLayout();
@@ -194,6 +194,43 @@
             this.BtnInfosPlan.TabIndex = 3;
             this.BtnInfosPlan.UseVisualStyleBackColor = true;
             this.BtnInfosPlan.Click += new System.EventHandler(this.BtnInfosPlan_Click);
+            // 
+            // grpNouvMission
+            // 
+            this.grpNouvMission.Controls.Add(this.btnAuthentifier);
+            this.grpNouvMission.Controls.Add(this.lblVeuillezAuthentifiez);
+            this.grpNouvMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grpNouvMission.Location = new System.Drawing.Point(290, 20);
+            this.grpNouvMission.Name = "grpNouvMission";
+            this.grpNouvMission.Size = new System.Drawing.Size(950, 825);
+            this.grpNouvMission.TabIndex = 6;
+            this.grpNouvMission.TabStop = false;
+            this.grpNouvMission.Visible = false;
+            // 
+            // btnAuthentifier
+            // 
+            this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
+            this.btnAuthentifier.Name = "btnAuthentifier";
+            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
+            this.btnAuthentifier.TabIndex = 1;
+            this.btnAuthentifier.Text = "S\'authentifier :";
+            this.btnAuthentifier.UseVisualStyleBackColor = true;
+            this.btnAuthentifier.Click += new System.EventHandler(this.btnAuthentifier_Click);
+            // 
+            // lblVeuillezAuthentifiez
+            // 
+            this.lblVeuillezAuthentifiez.AutoSize = true;
+            this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
+            this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
+            this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(616, 100);
+            this.lblVeuillezAuthentifiez.TabIndex = 0;
+            this.lblVeuillezAuthentifiez.Text = "Veuillez vous authentifier \r\npour voir ce contenu !";
+            this.lblVeuillezAuthentifiez.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // grpTableauBord
             // 
@@ -365,18 +402,6 @@
             this.lblNomAlien.Size = new System.Drawing.Size(72, 25);
             this.lblNomAlien.TabIndex = 0;
             this.lblNomAlien.Text = "Nom :";
-            // 
-            // grpNouvMission
-            // 
-            this.grpNouvMission.Controls.Add(this.btnAuthentifier);
-            this.grpNouvMission.Controls.Add(this.lblVeuillezAuthentifiez);
-            this.grpNouvMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpNouvMission.Location = new System.Drawing.Point(290, 20);
-            this.grpNouvMission.Name = "grpNouvMission";
-            this.grpNouvMission.Size = new System.Drawing.Size(950, 825);
-            this.grpNouvMission.TabIndex = 6;
-            this.grpNouvMission.TabStop = false;
-            this.grpNouvMission.Visible = false;
             // 
             // tabPageMenu
             // 
@@ -763,38 +788,13 @@
             this.btnMenuStats.UseVisualStyleBackColor = true;
             this.btnMenuStats.Click += new System.EventHandler(this.btnMenuStats_Click);
             // 
-            // lblVeuillezAuthentifiez
-            // 
-            this.lblVeuillezAuthentifiez.AutoSize = true;
-            this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
-            this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
-            this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(616, 100);
-            this.lblVeuillezAuthentifiez.TabIndex = 0;
-            this.lblVeuillezAuthentifiez.Text = "Veuillez vous authentifier \r\npour voir ce contenu !";
-            this.lblVeuillezAuthentifiez.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnAuthentifier
-            // 
-            this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
-            this.btnAuthentifier.Name = "btnAuthentifier";
-            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
-            this.btnAuthentifier.TabIndex = 1;
-            this.btnAuthentifier.Text = "S\'authentifier :";
-            this.btnAuthentifier.UseVisualStyleBackColor = true;
-            this.btnAuthentifier.Click += new System.EventHandler(this.btnAuthentifier_Click);
-            // 
             // frmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1256, 855);
+            this.ClientSize = new System.Drawing.Size(1278, 911);
             this.Controls.Add(this.tabMenu);
             this.MaximumSize = new System.Drawing.Size(1278, 911);
             this.MinimumSize = new System.Drawing.Size(1278, 911);
@@ -803,13 +803,13 @@
             this.Load += new System.EventHandler(this.frmAccueil_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabPagePrincipal.ResumeLayout(false);
+            this.grpNouvMission.ResumeLayout(false);
+            this.grpNouvMission.PerformLayout();
             this.grpTableauBord.ResumeLayout(false);
             this.grpInfosPlan.ResumeLayout(false);
             this.grpDecouvRaces.ResumeLayout(false);
             this.grpFiltres.ResumeLayout(false);
             this.grpFiltres.PerformLayout();
-            this.grpNouvMission.ResumeLayout(false);
-            this.grpNouvMission.PerformLayout();
             this.tabPageMenu.ResumeLayout(false);
             this.tabPageStatistiques.ResumeLayout(false);
             this.grpStatistiques.ResumeLayout(false);
