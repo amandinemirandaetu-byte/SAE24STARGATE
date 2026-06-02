@@ -836,7 +836,7 @@
         private System.Windows.Forms.GroupBox grpNouvMission;
         private System.Windows.Forms.GroupBox grpInfosPlan;
         private System.Windows.Forms.GroupBox grpMissionsTDB;
-        private System.Windows.Forms.Button btnPresent;
+        private System.Windows.Forms.Button btnEnCours;
         private System.Windows.Forms.Button btnFutur;
         private System.Windows.Forms.Button btnPasse;
         private System.Windows.Forms.GroupBox grpFiltres;
