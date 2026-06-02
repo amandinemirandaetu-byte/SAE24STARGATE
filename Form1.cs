@@ -12,7 +12,6 @@ using System.Data.SQLite;
 
 namespace SAE24STARGATE
 {
-
     public partial class frmAccueil : Form
     {
         public frmAccueil()
@@ -20,11 +19,14 @@ namespace SAE24STARGATE
             InitializeComponent();
         }
 
+        public static bool authentifie = false;
+
         //AMANDINE
         //permet d'initialiser le mode déconnecté de la base de données
         SQLiteConnection maConnec = new SQLiteConnection();
         string connecString = @"Data Source = Stargate.db";
         DataSet monDS = new DataSet();
+
         //AMANDINE
         private void frmAccueil_Load(object sender, EventArgs e)
         {
@@ -244,6 +246,26 @@ namespace SAE24STARGATE
             cboPlanetes.DataSource = vueTrieePlanete;
             cboPlanetes.DisplayMember = "nom";
 
+            cboChoixPlanete.DataSource = vueTrieePlanete;
+            cboChoixPlanete.DisplayMember = "nom";
+
+
+
+            foreach(DataRow ligne in monDS.Tables["Militaire"].Rows)
+            {
+                string resultat = "";
+                foreach(DataRow ligne2 in monDS.Tables["Membre"].Rows)
+                {
+                    if (ligne["matriculeMembre"].ToString() == ligne2["matricule"].ToString())
+                    {
+                        resultat += ligne2["nom"] + " " + ligne2["prenom"];
+                    }
+                }
+                resultat += " - " + ligne["grade"];
+                cboChoixChef.Items.Add(resultat);
+            }
+
+
         }
 
 
@@ -255,7 +277,7 @@ namespace SAE24STARGATE
             tabMenu.SelectedTab = tabPagePrincipal;
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = true;
             // AMANDINE
         }
@@ -266,7 +288,7 @@ namespace SAE24STARGATE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Decouverte des Races)
             tabMenu.SelectedTab = tabPagePrincipal;
             grpInfosPlan.Visible = false;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = true;
             // AMANDINE
@@ -280,8 +302,9 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
-            grpNouvMission.Visible = true;
+            grpNouvMissionCache.Visible = true;
             frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.FormClosed += verifAuthent;
             frmAuthent.ShowDialog();
             // AMANDINE
         }
@@ -291,7 +314,7 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Infos Planètes)
             tabMenu.SelectedTab = tabPagePrincipal;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = true;
@@ -304,7 +327,7 @@ namespace SAE24STARGATE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Tableau de Bord)
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = true;
             // AMANDINE
         }
@@ -314,7 +337,7 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Découverte des Races)
             grpInfosPlan.Visible = false;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = true;
             // AMANDINE
@@ -327,9 +350,11 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
-            grpNouvMission.Visible = true;
+            grpNouvMissionCache.Visible = true;
             frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.FormClosed += verifAuthent;
             frmAuthent.ShowDialog();
+
             // AMANDINE
         }
 
@@ -338,7 +363,7 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Infos Planètes)
             grpDecouvRaces.Visible = false;
-            grpNouvMission.Visible = false;
+            grpNouvMissionCache.Visible = false;
             grpTableauBord.Visible = false;
             grpInfosPlan.Visible = true;
             // AMANDINE
@@ -1107,6 +1132,8 @@ namespace SAE24STARGATE
                         }
                     }
                 }
+                
+                    
 
                 resultat += "Nom de code : " + kvp.Key + "\n"
                          + "Espèce de l'informateur : " + origineInformateur + "\n"
@@ -1119,7 +1146,35 @@ namespace SAE24STARGATE
         private void btnAuthentifier_Click(object sender, EventArgs e)
         {
             frmAuthentification frmAuthent = new frmAuthentification();
+            frmAuthent.FormClosed += verifAuthent;
             frmAuthent.ShowDialog();
+        }
+
+
+        private void verifAuthent(object sender, FormClosedEventArgs e)
+        {
+            if (authentifie) {
+                grpNouvMissionCache.Visible = false;
+                grpNouvMissionDevoile.Visible = true;
+            }
+            else
+            {
+                grpNouvMissionDevoile.Visible = false;
+                grpNouvMissionCache.Visible = true;
+            }
+        }
+
+        private void btnValiderPlanete_Click(object sender, EventArgs e)
+        {
+            int indexMission = 1;
+            foreach(DataRow ligne in monDS.Tables["Mission"].Rows)
+            {
+                if(ligne["nomPlanete"].ToString() == cboChoixPlanete.Text)
+                {
+                    indexMission++;
+                }
+            }
+            lblNomMission.Text += "    " + cboChoixPlanete.Text + "  -  " + indexMission.ToString();
         }
     }
 }

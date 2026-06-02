@@ -35,7 +35,7 @@
             this.btnDecouvRaces = new System.Windows.Forms.Button();
             this.btnNouvMission = new System.Windows.Forms.Button();
             this.BtnInfosPlan = new System.Windows.Forms.Button();
-            this.grpNouvMission = new System.Windows.Forms.GroupBox();
+            this.grpNouvMissionCache = new System.Windows.Forms.GroupBox();
             this.btnAuthentifier = new System.Windows.Forms.Button();
             this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
             this.grpTableauBord = new System.Windows.Forms.GroupBox();
@@ -79,9 +79,17 @@
             this.lblCoequipiersTitre = new System.Windows.Forms.Label();
             this.lblTitreStats = new System.Windows.Forms.Label();
             this.btnMenuStats = new System.Windows.Forms.Button();
+            this.grpNouvMissionDevoile = new System.Windows.Forms.GroupBox();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.lblChoixPlanete = new System.Windows.Forms.Label();
+            this.cboChoixPlanete = new System.Windows.Forms.ComboBox();
+            this.btnValiderPlanete = new System.Windows.Forms.Button();
+            this.lblNomMission = new System.Windows.Forms.Label();
+            this.cboChoixChef = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
-            this.grpNouvMission.SuspendLayout();
+            this.grpNouvMissionCache.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
             this.grpInfosPlan.SuspendLayout();
             this.grpDecouvRaces.SuspendLayout();
@@ -89,6 +97,7 @@
             this.tabPageMenu.SuspendLayout();
             this.tabPageStatistiques.SuspendLayout();
             this.grpStatistiques.SuspendLayout();
+            this.grpNouvMissionDevoile.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -110,7 +119,8 @@
             this.tabPagePrincipal.Controls.Add(this.btnDecouvRaces);
             this.tabPagePrincipal.Controls.Add(this.btnNouvMission);
             this.tabPagePrincipal.Controls.Add(this.BtnInfosPlan);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMission);
+            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionDevoile);
+            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionCache);
             this.tabPagePrincipal.Controls.Add(this.grpTableauBord);
             this.tabPagePrincipal.Controls.Add(this.grpInfosPlan);
             this.tabPagePrincipal.Controls.Add(this.grpDecouvRaces);
@@ -195,17 +205,17 @@
             this.BtnInfosPlan.UseVisualStyleBackColor = true;
             this.BtnInfosPlan.Click += new System.EventHandler(this.BtnInfosPlan_Click);
             // 
-            // grpNouvMission
+            // grpNouvMissionCache
             // 
-            this.grpNouvMission.Controls.Add(this.btnAuthentifier);
-            this.grpNouvMission.Controls.Add(this.lblVeuillezAuthentifiez);
-            this.grpNouvMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpNouvMission.Location = new System.Drawing.Point(290, 20);
-            this.grpNouvMission.Name = "grpNouvMission";
-            this.grpNouvMission.Size = new System.Drawing.Size(950, 825);
-            this.grpNouvMission.TabIndex = 6;
-            this.grpNouvMission.TabStop = false;
-            this.grpNouvMission.Visible = false;
+            this.grpNouvMissionCache.Controls.Add(this.btnAuthentifier);
+            this.grpNouvMissionCache.Controls.Add(this.lblVeuillezAuthentifiez);
+            this.grpNouvMissionCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grpNouvMissionCache.Location = new System.Drawing.Point(290, 20);
+            this.grpNouvMissionCache.Name = "grpNouvMissionCache";
+            this.grpNouvMissionCache.Size = new System.Drawing.Size(950, 825);
+            this.grpNouvMissionCache.TabIndex = 6;
+            this.grpNouvMissionCache.TabStop = false;
+            this.grpNouvMissionCache.Visible = false;
             // 
             // btnAuthentifier
             // 
@@ -788,13 +798,104 @@
             this.btnMenuStats.UseVisualStyleBackColor = true;
             this.btnMenuStats.Click += new System.EventHandler(this.btnMenuStats_Click);
             // 
+            // grpNouvMissionDevoile
+            // 
+            this.grpNouvMissionDevoile.Controls.Add(this.cboChoixChef);
+            this.grpNouvMissionDevoile.Controls.Add(this.label2);
+            this.grpNouvMissionDevoile.Controls.Add(this.lblNomMission);
+            this.grpNouvMissionDevoile.Controls.Add(this.btnValiderPlanete);
+            this.grpNouvMissionDevoile.Controls.Add(this.cboChoixPlanete);
+            this.grpNouvMissionDevoile.Controls.Add(this.lblChoixPlanete);
+            this.grpNouvMissionDevoile.Controls.Add(this.lblTitre);
+            this.grpNouvMissionDevoile.Location = new System.Drawing.Point(290, 20);
+            this.grpNouvMissionDevoile.Name = "grpNouvMissionDevoile";
+            this.grpNouvMissionDevoile.Size = new System.Drawing.Size(950, 825);
+            this.grpNouvMissionDevoile.TabIndex = 2;
+            this.grpNouvMissionDevoile.TabStop = false;
+            this.grpNouvMissionDevoile.Visible = false;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Orbitron Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.lblTitre.Location = new System.Drawing.Point(15, 22);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(288, 35);
+            this.lblTitre.TabIndex = 0;
+            this.lblTitre.Text = "Nouvelle mission :";
+            // 
+            // lblChoixPlanete
+            // 
+            this.lblChoixPlanete.AutoSize = true;
+            this.lblChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChoixPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.lblChoixPlanete.Location = new System.Drawing.Point(34, 91);
+            this.lblChoixPlanete.Name = "lblChoixPlanete";
+            this.lblChoixPlanete.Size = new System.Drawing.Size(316, 30);
+            this.lblChoixPlanete.TabIndex = 1;
+            this.lblChoixPlanete.Text = "1 - Choix de la planète :";
+            // 
+            // cboChoixPlanete
+            // 
+            this.cboChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboChoixPlanete.FormattingEnabled = true;
+            this.cboChoixPlanete.Location = new System.Drawing.Point(372, 93);
+            this.cboChoixPlanete.Name = "cboChoixPlanete";
+            this.cboChoixPlanete.Size = new System.Drawing.Size(304, 28);
+            this.cboChoixPlanete.TabIndex = 2;
+            // 
+            // btnValiderPlanete
+            // 
+            this.btnValiderPlanete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValiderPlanete.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValiderPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.btnValiderPlanete.Location = new System.Drawing.Point(714, 86);
+            this.btnValiderPlanete.Name = "btnValiderPlanete";
+            this.btnValiderPlanete.Size = new System.Drawing.Size(198, 41);
+            this.btnValiderPlanete.TabIndex = 3;
+            this.btnValiderPlanete.Text = "Valider la planète";
+            this.btnValiderPlanete.UseVisualStyleBackColor = true;
+            this.btnValiderPlanete.Click += new System.EventHandler(this.btnValiderPlanete_Click);
+            // 
+            // lblNomMission
+            // 
+            this.lblNomMission.AutoSize = true;
+            this.lblNomMission.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.lblNomMission.Location = new System.Drawing.Point(87, 152);
+            this.lblNomMission.Name = "lblNomMission";
+            this.lblNomMission.Size = new System.Drawing.Size(263, 30);
+            this.lblNomMission.TabIndex = 4;
+            this.lblNomMission.Text = "Nom de la mission :";
+            // 
+            // cboChoixChef
+            // 
+            this.cboChoixChef.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboChoixChef.FormattingEnabled = true;
+            this.cboChoixChef.Location = new System.Drawing.Point(458, 225);
+            this.cboChoixChef.Name = "cboChoixChef";
+            this.cboChoixChef.Size = new System.Drawing.Size(351, 28);
+            this.cboChoixChef.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.label2.Location = new System.Drawing.Point(34, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(398, 30);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "2 - Choix du chef de mission :";
+            // 
             // frmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1278, 911);
+            this.ClientSize = new System.Drawing.Size(1256, 855);
             this.Controls.Add(this.tabMenu);
             this.MaximumSize = new System.Drawing.Size(1278, 911);
             this.MinimumSize = new System.Drawing.Size(1278, 911);
@@ -803,8 +904,8 @@
             this.Load += new System.EventHandler(this.frmAccueil_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabPagePrincipal.ResumeLayout(false);
-            this.grpNouvMission.ResumeLayout(false);
-            this.grpNouvMission.PerformLayout();
+            this.grpNouvMissionCache.ResumeLayout(false);
+            this.grpNouvMissionCache.PerformLayout();
             this.grpTableauBord.ResumeLayout(false);
             this.grpInfosPlan.ResumeLayout(false);
             this.grpDecouvRaces.ResumeLayout(false);
@@ -814,6 +915,8 @@
             this.tabPageStatistiques.ResumeLayout(false);
             this.grpStatistiques.ResumeLayout(false);
             this.grpStatistiques.PerformLayout();
+            this.grpNouvMissionDevoile.ResumeLayout(false);
+            this.grpNouvMissionDevoile.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -833,7 +936,7 @@
         private System.Windows.Forms.Button btnDecouvRaces;
         private System.Windows.Forms.Button btnTbBord;
         private System.Windows.Forms.GroupBox grpDecouvRaces;
-        private System.Windows.Forms.GroupBox grpNouvMission;
+        private System.Windows.Forms.GroupBox grpNouvMissionCache;
         private System.Windows.Forms.GroupBox grpInfosPlan;
         private System.Windows.Forms.GroupBox grpMissionsTDB;
         private System.Windows.Forms.Button btnEnCours;
@@ -871,5 +974,13 @@
         private System.Windows.Forms.Label lblInformateur;
         private System.Windows.Forms.Label lblVeuillezAuthentifiez;
         private System.Windows.Forms.Button btnAuthentifier;
+        private System.Windows.Forms.GroupBox grpNouvMissionDevoile;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.ComboBox cboChoixPlanete;
+        private System.Windows.Forms.Label lblChoixPlanete;
+        private System.Windows.Forms.Button btnValiderPlanete;
+        private System.Windows.Forms.Label lblNomMission;
+        private System.Windows.Forms.ComboBox cboChoixChef;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -92,10 +92,13 @@ namespace SAE24STARGATE
                     if (valide)
                     {
                         MessageBox.Show("Accès autorisé", "Authentification");
+                        this.Close();
+                        frmAccueil.authentifie = true;
                     }
                     else
                     {
                         MessageBox.Show("Accès refusé", "Authentification");
+                        frmAccueil.authentifie = false;
                     }
                 }
             }
