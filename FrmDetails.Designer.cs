@@ -34,6 +34,7 @@
             // 
             // pnlMembres
             // 
+            this.pnlMembres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMembres.Location = new System.Drawing.Point(10, 280);
             this.pnlMembres.Name = "pnlMembres";
             this.pnlMembres.Size = new System.Drawing.Size(810, 240);
@@ -55,7 +56,7 @@
             // 
             // FrmDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(835, 538);
@@ -64,6 +65,8 @@
             this.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximumSize = new System.Drawing.Size(851, 577);
+            this.MinimumSize = new System.Drawing.Size(851, 577);
             this.Name = "FrmDetails";
             this.Text = "FrmDetails";
             this.ResumeLayout(false);

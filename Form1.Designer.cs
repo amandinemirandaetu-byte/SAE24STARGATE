@@ -36,6 +36,7 @@
             this.btnNouvMission = new System.Windows.Forms.Button();
             this.BtnInfosPlan = new System.Windows.Forms.Button();
             this.grpTableauBord = new System.Windows.Forms.GroupBox();
+            this.pnlTDBMission = new System.Windows.Forms.Panel();
             this.btnToutesMissions = new System.Windows.Forms.Button();
             this.btnFutur = new System.Windows.Forms.Button();
             this.btnPasse = new System.Windows.Forms.Button();
@@ -51,6 +52,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomAlien = new System.Windows.Forms.Label();
             this.grpNouvMission = new System.Windows.Forms.GroupBox();
+            this.btnAuthentifier = new System.Windows.Forms.Button();
+            this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.btnPageStatistiques = new System.Windows.Forms.Button();
             this.btnTableauBord = new System.Windows.Forms.Button();
@@ -77,9 +80,6 @@
             this.lblCoequipiersTitre = new System.Windows.Forms.Label();
             this.lblTitreStats = new System.Windows.Forms.Label();
             this.btnMenuStats = new System.Windows.Forms.Button();
-            this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
-            this.btnAuthentifier = new System.Windows.Forms.Button();
-            this.pnlTDBMission = new System.Windows.Forms.Panel();
             this.tabMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
@@ -112,7 +112,6 @@
             this.tabPagePrincipal.Controls.Add(this.btnDecouvRaces);
             this.tabPagePrincipal.Controls.Add(this.btnNouvMission);
             this.tabPagePrincipal.Controls.Add(this.BtnInfosPlan);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMission);
             this.tabPagePrincipal.Controls.Add(this.grpTableauBord);
             this.tabPagePrincipal.Controls.Add(this.grpInfosPlan);
             this.tabPagePrincipal.Controls.Add(this.grpDecouvRaces);
@@ -221,6 +220,19 @@
             this.grpTableauBord.TabIndex = 4;
             this.grpTableauBord.TabStop = false;
             this.grpTableauBord.Visible = false;
+            // 
+            // pnlTDBMission
+            // 
+            this.pnlTDBMission.AutoScroll = true;
+            this.pnlTDBMission.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTDBMission.Font = new System.Drawing.Font("Orbitron", 8.25F);
+            this.pnlTDBMission.ForeColor = System.Drawing.Color.Cyan;
+            this.pnlTDBMission.Location = new System.Drawing.Point(55, 135);
+            this.pnlTDBMission.MaximumSize = new System.Drawing.Size(525, 390);
+            this.pnlTDBMission.MinimumSize = new System.Drawing.Size(525, 390);
+            this.pnlTDBMission.Name = "pnlTDBMission";
+            this.pnlTDBMission.Size = new System.Drawing.Size(525, 390);
+            this.pnlTDBMission.TabIndex = 6;
             // 
             // btnToutesMissions
             // 
@@ -419,6 +431,31 @@
             this.grpNouvMission.TabStop = false;
             this.grpNouvMission.Visible = false;
             // 
+            // btnAuthentifier
+            // 
+            this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
+            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
+            this.btnAuthentifier.Name = "btnAuthentifier";
+            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
+            this.btnAuthentifier.TabIndex = 1;
+            this.btnAuthentifier.Text = "S\'authentifier :";
+            this.btnAuthentifier.UseVisualStyleBackColor = true;
+            this.btnAuthentifier.Click += new System.EventHandler(this.btnAuthentifier_Click);
+            // 
+            // lblVeuillezAuthentifiez
+            // 
+            this.lblVeuillezAuthentifiez.AutoSize = true;
+            this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
+            this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
+            this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(417, 68);
+            this.lblVeuillezAuthentifiez.TabIndex = 0;
+            this.lblVeuillezAuthentifiez.Text = "Veuillez vous authentifier \r\npour voir ce contenu !";
+            this.lblVeuillezAuthentifiez.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tabPageMenu
             // 
             this.tabPageMenu.BackColor = System.Drawing.Color.Black;
@@ -604,7 +641,7 @@
             this.cboChoixMissionInformateur.IntegralHeight = false;
             this.cboChoixMissionInformateur.Location = new System.Drawing.Point(667, 476);
             this.cboChoixMissionInformateur.Name = "cboChoixMissionInformateur";
-            this.cboChoixMissionInformateur.Size = new System.Drawing.Size(350, 33);
+            this.cboChoixMissionInformateur.Size = new System.Drawing.Size(350, 24);
             this.cboChoixMissionInformateur.TabIndex = 18;
             // 
             // lblInformateur
@@ -615,7 +652,7 @@
             this.lblInformateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.lblInformateur.Location = new System.Drawing.Point(652, 395);
             this.lblInformateur.Name = "lblInformateur";
-            this.lblInformateur.Size = new System.Drawing.Size(377, 60);
+            this.lblInformateur.Size = new System.Drawing.Size(249, 40);
             this.lblInformateur.TabIndex = 19;
             this.lblInformateur.Text = "Les informateurs les moins\r\nfortunés pour la mission :\r\n";
             this.lblInformateur.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -643,7 +680,7 @@
             this.cboChoixMissionBudget.IntegralHeight = false;
             this.cboChoixMissionBudget.Location = new System.Drawing.Point(143, 476);
             this.cboChoixMissionBudget.Name = "cboChoixMissionBudget";
-            this.cboChoixMissionBudget.Size = new System.Drawing.Size(350, 33);
+            this.cboChoixMissionBudget.Size = new System.Drawing.Size(350, 24);
             this.cboChoixMissionBudget.TabIndex = 15;
             // 
             // lblDepensesMissions
@@ -654,7 +691,7 @@
             this.lblDepensesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.lblDepensesMissions.Location = new System.Drawing.Point(148, 395);
             this.lblDepensesMissions.Name = "lblDepensesMissions";
-            this.lblDepensesMissions.Size = new System.Drawing.Size(340, 60);
+            this.lblDepensesMissions.Size = new System.Drawing.Size(224, 40);
             this.lblDepensesMissions.TabIndex = 16;
             this.lblDepensesMissions.Text = "Les dépenses les plus\r\nélevées pour la mission :\r\n";
             this.lblDepensesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -682,7 +719,7 @@
             this.cboPlanetes.IntegralHeight = false;
             this.cboPlanetes.Location = new System.Drawing.Point(881, 182);
             this.cboPlanetes.Name = "cboPlanetes";
-            this.cboPlanetes.Size = new System.Drawing.Size(225, 33);
+            this.cboPlanetes.Size = new System.Drawing.Size(225, 24);
             this.cboPlanetes.TabIndex = 13;
             // 
             // lblPlanetesMissions
@@ -693,7 +730,7 @@
             this.lblPlanetesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.lblPlanetesMissions.Location = new System.Drawing.Point(815, 136);
             this.lblPlanetesMissions.Name = "lblPlanetesMissions";
-            this.lblPlanetesMissions.Size = new System.Drawing.Size(360, 30);
+            this.lblPlanetesMissions.Size = new System.Drawing.Size(236, 20);
             this.lblPlanetesMissions.TabIndex = 12;
             this.lblPlanetesMissions.Text = "Mission(s) pour la planète :";
             this.lblPlanetesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -820,43 +857,6 @@
             this.btnMenuStats.Text = "button1";
             this.btnMenuStats.UseVisualStyleBackColor = true;
             this.btnMenuStats.Click += new System.EventHandler(this.btnMenuStats_Click);
-            // 
-            // lblVeuillezAuthentifiez
-            // 
-            this.lblVeuillezAuthentifiez.AutoSize = true;
-            this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
-            this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
-            this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(616, 100);
-            this.lblVeuillezAuthentifiez.TabIndex = 0;
-            this.lblVeuillezAuthentifiez.Text = "Veuillez vous authentifier \r\npour voir ce contenu !";
-            this.lblVeuillezAuthentifiez.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnAuthentifier
-            // 
-            this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
-            this.btnAuthentifier.Name = "btnAuthentifier";
-            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
-            this.btnAuthentifier.TabIndex = 1;
-            this.btnAuthentifier.Text = "S\'authentifier :";
-            this.btnAuthentifier.UseVisualStyleBackColor = true;
-            this.btnAuthentifier.Click += new System.EventHandler(this.btnAuthentifier_Click);
-            // 
-            // pnlTDBMission
-            // 
-            this.pnlTDBMission.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTDBMission.Font = new System.Drawing.Font("Orbitron", 8.25F);
-            this.pnlTDBMission.ForeColor = System.Drawing.Color.Chartreuse;
-            this.pnlTDBMission.Location = new System.Drawing.Point(55, 135);
-            this.pnlTDBMission.MaximumSize = new System.Drawing.Size(525, 390);
-            this.pnlTDBMission.MinimumSize = new System.Drawing.Size(525, 390);
-            this.pnlTDBMission.Name = "pnlTDBMission";
-            this.pnlTDBMission.Size = new System.Drawing.Size(525, 390);
-            this.pnlTDBMission.TabIndex = 6;
             // 
             // frmAccueil
             // 

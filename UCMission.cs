@@ -64,12 +64,40 @@ namespace SAE24STARGATE
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            btnDetails.BackColor = Color.FromArgb(255, 0, 255);
-            btnDetails.ForeColor = Color.FromArgb(0, 255,0);
-            btnDetails.Text = "a venir";
             FrmDetails details = new FrmDetails(this.m_mission,this.m_monDS);
             details.ShowDialog();
-            
         }
+        
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Color couleur = Color.FromArgb(3, 107, 255);
+
+            if (this.m_mission.futurOuPasse()<0)
+            {
+                couleur = Color.FromArgb(165, 255, 64);
+
+            }
+            if (this.m_mission.futurOuPasse() > 0)
+            {
+                couleur = Color.FromArgb(184, 143, 255);
+            }
+
+            {
+                using (Pen pen = new Pen(couleur, 2))
+                {
+                    e.Graphics.DrawRectangle(
+                        pen,
+                        0,
+                        0,
+                        this.Width - 2,
+                        this.Height - 2
+                    );
+                }
+
+            }
+        
+        }
+        
     }
 }

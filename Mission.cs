@@ -50,7 +50,7 @@ namespace SAE24STARGATE
         public int getNumMission() { return m_numMission; }
         public int getNbrMembres() { return m_nbrMembres; }
 
-
+        //fonctions customs 
         public List<UCMembre> listeMembres()
         {
             DataTable dtMembres = m_monDS.Tables["Membre"];
@@ -64,7 +64,7 @@ namespace SAE24STARGATE
                 int mission = Convert.ToInt32(dr[1]);
                 if (planete == m_planete && mission == m_numMission)
                 {
-                    idMembres.Append(dr[2]);
+                    idMembres.Add(dr[2].ToString());
                 }
             }
 
@@ -75,27 +75,40 @@ namespace SAE24STARGATE
                 if (id.StartsWith("M"))
                 {
                     membre.setPlaneteOrigine("???");
-                    String metier = dtMilitaire.Select("matriculeMembre = " +id)[1].ToString();
+                    String metier = dtMilitaire.Select("matriculeMembre = '" +id+"'")[0][1].ToString();
                     membre.setMetier(metier);
-
                 }
                 else
                 {
-                    String PlaneteOrigine = dtCivils.Select("matriculeMembre = " + id)[2].ToString();
+                    String PlaneteOrigine = dtCivils.Select("matriculeMembre = '" + id + "'")[0][2].ToString();
                     membre.setPlaneteOrigine(PlaneteOrigine);
-                    String metier = dtMilitaire.Select("matriculeMembre = " +id)[1].ToString();
+                    String metier = dtCivils.Select("matriculeMembre= '" + id + "'")[0][1].ToString();
                     membre.setMetier(metier);
                 }
-                String nom = dtMembres.Select("matriculeMembre = " + id)[1].ToString();
+                String nom = dtMembres.Select("matricule = '" + id + "'")[0][1].ToString();
                 membre.setNom(nom);
-                String prenom = dtMembres.Select("matriculeMembre = " + id)[2].ToString();
+                String prenom = dtMembres.Select("matricule= '" + id + "'")[0][2].ToString();
                 membre.setPrenom(prenom);
-                String dateNaissance = dtMembres.Select("matriculeMembre = " + id)[3].ToString();
+                String dateNaissance = dtMembres.Select("matricule = '" + id + "'")[0][3].ToString();
                 membre.setDateNaissance(formaterDate(dateNaissance));
-                liste.Append(membre);
+                liste.Add(membre);
             }
 
             return liste;
+        }
+
+        public int futurOuPasse()
+        {
+            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());
+            if(DateTime.Parse(m_dateArrivee) < DateTime.Parse(aujoudhui))
+            {
+                return -1;
+            }
+            if(DateTime.Parse(m_dateDepart) > DateTime.Parse(aujoudhui))
+            {
+                return -0;
+            }
+            return 0;
         }
 
 

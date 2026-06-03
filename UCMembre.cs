@@ -79,6 +79,33 @@ namespace SAE24STARGATE
         }
 
 
+        // overides 
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Color couleur = Color.FromArgb(165, 255, 64);
+
+            if (this.m_id.StartsWith("M"))
+            {
+                couleur = Color.FromArgb(184, 143, 255);
+            }
+            
+            {
+                using (Pen pen = new Pen(couleur, 2))
+                {
+                    e.Graphics.DrawRectangle(
+                        pen,
+                        0,
+                        0,
+                        this.Width - 1,
+                        this.Height - 1
+                    );
+                }
+
+            }
+
+        }
         private void UCMembre_Load(object sender, EventArgs e)
         {
 
