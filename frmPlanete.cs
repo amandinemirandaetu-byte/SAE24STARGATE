@@ -24,7 +24,7 @@ namespace SAE24STARGATE
             InitializeComponent();
 
             monDS = DS;
-
+            //MessageBox.Show(planete + " param frmPlanete");
             this.Text = this.Text + " " + planete;
             pboxPlanete.BackgroundImage = Image.FromFile("../../Resources/" + planete + ".png");
             lblNomPlanete.Text = planete;
@@ -116,6 +116,11 @@ namespace SAE24STARGATE
                     }
                 }
             }
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
