@@ -1286,8 +1286,6 @@ namespace SAE24STARGATE
         ///                                             FIN TABLEAU DE BORD
 
 
-    }
-
 
 
         private void verifAuthent(object sender, FormClosedEventArgs e)

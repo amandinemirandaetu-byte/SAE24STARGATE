@@ -81,9 +81,6 @@
             this.txtNomAliens = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomAlien = new System.Windows.Forms.Label();
-            this.grpNouvMission = new System.Windows.Forms.GroupBox();
-            this.btnAuthentifier = new System.Windows.Forms.Button();
-            this.lblVeuillezAuthentifiez = new System.Windows.Forms.Label();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.btnPageStatistiques = new System.Windows.Forms.Button();
             this.btnTableauBord = new System.Windows.Forms.Button();
@@ -131,11 +128,10 @@
             this.tabMenu.Controls.Add(this.tabPagePrincipal);
             this.tabMenu.Controls.Add(this.tabPageMenu);
             this.tabMenu.Controls.Add(this.tabPageStatistiques);
-            this.tabMenu.Location = new System.Drawing.Point(-7, -23);
-            this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.tabMenu.Location = new System.Drawing.Point(-10, -35);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(859, 603);
+            this.tabMenu.Size = new System.Drawing.Size(1288, 928);
             this.tabMenu.TabIndex = 4;
             // 
             // tabPagePrincipal
@@ -146,17 +142,15 @@
             this.tabPagePrincipal.Controls.Add(this.btnDecouvRaces);
             this.tabPagePrincipal.Controls.Add(this.btnNouvMission);
             this.tabPagePrincipal.Controls.Add(this.BtnInfosPlan);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionDevoile);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionCache);
             this.tabPagePrincipal.Controls.Add(this.grpTableauBord);
+            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionDevoile);
             this.tabPagePrincipal.Controls.Add(this.grpInfosPlan);
             this.tabPagePrincipal.Controls.Add(this.grpDecouvRaces);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMission);
-            this.tabPagePrincipal.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionCache);
+            this.tabPagePrincipal.Location = new System.Drawing.Point(4, 29);
             this.tabPagePrincipal.Name = "tabPagePrincipal";
-            this.tabPagePrincipal.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPagePrincipal.Size = new System.Drawing.Size(851, 577);
+            this.tabPagePrincipal.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPagePrincipal.Size = new System.Drawing.Size(1280, 895);
             this.tabPagePrincipal.TabIndex = 1;
             this.tabPagePrincipal.Text = "tabPage2";
             // 
@@ -166,10 +160,9 @@
             this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Location = new System.Drawing.Point(23, 500);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenu.Location = new System.Drawing.Point(34, 769);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(150, 46);
+            this.btnMenu.Size = new System.Drawing.Size(225, 71);
             this.btnMenu.TabIndex = 7;
             this.btnMenu.Text = "button1";
             this.btnMenu.UseVisualStyleBackColor = true;
@@ -183,10 +176,9 @@
             this.btnTbBord.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnTbBord.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnTbBord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTbBord.Location = new System.Drawing.Point(23, 20);
-            this.btnTbBord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTbBord.Location = new System.Drawing.Point(34, 31);
             this.btnTbBord.Name = "btnTbBord";
-            this.btnTbBord.Size = new System.Drawing.Size(150, 98);
+            this.btnTbBord.Size = new System.Drawing.Size(225, 151);
             this.btnTbBord.TabIndex = 0;
             this.btnTbBord.UseVisualStyleBackColor = true;
             this.btnTbBord.Click += new System.EventHandler(this.btnTbBord_Click);
@@ -199,10 +191,9 @@
             this.btnDecouvRaces.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnDecouvRaces.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnDecouvRaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecouvRaces.Location = new System.Drawing.Point(23, 136);
-            this.btnDecouvRaces.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDecouvRaces.Location = new System.Drawing.Point(34, 209);
             this.btnDecouvRaces.Name = "btnDecouvRaces";
-            this.btnDecouvRaces.Size = new System.Drawing.Size(150, 98);
+            this.btnDecouvRaces.Size = new System.Drawing.Size(225, 151);
             this.btnDecouvRaces.TabIndex = 1;
             this.btnDecouvRaces.UseVisualStyleBackColor = true;
             this.btnDecouvRaces.Click += new System.EventHandler(this.btnDecouvRaces_Click);
@@ -215,10 +206,9 @@
             this.btnNouvMission.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnNouvMission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.btnNouvMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNouvMission.Location = new System.Drawing.Point(23, 260);
-            this.btnNouvMission.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNouvMission.Location = new System.Drawing.Point(34, 400);
             this.btnNouvMission.Name = "btnNouvMission";
-            this.btnNouvMission.Size = new System.Drawing.Size(150, 98);
+            this.btnNouvMission.Size = new System.Drawing.Size(225, 151);
             this.btnNouvMission.TabIndex = 2;
             this.btnNouvMission.UseVisualStyleBackColor = true;
             this.btnNouvMission.Click += new System.EventHandler(this.btnNouvMission_Click);
@@ -231,10 +221,9 @@
             this.BtnInfosPlan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.BtnInfosPlan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.BtnInfosPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInfosPlan.Location = new System.Drawing.Point(23, 384);
-            this.BtnInfosPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnInfosPlan.Location = new System.Drawing.Point(34, 591);
             this.BtnInfosPlan.Name = "BtnInfosPlan";
-            this.BtnInfosPlan.Size = new System.Drawing.Size(150, 98);
+            this.BtnInfosPlan.Size = new System.Drawing.Size(225, 151);
             this.BtnInfosPlan.TabIndex = 3;
             this.BtnInfosPlan.UseVisualStyleBackColor = true;
             this.BtnInfosPlan.Click += new System.EventHandler(this.BtnInfosPlan_Click);
@@ -265,9 +254,11 @@
             this.grpNouvMissionDevoile.Controls.Add(this.cboChoixPlanete);
             this.grpNouvMissionDevoile.Controls.Add(this.lblChoixPlanete);
             this.grpNouvMissionDevoile.Controls.Add(this.lblTitre);
-            this.grpNouvMissionDevoile.Location = new System.Drawing.Point(290, 20);
+            this.grpNouvMissionDevoile.Location = new System.Drawing.Point(290, 31);
+            this.grpNouvMissionDevoile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpNouvMissionDevoile.Name = "grpNouvMissionDevoile";
-            this.grpNouvMissionDevoile.Size = new System.Drawing.Size(950, 825);
+            this.grpNouvMissionDevoile.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpNouvMissionDevoile.Size = new System.Drawing.Size(950, 1269);
             this.grpNouvMissionDevoile.TabIndex = 2;
             this.grpNouvMissionDevoile.TabStop = false;
             this.grpNouvMissionDevoile.Visible = false;
@@ -277,7 +268,8 @@
             this.lblEuros.AutoSize = true;
             this.lblEuros.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblEuros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblEuros.Location = new System.Drawing.Point(580, 757);
+            this.lblEuros.Location = new System.Drawing.Point(870, 1165);
+            this.lblEuros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEuros.Name = "lblEuros";
             this.lblEuros.Size = new System.Drawing.Size(22, 20);
             this.lblEuros.TabIndex = 23;
@@ -288,7 +280,8 @@
             this.lblTonnes.AutoSize = true;
             this.lblTonnes.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblTonnes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblTonnes.Location = new System.Drawing.Point(580, 714);
+            this.lblTonnes.Location = new System.Drawing.Point(870, 1098);
+            this.lblTonnes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTonnes.Name = "lblTonnes";
             this.lblTonnes.Size = new System.Drawing.Size(71, 20);
             this.lblTonnes.TabIndex = 22;
@@ -299,7 +292,8 @@
             this.lblPersonnes.AutoSize = true;
             this.lblPersonnes.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblPersonnes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblPersonnes.Location = new System.Drawing.Point(580, 668);
+            this.lblPersonnes.Location = new System.Drawing.Point(870, 1028);
+            this.lblPersonnes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPersonnes.Name = "lblPersonnes";
             this.lblPersonnes.Size = new System.Drawing.Size(105, 20);
             this.lblPersonnes.TabIndex = 21;
@@ -308,54 +302,59 @@
             // chiffreBudget
             // 
             this.chiffreBudget.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreBudget.Location = new System.Drawing.Point(392, 753);
+            this.chiffreBudget.Location = new System.Drawing.Point(588, 1158);
+            this.chiffreBudget.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreBudget.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.chiffreBudget.Name = "chiffreBudget";
-            this.chiffreBudget.Size = new System.Drawing.Size(167, 28);
+            this.chiffreBudget.Size = new System.Drawing.Size(250, 28);
             this.chiffreBudget.TabIndex = 20;
             // 
             // chiffreTonnesDataBaz
             // 
             this.chiffreTonnesDataBaz.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreTonnesDataBaz.Location = new System.Drawing.Point(392, 708);
+            this.chiffreTonnesDataBaz.Location = new System.Drawing.Point(588, 1089);
+            this.chiffreTonnesDataBaz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreTonnesDataBaz.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.chiffreTonnesDataBaz.Name = "chiffreTonnesDataBaz";
-            this.chiffreTonnesDataBaz.Size = new System.Drawing.Size(167, 28);
+            this.chiffreTonnesDataBaz.Size = new System.Drawing.Size(250, 28);
             this.chiffreTonnesDataBaz.TabIndex = 19;
             // 
             // chiffreNbPersonnes
             // 
             this.chiffreNbPersonnes.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreNbPersonnes.Location = new System.Drawing.Point(392, 662);
+            this.chiffreNbPersonnes.Location = new System.Drawing.Point(588, 1018);
+            this.chiffreNbPersonnes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreNbPersonnes.Name = "chiffreNbPersonnes";
-            this.chiffreNbPersonnes.Size = new System.Drawing.Size(167, 28);
+            this.chiffreNbPersonnes.Size = new System.Drawing.Size(250, 28);
             this.chiffreNbPersonnes.TabIndex = 18;
             // 
             // txtFeuilleRoute
             // 
             this.txtFeuilleRoute.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.txtFeuilleRoute.Location = new System.Drawing.Point(329, 470);
+            this.txtFeuilleRoute.Location = new System.Drawing.Point(494, 723);
+            this.txtFeuilleRoute.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFeuilleRoute.Multiline = true;
             this.txtFeuilleRoute.Name = "txtFeuilleRoute";
             this.txtFeuilleRoute.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFeuilleRoute.Size = new System.Drawing.Size(572, 164);
+            this.txtFeuilleRoute.Size = new System.Drawing.Size(856, 250);
             this.txtFeuilleRoute.TabIndex = 17;
             // 
             // dtpDateRetour
             // 
             this.dtpDateRetour.Font = new System.Drawing.Font("Orbitron Medium", 9F);
             this.dtpDateRetour.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateRetour.Location = new System.Drawing.Point(330, 414);
+            this.dtpDateRetour.Location = new System.Drawing.Point(495, 637);
+            this.dtpDateRetour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDateRetour.Name = "dtpDateRetour";
-            this.dtpDateRetour.Size = new System.Drawing.Size(229, 30);
+            this.dtpDateRetour.Size = new System.Drawing.Size(342, 30);
             this.dtpDateRetour.TabIndex = 16;
             // 
             // dtpDateDepart
@@ -364,9 +363,10 @@
             this.dtpDateDepart.Checked = false;
             this.dtpDateDepart.Font = new System.Drawing.Font("Orbitron Medium", 9F);
             this.dtpDateDepart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateDepart.Location = new System.Drawing.Point(330, 359);
+            this.dtpDateDepart.Location = new System.Drawing.Point(495, 552);
+            this.dtpDateDepart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDateDepart.Name = "dtpDateDepart";
-            this.dtpDateDepart.Size = new System.Drawing.Size(229, 30);
+            this.dtpDateDepart.Size = new System.Drawing.Size(342, 30);
             this.dtpDateDepart.TabIndex = 15;
             // 
             // btnValiderDebutMission
@@ -374,9 +374,10 @@
             this.btnValiderDebutMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValiderDebutMission.Font = new System.Drawing.Font("Orbitron SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValiderDebutMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnValiderDebutMission.Location = new System.Drawing.Point(668, 762);
+            this.btnValiderDebutMission.Location = new System.Drawing.Point(1002, 1172);
+            this.btnValiderDebutMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnValiderDebutMission.Name = "btnValiderDebutMission";
-            this.btnValiderDebutMission.Size = new System.Drawing.Size(258, 41);
+            this.btnValiderDebutMission.Size = new System.Drawing.Size(387, 63);
             this.btnValiderDebutMission.TabIndex = 14;
             this.btnValiderDebutMission.Text = "Valider la mission";
             this.btnValiderDebutMission.UseVisualStyleBackColor = true;
@@ -387,7 +388,8 @@
             this.lblBudget.AutoSize = true;
             this.lblBudget.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblBudget.Location = new System.Drawing.Point(67, 749);
+            this.lblBudget.Location = new System.Drawing.Point(100, 1152);
+            this.lblBudget.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBudget.Name = "lblBudget";
             this.lblBudget.Size = new System.Drawing.Size(121, 30);
             this.lblBudget.TabIndex = 13;
@@ -398,7 +400,8 @@
             this.lblObjectifDatabaz.AutoSize = true;
             this.lblObjectifDatabaz.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObjectifDatabaz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblObjectifDatabaz.Location = new System.Drawing.Point(67, 702);
+            this.lblObjectifDatabaz.Location = new System.Drawing.Point(100, 1080);
+            this.lblObjectifDatabaz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObjectifDatabaz.Name = "lblObjectifDatabaz";
             this.lblObjectifDatabaz.Size = new System.Drawing.Size(284, 30);
             this.lblObjectifDatabaz.TabIndex = 12;
@@ -409,7 +412,8 @@
             this.lblNombreMembres.AutoSize = true;
             this.lblNombreMembres.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreMembres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblNombreMembres.Location = new System.Drawing.Point(67, 656);
+            this.lblNombreMembres.Location = new System.Drawing.Point(100, 1009);
+            this.lblNombreMembres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreMembres.Name = "lblNombreMembres";
             this.lblNombreMembres.Size = new System.Drawing.Size(301, 30);
             this.lblNombreMembres.TabIndex = 11;
@@ -420,7 +424,8 @@
             this.lblFeuilleRoute.AutoSize = true;
             this.lblFeuilleRoute.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeuilleRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblFeuilleRoute.Location = new System.Drawing.Point(67, 470);
+            this.lblFeuilleRoute.Location = new System.Drawing.Point(100, 723);
+            this.lblFeuilleRoute.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeuilleRoute.Name = "lblFeuilleRoute";
             this.lblFeuilleRoute.Size = new System.Drawing.Size(233, 30);
             this.lblFeuilleRoute.TabIndex = 10;
@@ -431,7 +436,8 @@
             this.lblDateRetour.AutoSize = true;
             this.lblDateRetour.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateRetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblDateRetour.Location = new System.Drawing.Point(67, 414);
+            this.lblDateRetour.Location = new System.Drawing.Point(100, 637);
+            this.lblDateRetour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateRetour.Name = "lblDateRetour";
             this.lblDateRetour.Size = new System.Drawing.Size(220, 30);
             this.lblDateRetour.TabIndex = 9;
@@ -442,7 +448,8 @@
             this.lblDateDépart.AutoSize = true;
             this.lblDateDépart.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateDépart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblDateDépart.Location = new System.Drawing.Point(67, 359);
+            this.lblDateDépart.Location = new System.Drawing.Point(100, 552);
+            this.lblDateDépart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateDépart.Name = "lblDateDépart";
             this.lblDateDépart.Size = new System.Drawing.Size(224, 30);
             this.lblDateDépart.TabIndex = 8;
@@ -453,7 +460,8 @@
             this.lblParamMissions.AutoSize = true;
             this.lblParamMissions.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParamMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblParamMissions.Location = new System.Drawing.Point(34, 293);
+            this.lblParamMissions.Location = new System.Drawing.Point(51, 451);
+            this.lblParamMissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblParamMissions.Name = "lblParamMissions";
             this.lblParamMissions.Size = new System.Drawing.Size(409, 30);
             this.lblParamMissions.TabIndex = 7;
@@ -463,9 +471,10 @@
             // 
             this.cboChoixChef.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChoixChef.FormattingEnabled = true;
-            this.cboChoixChef.Location = new System.Drawing.Point(458, 225);
+            this.cboChoixChef.Location = new System.Drawing.Point(687, 346);
+            this.cboChoixChef.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixChef.Name = "cboChoixChef";
-            this.cboChoixChef.Size = new System.Drawing.Size(351, 28);
+            this.cboChoixChef.Size = new System.Drawing.Size(524, 28);
             this.cboChoixChef.TabIndex = 6;
             // 
             // label2
@@ -473,7 +482,8 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(34, 223);
+            this.label2.Location = new System.Drawing.Point(51, 343);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(398, 30);
             this.label2.TabIndex = 5;
@@ -484,7 +494,8 @@
             this.lblNomMission.AutoSize = true;
             this.lblNomMission.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblNomMission.Location = new System.Drawing.Point(67, 152);
+            this.lblNomMission.Location = new System.Drawing.Point(100, 234);
+            this.lblNomMission.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomMission.Name = "lblNomMission";
             this.lblNomMission.Size = new System.Drawing.Size(263, 30);
             this.lblNomMission.TabIndex = 4;
@@ -495,9 +506,10 @@
             this.btnValiderPlanete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValiderPlanete.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValiderPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnValiderPlanete.Location = new System.Drawing.Point(728, 86);
+            this.btnValiderPlanete.Location = new System.Drawing.Point(1092, 132);
+            this.btnValiderPlanete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnValiderPlanete.Name = "btnValiderPlanete";
-            this.btnValiderPlanete.Size = new System.Drawing.Size(198, 41);
+            this.btnValiderPlanete.Size = new System.Drawing.Size(297, 63);
             this.btnValiderPlanete.TabIndex = 3;
             this.btnValiderPlanete.Text = "Valider la planète";
             this.btnValiderPlanete.UseVisualStyleBackColor = true;
@@ -507,9 +519,10 @@
             // 
             this.cboChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChoixPlanete.FormattingEnabled = true;
-            this.cboChoixPlanete.Location = new System.Drawing.Point(372, 93);
+            this.cboChoixPlanete.Location = new System.Drawing.Point(558, 143);
+            this.cboChoixPlanete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixPlanete.Name = "cboChoixPlanete";
-            this.cboChoixPlanete.Size = new System.Drawing.Size(304, 28);
+            this.cboChoixPlanete.Size = new System.Drawing.Size(454, 28);
             this.cboChoixPlanete.TabIndex = 2;
             // 
             // lblChoixPlanete
@@ -517,7 +530,8 @@
             this.lblChoixPlanete.AutoSize = true;
             this.lblChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoixPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblChoixPlanete.Location = new System.Drawing.Point(34, 91);
+            this.lblChoixPlanete.Location = new System.Drawing.Point(51, 140);
+            this.lblChoixPlanete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChoixPlanete.Name = "lblChoixPlanete";
             this.lblChoixPlanete.Size = new System.Drawing.Size(316, 30);
             this.lblChoixPlanete.TabIndex = 1;
@@ -528,7 +542,8 @@
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Orbitron Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblTitre.Location = new System.Drawing.Point(15, 22);
+            this.lblTitre.Location = new System.Drawing.Point(22, 34);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(288, 35);
             this.lblTitre.TabIndex = 0;
@@ -539,9 +554,11 @@
             this.grpNouvMissionCache.Controls.Add(this.btnAuthentifier);
             this.grpNouvMissionCache.Controls.Add(this.lblVeuillezAuthentifiez);
             this.grpNouvMissionCache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpNouvMissionCache.Location = new System.Drawing.Point(290, 20);
+            this.grpNouvMissionCache.Location = new System.Drawing.Point(435, 31);
+            this.grpNouvMissionCache.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpNouvMissionCache.Name = "grpNouvMissionCache";
-            this.grpNouvMissionCache.Size = new System.Drawing.Size(950, 825);
+            this.grpNouvMissionCache.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpNouvMissionCache.Size = new System.Drawing.Size(1425, 1269);
             this.grpNouvMissionCache.TabIndex = 6;
             this.grpNouvMissionCache.TabStop = false;
             this.grpNouvMissionCache.Visible = false;
@@ -551,9 +568,10 @@
             this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
+            this.btnAuthentifier.Location = new System.Drawing.Point(382, 654);
+            this.btnAuthentifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAuthentifier.Name = "btnAuthentifier";
-            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
+            this.btnAuthentifier.Size = new System.Drawing.Size(652, 115);
             this.btnAuthentifier.TabIndex = 1;
             this.btnAuthentifier.Text = "S\'authentifier :";
             this.btnAuthentifier.UseVisualStyleBackColor = true;
@@ -564,7 +582,8 @@
             this.lblVeuillezAuthentifiez.AutoSize = true;
             this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
+            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(260, 371);
+            this.lblVeuillezAuthentifiez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
             this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(616, 100);
             this.lblVeuillezAuthentifiez.TabIndex = 0;
@@ -582,11 +601,9 @@
             this.grpTableauBord.Controls.Add(this.grpMissionsTDB);
             this.grpTableauBord.Controls.Add(this.btnPresent);
             this.grpTableauBord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpTableauBord.Location = new System.Drawing.Point(193, 13);
-            this.grpTableauBord.Margin = new System.Windows.Forms.Padding(2);
+            this.grpTableauBord.Location = new System.Drawing.Point(290, 20);
             this.grpTableauBord.Name = "grpTableauBord";
-            this.grpTableauBord.Padding = new System.Windows.Forms.Padding(2);
-            this.grpTableauBord.Size = new System.Drawing.Size(633, 536);
+            this.grpTableauBord.Size = new System.Drawing.Size(950, 825);
             this.grpTableauBord.TabIndex = 4;
             this.grpTableauBord.TabStop = false;
             this.grpTableauBord.Visible = false;
@@ -597,11 +614,12 @@
             this.pnlTDBMission.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTDBMission.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.pnlTDBMission.ForeColor = System.Drawing.Color.Cyan;
-            this.pnlTDBMission.Location = new System.Drawing.Point(55, 135);
-            this.pnlTDBMission.MaximumSize = new System.Drawing.Size(525, 390);
-            this.pnlTDBMission.MinimumSize = new System.Drawing.Size(525, 390);
+            this.pnlTDBMission.Location = new System.Drawing.Point(82, 208);
+            this.pnlTDBMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlTDBMission.MaximumSize = new System.Drawing.Size(786, 599);
+            this.pnlTDBMission.MinimumSize = new System.Drawing.Size(786, 599);
             this.pnlTDBMission.Name = "pnlTDBMission";
-            this.pnlTDBMission.Size = new System.Drawing.Size(525, 390);
+            this.pnlTDBMission.Size = new System.Drawing.Size(786, 599);
             this.pnlTDBMission.TabIndex = 6;
             // 
             // btnToutesMissions
@@ -610,9 +628,10 @@
             this.btnToutesMissions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToutesMissions.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.btnToutesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnToutesMissions.Location = new System.Drawing.Point(54, 75);
+            this.btnToutesMissions.Location = new System.Drawing.Point(81, 115);
+            this.btnToutesMissions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnToutesMissions.Name = "btnToutesMissions";
-            this.btnToutesMissions.Size = new System.Drawing.Size(525, 50);
+            this.btnToutesMissions.Size = new System.Drawing.Size(788, 77);
             this.btnToutesMissions.TabIndex = 5;
             this.btnToutesMissions.Text = "Toutes Missions";
             this.btnToutesMissions.UseVisualStyleBackColor = true;
@@ -624,9 +643,10 @@
             this.btnFutur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFutur.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.btnFutur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnFutur.Location = new System.Drawing.Point(409, 18);
+            this.btnFutur.Location = new System.Drawing.Point(614, 28);
+            this.btnFutur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFutur.Name = "btnFutur";
-            this.btnFutur.Size = new System.Drawing.Size(170, 50);
+            this.btnFutur.Size = new System.Drawing.Size(255, 77);
             this.btnFutur.TabIndex = 4;
             this.btnFutur.Text = "Futur";
             this.btnFutur.UseVisualStyleBackColor = true;
@@ -638,9 +658,10 @@
             this.btnPasse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasse.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.btnPasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnPasse.Location = new System.Drawing.Point(54, 18);
+            this.btnPasse.Location = new System.Drawing.Point(81, 28);
+            this.btnPasse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPasse.Name = "btnPasse";
-            this.btnPasse.Size = new System.Drawing.Size(170, 50);
+            this.btnPasse.Size = new System.Drawing.Size(255, 77);
             this.btnPasse.TabIndex = 3;
             this.btnPasse.Text = "Passe";
             this.btnPasse.UseVisualStyleBackColor = true;
@@ -648,20 +669,34 @@
             // 
             // btnEnCours
             // 
-            this.btnEnCours.Location = new System.Drawing.Point(350, 28);
-            this.btnEnCours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEnCours.Location = new System.Drawing.Point(525, 43);
+            this.btnEnCours.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnEnCours.Name = "btnEnCours";
-            this.btnEnCours.Size = new System.Drawing.Size(255, 77);
+            this.btnEnCours.Size = new System.Drawing.Size(382, 118);
             this.btnEnCours.TabIndex = 2;
             this.btnEnCours.Text = "button1";
             this.btnEnCours.UseVisualStyleBackColor = true;
+            // 
+            // grpMissionsTDB
+            // 
+            this.grpMissionsTDB.Location = new System.Drawing.Point(0, 0);
+            this.grpMissionsTDB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpMissionsTDB.Name = "grpMissionsTDB";
+            this.grpMissionsTDB.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpMissionsTDB.Size = new System.Drawing.Size(300, 154);
+            this.grpMissionsTDB.TabIndex = 7;
+            this.grpMissionsTDB.TabStop = false;
+            // 
+            // btnPresent
+            // 
             this.btnPresent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.btnPresent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPresent.Font = new System.Drawing.Font("Orbitron", 8.25F);
             this.btnPresent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnPresent.Location = new System.Drawing.Point(233, 18);
+            this.btnPresent.Location = new System.Drawing.Point(350, 28);
+            this.btnPresent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPresent.Name = "btnPresent";
-            this.btnPresent.Size = new System.Drawing.Size(170, 50);
+            this.btnPresent.Size = new System.Drawing.Size(255, 77);
             this.btnPresent.TabIndex = 2;
             this.btnPresent.Text = "En Cours";
             this.btnPresent.UseVisualStyleBackColor = true;
@@ -671,11 +706,9 @@
             // 
             this.grpInfosPlan.Controls.Add(this.panelPlanetes);
             this.grpInfosPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpInfosPlan.Location = new System.Drawing.Point(193, 13);
-            this.grpInfosPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.grpInfosPlan.Location = new System.Drawing.Point(290, 20);
             this.grpInfosPlan.Name = "grpInfosPlan";
-            this.grpInfosPlan.Padding = new System.Windows.Forms.Padding(2);
-            this.grpInfosPlan.Size = new System.Drawing.Size(633, 536);
+            this.grpInfosPlan.Size = new System.Drawing.Size(950, 825);
             this.grpInfosPlan.TabIndex = 6;
             this.grpInfosPlan.TabStop = false;
             this.grpInfosPlan.Visible = false;
@@ -683,10 +716,9 @@
             // panelPlanetes
             // 
             this.panelPlanetes.AutoScroll = true;
-            this.panelPlanetes.Location = new System.Drawing.Point(3, 10);
-            this.panelPlanetes.Margin = new System.Windows.Forms.Padding(2);
+            this.panelPlanetes.Location = new System.Drawing.Point(4, 15);
             this.panelPlanetes.Name = "panelPlanetes";
-            this.panelPlanetes.Size = new System.Drawing.Size(627, 523);
+            this.panelPlanetes.Size = new System.Drawing.Size(940, 805);
             this.panelPlanetes.TabIndex = 0;
             // 
             // grpDecouvRaces
@@ -694,11 +726,9 @@
             this.grpDecouvRaces.Controls.Add(this.panelAliens);
             this.grpDecouvRaces.Controls.Add(this.grpFiltres);
             this.grpDecouvRaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpDecouvRaces.Location = new System.Drawing.Point(193, 13);
-            this.grpDecouvRaces.Margin = new System.Windows.Forms.Padding(2);
+            this.grpDecouvRaces.Location = new System.Drawing.Point(290, 20);
             this.grpDecouvRaces.Name = "grpDecouvRaces";
-            this.grpDecouvRaces.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDecouvRaces.Size = new System.Drawing.Size(633, 536);
+            this.grpDecouvRaces.Size = new System.Drawing.Size(950, 825);
             this.grpDecouvRaces.TabIndex = 5;
             this.grpDecouvRaces.TabStop = false;
             this.grpDecouvRaces.Visible = false;
@@ -708,10 +738,9 @@
             this.panelAliens.AutoScroll = true;
             this.panelAliens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelAliens.ForeColor = System.Drawing.Color.Black;
-            this.panelAliens.Location = new System.Drawing.Point(14, 143);
-            this.panelAliens.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAliens.Location = new System.Drawing.Point(21, 220);
             this.panelAliens.Name = "panelAliens";
-            this.panelAliens.Size = new System.Drawing.Size(608, 378);
+            this.panelAliens.Size = new System.Drawing.Size(910, 579);
             this.panelAliens.TabIndex = 7;
             // 
             // grpFiltres
@@ -723,11 +752,9 @@
             this.grpFiltres.Controls.Add(this.lblNomAlien);
             this.grpFiltres.Font = new System.Drawing.Font("Orbitron", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.grpFiltres.Location = new System.Drawing.Point(14, 13);
-            this.grpFiltres.Margin = new System.Windows.Forms.Padding(2);
+            this.grpFiltres.Location = new System.Drawing.Point(21, 20);
             this.grpFiltres.Name = "grpFiltres";
-            this.grpFiltres.Padding = new System.Windows.Forms.Padding(2);
-            this.grpFiltres.Size = new System.Drawing.Size(607, 117);
+            this.grpFiltres.Size = new System.Drawing.Size(910, 180);
             this.grpFiltres.TabIndex = 1;
             this.grpFiltres.TabStop = false;
             this.grpFiltres.Text = "Filtres";
@@ -738,10 +765,9 @@
             this.btnRechercherAliens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRechercherAliens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherAliens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnRechercherAliens.Location = new System.Drawing.Point(523, 27);
-            this.btnRechercherAliens.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRechercherAliens.Location = new System.Drawing.Point(784, 42);
             this.btnRechercherAliens.Name = "btnRechercherAliens";
-            this.btnRechercherAliens.Size = new System.Drawing.Size(63, 62);
+            this.btnRechercherAliens.Size = new System.Drawing.Size(94, 95);
             this.btnRechercherAliens.TabIndex = 4;
             this.btnRechercherAliens.UseVisualStyleBackColor = true;
             this.btnRechercherAliens.Click += new System.EventHandler(this.btnRechercherAliens_Click);
@@ -753,10 +779,9 @@
             this.cboCouleursAliens.Font = new System.Drawing.Font("Orbitron", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCouleursAliens.ForeColor = System.Drawing.Color.White;
             this.cboCouleursAliens.FormattingEnabled = true;
-            this.cboCouleursAliens.Location = new System.Drawing.Point(121, 68);
-            this.cboCouleursAliens.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCouleursAliens.Location = new System.Drawing.Point(182, 105);
             this.cboCouleursAliens.Name = "cboCouleursAliens";
-            this.cboCouleursAliens.Size = new System.Drawing.Size(365, 24);
+            this.cboCouleursAliens.Size = new System.Drawing.Size(546, 33);
             this.cboCouleursAliens.TabIndex = 3;
             this.cboCouleursAliens.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCouleursAliens_KeyPress);
             // 
@@ -765,10 +790,9 @@
             this.txtNomAliens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.txtNomAliens.Font = new System.Drawing.Font("Orbitron", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomAliens.ForeColor = System.Drawing.Color.White;
-            this.txtNomAliens.Location = new System.Drawing.Point(121, 29);
-            this.txtNomAliens.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomAliens.Location = new System.Drawing.Point(182, 45);
             this.txtNomAliens.Name = "txtNomAliens";
-            this.txtNomAliens.Size = new System.Drawing.Size(365, 24);
+            this.txtNomAliens.Size = new System.Drawing.Size(546, 33);
             this.txtNomAliens.TabIndex = 2;
             this.txtNomAliens.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomAliens_KeyPress);
             // 
@@ -776,10 +800,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(23, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(34, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(109, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Couleur :";
             // 
@@ -787,51 +810,11 @@
             // 
             this.lblNomAlien.AutoSize = true;
             this.lblNomAlien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblNomAlien.Location = new System.Drawing.Point(23, 30);
-            this.lblNomAlien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomAlien.Location = new System.Drawing.Point(34, 46);
             this.lblNomAlien.Name = "lblNomAlien";
-            this.lblNomAlien.Size = new System.Drawing.Size(51, 17);
+            this.lblNomAlien.Size = new System.Drawing.Size(72, 25);
             this.lblNomAlien.TabIndex = 0;
             this.lblNomAlien.Text = "Nom :";
-            // 
-            // grpNouvMission
-            // 
-            this.grpNouvMission.Controls.Add(this.btnAuthentifier);
-            this.grpNouvMission.Controls.Add(this.lblVeuillezAuthentifiez);
-            this.grpNouvMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpNouvMission.Location = new System.Drawing.Point(193, 13);
-            this.grpNouvMission.Margin = new System.Windows.Forms.Padding(2);
-            this.grpNouvMission.Name = "grpNouvMission";
-            this.grpNouvMission.Padding = new System.Windows.Forms.Padding(2);
-            this.grpNouvMission.Size = new System.Drawing.Size(633, 536);
-            this.grpNouvMission.TabIndex = 6;
-            this.grpNouvMission.TabStop = false;
-            this.grpNouvMission.Visible = false;
-            // 
-            // btnAuthentifier
-            // 
-            this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.btnAuthentifier.Location = new System.Drawing.Point(255, 425);
-            this.btnAuthentifier.Name = "btnAuthentifier";
-            this.btnAuthentifier.Size = new System.Drawing.Size(435, 75);
-            this.btnAuthentifier.TabIndex = 1;
-            this.btnAuthentifier.Text = "S\'authentifier :";
-            this.btnAuthentifier.UseVisualStyleBackColor = true;
-            this.btnAuthentifier.Click += new System.EventHandler(this.btnAuthentifier_Click);
-            // 
-            // lblVeuillezAuthentifiez
-            // 
-            this.lblVeuillezAuthentifiez.AutoSize = true;
-            this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(173, 241);
-            this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
-            this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(417, 68);
-            this.lblVeuillezAuthentifiez.TabIndex = 0;
-            this.lblVeuillezAuthentifiez.Text = "Veuillez vous authentifier \r\npour voir ce contenu !";
-            this.lblVeuillezAuthentifiez.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabPageMenu
             // 
@@ -843,11 +826,11 @@
             this.tabPageMenu.Controls.Add(this.btnDecouverteRaces);
             this.tabPageMenu.Controls.Add(this.btnNouvelleMission);
             this.tabPageMenu.Controls.Add(this.btnInfosPlanete);
-            this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMenu.Location = new System.Drawing.Point(4, 29);
             this.tabPageMenu.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageMenu.Name = "tabPageMenu";
-            this.tabPageMenu.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageMenu.Size = new System.Drawing.Size(851, 577);
+            this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageMenu.Size = new System.Drawing.Size(1280, 895);
             this.tabPageMenu.TabIndex = 0;
             this.tabPageMenu.Text = "tabPage1";
             // 
@@ -860,10 +843,9 @@
             this.btnPageStatistiques.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPageStatistiques.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPageStatistiques.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnPageStatistiques.Location = new System.Drawing.Point(309, 510);
-            this.btnPageStatistiques.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPageStatistiques.Location = new System.Drawing.Point(464, 785);
             this.btnPageStatistiques.Name = "btnPageStatistiques";
-            this.btnPageStatistiques.Size = new System.Drawing.Size(233, 36);
+            this.btnPageStatistiques.Size = new System.Drawing.Size(350, 55);
             this.btnPageStatistiques.TabIndex = 4;
             this.btnPageStatistiques.Text = "Statistiques";
             this.btnPageStatistiques.UseVisualStyleBackColor = false;
@@ -882,10 +864,9 @@
             this.btnTableauBord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTableauBord.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTableauBord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnTableauBord.Location = new System.Drawing.Point(110, 281);
-            this.btnTableauBord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTableauBord.Location = new System.Drawing.Point(165, 432);
             this.btnTableauBord.Name = "btnTableauBord";
-            this.btnTableauBord.Size = new System.Drawing.Size(231, 213);
+            this.btnTableauBord.Size = new System.Drawing.Size(346, 328);
             this.btnTableauBord.TabIndex = 0;
             this.btnTableauBord.Text = "Tableau\r\nde bord";
             this.btnTableauBord.UseVisualStyleBackColor = false;
@@ -904,10 +885,9 @@
             this.btnDecouverteRaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecouverteRaces.Font = new System.Drawing.Font("Orbitron", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecouverteRaces.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnDecouverteRaces.Location = new System.Drawing.Point(582, 317);
-            this.btnDecouverteRaces.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDecouverteRaces.Location = new System.Drawing.Point(873, 488);
             this.btnDecouverteRaces.Name = "btnDecouverteRaces";
-            this.btnDecouverteRaces.Size = new System.Drawing.Size(173, 166);
+            this.btnDecouverteRaces.Size = new System.Drawing.Size(260, 255);
             this.btnDecouverteRaces.TabIndex = 1;
             this.btnDecouverteRaces.Text = "Découverte \r\ndes races";
             this.btnDecouverteRaces.UseVisualStyleBackColor = false;
@@ -926,10 +906,9 @@
             this.btnNouvelleMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNouvelleMission.Font = new System.Drawing.Font("Orbitron", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNouvelleMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnNouvelleMission.Location = new System.Drawing.Point(479, 166);
-            this.btnNouvelleMission.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNouvelleMission.Location = new System.Drawing.Point(718, 255);
             this.btnNouvelleMission.Name = "btnNouvelleMission";
-            this.btnNouvelleMission.Size = new System.Drawing.Size(139, 129);
+            this.btnNouvelleMission.Size = new System.Drawing.Size(208, 198);
             this.btnNouvelleMission.TabIndex = 2;
             this.btnNouvelleMission.Text = "Nouvelle mission";
             this.btnNouvelleMission.UseVisualStyleBackColor = false;
@@ -948,10 +927,9 @@
             this.btnInfosPlanete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfosPlanete.Font = new System.Drawing.Font("Orbitron", 12F);
             this.btnInfosPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnInfosPlanete.Location = new System.Drawing.Point(232, 179);
-            this.btnInfosPlanete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInfosPlanete.Location = new System.Drawing.Point(348, 275);
             this.btnInfosPlanete.Name = "btnInfosPlanete";
-            this.btnInfosPlanete.Size = new System.Drawing.Size(112, 103);
+            this.btnInfosPlanete.Size = new System.Drawing.Size(168, 158);
             this.btnInfosPlanete.TabIndex = 3;
             this.btnInfosPlanete.Text = "Infos planètes";
             this.btnInfosPlanete.UseVisualStyleBackColor = false;
@@ -962,10 +940,9 @@
             this.tabPageStatistiques.BackColor = System.Drawing.Color.Black;
             this.tabPageStatistiques.Controls.Add(this.grpStatistiques);
             this.tabPageStatistiques.Controls.Add(this.btnMenuStats);
-            this.tabPageStatistiques.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStatistiques.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageStatistiques.Location = new System.Drawing.Point(4, 29);
             this.tabPageStatistiques.Name = "tabPageStatistiques";
-            this.tabPageStatistiques.Size = new System.Drawing.Size(851, 577);
+            this.tabPageStatistiques.Size = new System.Drawing.Size(1280, 895);
             this.tabPageStatistiques.TabIndex = 2;
             // 
             // grpStatistiques
@@ -987,11 +964,9 @@
             this.grpStatistiques.Controls.Add(this.cboNoms);
             this.grpStatistiques.Controls.Add(this.lblCoequipiersTitre);
             this.grpStatistiques.Controls.Add(this.lblTitreStats);
-            this.grpStatistiques.Location = new System.Drawing.Point(22, 16);
-            this.grpStatistiques.Margin = new System.Windows.Forms.Padding(2);
+            this.grpStatistiques.Location = new System.Drawing.Point(33, 25);
             this.grpStatistiques.Name = "grpStatistiques";
-            this.grpStatistiques.Padding = new System.Windows.Forms.Padding(2);
-            this.grpStatistiques.Size = new System.Drawing.Size(800, 471);
+            this.grpStatistiques.Size = new System.Drawing.Size(1200, 725);
             this.grpStatistiques.TabIndex = 9;
             this.grpStatistiques.TabStop = false;
             // 
@@ -1000,9 +975,10 @@
             this.btnRechercherInformateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherInformateur.Font = new System.Drawing.Font("Orbitron Black", 10F);
             this.btnRechercherInformateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercherInformateur.Location = new System.Drawing.Point(715, 538);
+            this.btnRechercherInformateur.Location = new System.Drawing.Point(1072, 828);
+            this.btnRechercherInformateur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRechercherInformateur.Name = "btnRechercherInformateur";
-            this.btnRechercherInformateur.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherInformateur.Size = new System.Drawing.Size(366, 71);
             this.btnRechercherInformateur.TabIndex = 20;
             this.btnRechercherInformateur.Text = "Rechercher";
             this.btnRechercherInformateur.UseVisualStyleBackColor = true;
@@ -1016,9 +992,10 @@
             this.cboChoixMissionInformateur.ForeColor = System.Drawing.Color.Black;
             this.cboChoixMissionInformateur.FormattingEnabled = true;
             this.cboChoixMissionInformateur.IntegralHeight = false;
-            this.cboChoixMissionInformateur.Location = new System.Drawing.Point(667, 476);
+            this.cboChoixMissionInformateur.Location = new System.Drawing.Point(1000, 732);
+            this.cboChoixMissionInformateur.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixMissionInformateur.Name = "cboChoixMissionInformateur";
-            this.cboChoixMissionInformateur.Size = new System.Drawing.Size(350, 24);
+            this.cboChoixMissionInformateur.Size = new System.Drawing.Size(523, 33);
             this.cboChoixMissionInformateur.TabIndex = 18;
             // 
             // lblInformateur
@@ -1027,9 +1004,10 @@
             this.lblInformateur.BackColor = System.Drawing.Color.Transparent;
             this.lblInformateur.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblInformateur.Location = new System.Drawing.Point(652, 395);
+            this.lblInformateur.Location = new System.Drawing.Point(978, 608);
+            this.lblInformateur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInformateur.Name = "lblInformateur";
-            this.lblInformateur.Size = new System.Drawing.Size(249, 40);
+            this.lblInformateur.Size = new System.Drawing.Size(377, 60);
             this.lblInformateur.TabIndex = 19;
             this.lblInformateur.Text = "Les informateurs les moins\r\nfortunés pour la mission :\r\n";
             this.lblInformateur.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1039,9 +1017,10 @@
             this.btnRechercherBudgetMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherBudgetMission.Font = new System.Drawing.Font("Orbitron Black", 10F);
             this.btnRechercherBudgetMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercherBudgetMission.Location = new System.Drawing.Point(191, 538);
+            this.btnRechercherBudgetMission.Location = new System.Drawing.Point(286, 828);
+            this.btnRechercherBudgetMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRechercherBudgetMission.Name = "btnRechercherBudgetMission";
-            this.btnRechercherBudgetMission.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherBudgetMission.Size = new System.Drawing.Size(366, 71);
             this.btnRechercherBudgetMission.TabIndex = 17;
             this.btnRechercherBudgetMission.Text = "Rechercher";
             this.btnRechercherBudgetMission.UseVisualStyleBackColor = true;
@@ -1055,9 +1034,10 @@
             this.cboChoixMissionBudget.ForeColor = System.Drawing.Color.Black;
             this.cboChoixMissionBudget.FormattingEnabled = true;
             this.cboChoixMissionBudget.IntegralHeight = false;
-            this.cboChoixMissionBudget.Location = new System.Drawing.Point(143, 476);
+            this.cboChoixMissionBudget.Location = new System.Drawing.Point(214, 732);
+            this.cboChoixMissionBudget.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixMissionBudget.Name = "cboChoixMissionBudget";
-            this.cboChoixMissionBudget.Size = new System.Drawing.Size(350, 24);
+            this.cboChoixMissionBudget.Size = new System.Drawing.Size(523, 33);
             this.cboChoixMissionBudget.TabIndex = 15;
             // 
             // lblDepensesMissions
@@ -1066,9 +1046,10 @@
             this.lblDepensesMissions.BackColor = System.Drawing.Color.Transparent;
             this.lblDepensesMissions.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepensesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblDepensesMissions.Location = new System.Drawing.Point(148, 395);
+            this.lblDepensesMissions.Location = new System.Drawing.Point(222, 608);
+            this.lblDepensesMissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepensesMissions.Name = "lblDepensesMissions";
-            this.lblDepensesMissions.Size = new System.Drawing.Size(224, 40);
+            this.lblDepensesMissions.Size = new System.Drawing.Size(340, 60);
             this.lblDepensesMissions.TabIndex = 16;
             this.lblDepensesMissions.Text = "Les dépenses les plus\r\nélevées pour la mission :\r\n";
             this.lblDepensesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1078,9 +1059,10 @@
             this.btnRechercherPlaneteMission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherPlaneteMission.Font = new System.Drawing.Font("Orbitron Black", 10F);
             this.btnRechercherPlaneteMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercherPlaneteMission.Location = new System.Drawing.Point(871, 244);
+            this.btnRechercherPlaneteMission.Location = new System.Drawing.Point(1306, 375);
+            this.btnRechercherPlaneteMission.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRechercherPlaneteMission.Name = "btnRechercherPlaneteMission";
-            this.btnRechercherPlaneteMission.Size = new System.Drawing.Size(244, 46);
+            this.btnRechercherPlaneteMission.Size = new System.Drawing.Size(366, 71);
             this.btnRechercherPlaneteMission.TabIndex = 14;
             this.btnRechercherPlaneteMission.Text = "Rechercher";
             this.btnRechercherPlaneteMission.UseVisualStyleBackColor = true;
@@ -1094,9 +1076,10 @@
             this.cboPlanetes.ForeColor = System.Drawing.Color.Black;
             this.cboPlanetes.FormattingEnabled = true;
             this.cboPlanetes.IntegralHeight = false;
-            this.cboPlanetes.Location = new System.Drawing.Point(881, 182);
+            this.cboPlanetes.Location = new System.Drawing.Point(1322, 280);
+            this.cboPlanetes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboPlanetes.Name = "cboPlanetes";
-            this.cboPlanetes.Size = new System.Drawing.Size(225, 24);
+            this.cboPlanetes.Size = new System.Drawing.Size(336, 33);
             this.cboPlanetes.TabIndex = 13;
             // 
             // lblPlanetesMissions
@@ -1105,9 +1088,10 @@
             this.lblPlanetesMissions.BackColor = System.Drawing.Color.Transparent;
             this.lblPlanetesMissions.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlanetesMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblPlanetesMissions.Location = new System.Drawing.Point(815, 136);
+            this.lblPlanetesMissions.Location = new System.Drawing.Point(1222, 209);
+            this.lblPlanetesMissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlanetesMissions.Name = "lblPlanetesMissions";
-            this.lblPlanetesMissions.Size = new System.Drawing.Size(236, 20);
+            this.lblPlanetesMissions.Size = new System.Drawing.Size(360, 30);
             this.lblPlanetesMissions.TabIndex = 12;
             this.lblPlanetesMissions.Text = "Mission(s) pour la planète :";
             this.lblPlanetesMissions.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1117,10 +1101,9 @@
             this.btnRechercherBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercherBudget.Font = new System.Drawing.Font("Orbitron Black", 10F);
             this.btnRechercherBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercherBudget.Location = new System.Drawing.Point(322, 159);
-            this.btnRechercherBudget.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRechercherBudget.Location = new System.Drawing.Point(483, 245);
             this.btnRechercherBudget.Name = "btnRechercherBudget";
-            this.btnRechercherBudget.Size = new System.Drawing.Size(163, 30);
+            this.btnRechercherBudget.Size = new System.Drawing.Size(244, 46);
             this.btnRechercherBudget.TabIndex = 11;
             this.btnRechercherBudget.Text = "Rechercher";
             this.btnRechercherBudget.UseVisualStyleBackColor = true;
@@ -1131,10 +1114,9 @@
             this.btnRechercheCoequipiers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRechercheCoequipiers.Font = new System.Drawing.Font("Orbitron Black", 10F);
             this.btnRechercheCoequipiers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.btnRechercheCoequipiers.Location = new System.Drawing.Point(60, 159);
-            this.btnRechercheCoequipiers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRechercheCoequipiers.Location = new System.Drawing.Point(90, 245);
             this.btnRechercheCoequipiers.Name = "btnRechercheCoequipiers";
-            this.btnRechercheCoequipiers.Size = new System.Drawing.Size(163, 30);
+            this.btnRechercheCoequipiers.Size = new System.Drawing.Size(244, 46);
             this.btnRechercheCoequipiers.TabIndex = 10;
             this.btnRechercheCoequipiers.Text = "Rechercher";
             this.btnRechercheCoequipiers.UseVisualStyleBackColor = true;
@@ -1146,10 +1128,9 @@
             this.lblLstDepenses.BackColor = System.Drawing.Color.Transparent;
             this.lblLstDepenses.Font = new System.Drawing.Font("Orbitron", 8F);
             this.lblLstDepenses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblLstDepenses.Location = new System.Drawing.Point(325, 237);
-            this.lblLstDepenses.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLstDepenses.Location = new System.Drawing.Point(488, 365);
             this.lblLstDepenses.Name = "lblLstDepenses";
-            this.lblLstDepenses.Size = new System.Drawing.Size(0, 14);
+            this.lblLstDepenses.Size = new System.Drawing.Size(0, 20);
             this.lblLstDepenses.TabIndex = 9;
             // 
             // cboChoixMission
@@ -1160,10 +1141,9 @@
             this.cboChoixMission.ForeColor = System.Drawing.Color.Black;
             this.cboChoixMission.FormattingEnabled = true;
             this.cboChoixMission.IntegralHeight = false;
-            this.cboChoixMission.Location = new System.Drawing.Point(329, 119);
-            this.cboChoixMission.Margin = new System.Windows.Forms.Padding(2);
+            this.cboChoixMission.Location = new System.Drawing.Point(494, 183);
             this.cboChoixMission.Name = "cboChoixMission";
-            this.cboChoixMission.Size = new System.Drawing.Size(151, 24);
+            this.cboChoixMission.Size = new System.Drawing.Size(224, 33);
             this.cboChoixMission.TabIndex = 5;
             // 
             // lblBudgetMissionTitre
@@ -1172,10 +1152,9 @@
             this.lblBudgetMissionTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblBudgetMissionTitre.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBudgetMissionTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblBudgetMissionTitre.Location = new System.Drawing.Point(299, 89);
-            this.lblBudgetMissionTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBudgetMissionTitre.Location = new System.Drawing.Point(448, 137);
             this.lblBudgetMissionTitre.Name = "lblBudgetMissionTitre";
-            this.lblBudgetMissionTitre.Size = new System.Drawing.Size(215, 20);
+            this.lblBudgetMissionTitre.Size = new System.Drawing.Size(326, 30);
             this.lblBudgetMissionTitre.TabIndex = 4;
             this.lblBudgetMissionTitre.Text = "Budget pour la mission :\r\n";
             this.lblBudgetMissionTitre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1188,10 +1167,9 @@
             this.cboNoms.ForeColor = System.Drawing.Color.Black;
             this.cboNoms.FormattingEnabled = true;
             this.cboNoms.IntegralHeight = false;
-            this.cboNoms.Location = new System.Drawing.Point(28, 119);
-            this.cboNoms.Margin = new System.Windows.Forms.Padding(2);
+            this.cboNoms.Location = new System.Drawing.Point(42, 183);
             this.cboNoms.Name = "cboNoms";
-            this.cboNoms.Size = new System.Drawing.Size(235, 24);
+            this.cboNoms.Size = new System.Drawing.Size(350, 33);
             this.cboNoms.TabIndex = 1;
             // 
             // lblCoequipiersTitre
@@ -1200,10 +1178,9 @@
             this.lblCoequipiersTitre.BackColor = System.Drawing.Color.Transparent;
             this.lblCoequipiersTitre.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCoequipiersTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.lblCoequipiersTitre.Location = new System.Drawing.Point(33, 69);
-            this.lblCoequipiersTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCoequipiersTitre.Location = new System.Drawing.Point(50, 106);
             this.lblCoequipiersTitre.Name = "lblCoequipiersTitre";
-            this.lblCoequipiersTitre.Size = new System.Drawing.Size(222, 40);
+            this.lblCoequipiersTitre.Size = new System.Drawing.Size(337, 60);
             this.lblCoequipiersTitre.TabIndex = 2;
             this.lblCoequipiersTitre.Text = "Les personnes avec qui\r\nà déjà été en mission :";
             this.lblCoequipiersTitre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1213,10 +1190,9 @@
             this.lblTitreStats.AutoSize = true;
             this.lblTitreStats.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitreStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblTitreStats.Location = new System.Drawing.Point(309, 20);
-            this.lblTitreStats.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitreStats.Location = new System.Drawing.Point(464, 31);
             this.lblTitreStats.Name = "lblTitreStats";
-            this.lblTitreStats.Size = new System.Drawing.Size(183, 30);
+            this.lblTitreStats.Size = new System.Drawing.Size(273, 45);
             this.lblTitreStats.TabIndex = 0;
             this.lblTitreStats.Text = "Statistiques :";
             // 
@@ -1226,10 +1202,9 @@
             this.btnMenuStats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMenuStats.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
             this.btnMenuStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuStats.Location = new System.Drawing.Point(351, 500);
-            this.btnMenuStats.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenuStats.Location = new System.Drawing.Point(526, 769);
             this.btnMenuStats.Name = "btnMenuStats";
-            this.btnMenuStats.Size = new System.Drawing.Size(150, 46);
+            this.btnMenuStats.Size = new System.Drawing.Size(225, 71);
             this.btnMenuStats.TabIndex = 8;
             this.btnMenuStats.Text = "button1";
             this.btnMenuStats.UseVisualStyleBackColor = true;
@@ -1237,15 +1212,14 @@
             // 
             // frmAccueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(841, 567);
+            this.ClientSize = new System.Drawing.Size(1252, 846);
             this.Controls.Add(this.tabMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(857, 606);
-            this.MinimumSize = new System.Drawing.Size(857, 606);
+            this.MaximumSize = new System.Drawing.Size(1274, 902);
+            this.MinimumSize = new System.Drawing.Size(1274, 902);
             this.Name = "frmAccueil";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Gestion des missions";
