@@ -106,6 +106,7 @@
             this.lblCoequipiersTitre = new System.Windows.Forms.Label();
             this.lblTitreStats = new System.Windows.Forms.Label();
             this.btnMenuStats = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabMenu.SuspendLayout();
             this.tabPagePrincipal.SuspendLayout();
             this.grpTableauBord.SuspendLayout();
@@ -120,6 +121,7 @@
             this.tabPageMenu.SuspendLayout();
             this.tabPageStatistiques.SuspendLayout();
             this.grpStatistiques.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -141,9 +143,9 @@
             this.tabPagePrincipal.Controls.Add(this.btnDecouvRaces);
             this.tabPagePrincipal.Controls.Add(this.btnNouvMission);
             this.tabPagePrincipal.Controls.Add(this.BtnInfosPlan);
+            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionDevoile);
             this.tabPagePrincipal.Controls.Add(this.grpTableauBord);
             this.tabPagePrincipal.Controls.Add(this.grpNouvMissionCache);
-            this.tabPagePrincipal.Controls.Add(this.grpNouvMissionDevoile);
             this.tabPagePrincipal.Controls.Add(this.grpInfosPlan);
             this.tabPagePrincipal.Controls.Add(this.grpDecouvRaces);
             this.tabPagePrincipal.Location = new System.Drawing.Point(4, 29);
@@ -330,30 +332,7 @@
             // 
             // grpNouvMissionDevoile
             // 
-            this.grpNouvMissionDevoile.Controls.Add(this.lblEuros);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblTonnes);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblPersonnes);
-            this.grpNouvMissionDevoile.Controls.Add(this.chiffreBudget);
-            this.grpNouvMissionDevoile.Controls.Add(this.chiffreTonnesDataBaz);
-            this.grpNouvMissionDevoile.Controls.Add(this.chiffreNbPersonnes);
-            this.grpNouvMissionDevoile.Controls.Add(this.txtFeuilleRoute);
-            this.grpNouvMissionDevoile.Controls.Add(this.dtpDateRetour);
-            this.grpNouvMissionDevoile.Controls.Add(this.dtpDateDepart);
-            this.grpNouvMissionDevoile.Controls.Add(this.btnValiderDebutMission);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblBudget);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblObjectifDatabaz);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblNombreMembres);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblFeuilleRoute);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblDateRetour);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblDateDépart);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblParamMissions);
-            this.grpNouvMissionDevoile.Controls.Add(this.cboChoixChef);
-            this.grpNouvMissionDevoile.Controls.Add(this.label2);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblNomMission);
-            this.grpNouvMissionDevoile.Controls.Add(this.btnValiderPlanete);
-            this.grpNouvMissionDevoile.Controls.Add(this.cboChoixPlanete);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblChoixPlanete);
-            this.grpNouvMissionDevoile.Controls.Add(this.lblTitre);
+            this.grpNouvMissionDevoile.Controls.Add(this.panel1);
             this.grpNouvMissionDevoile.Location = new System.Drawing.Point(290, 20);
             this.grpNouvMissionDevoile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpNouvMissionDevoile.Name = "grpNouvMissionDevoile";
@@ -368,7 +347,7 @@
             this.lblEuros.AutoSize = true;
             this.lblEuros.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblEuros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblEuros.Location = new System.Drawing.Point(870, 1165);
+            this.lblEuros.Location = new System.Drawing.Point(863, 1141);
             this.lblEuros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEuros.Name = "lblEuros";
             this.lblEuros.Size = new System.Drawing.Size(22, 20);
@@ -380,7 +359,7 @@
             this.lblTonnes.AutoSize = true;
             this.lblTonnes.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold);
             this.lblTonnes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblTonnes.Location = new System.Drawing.Point(870, 1098);
+            this.lblTonnes.Location = new System.Drawing.Point(863, 1074);
             this.lblTonnes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTonnes.Name = "lblTonnes";
             this.lblTonnes.Size = new System.Drawing.Size(71, 20);
@@ -402,7 +381,7 @@
             // chiffreBudget
             // 
             this.chiffreBudget.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreBudget.Location = new System.Drawing.Point(588, 1158);
+            this.chiffreBudget.Location = new System.Drawing.Point(581, 1134);
             this.chiffreBudget.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreBudget.Maximum = new decimal(new int[] {
             1000000,
@@ -416,7 +395,7 @@
             // chiffreTonnesDataBaz
             // 
             this.chiffreTonnesDataBaz.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreTonnesDataBaz.Location = new System.Drawing.Point(588, 1089);
+            this.chiffreTonnesDataBaz.Location = new System.Drawing.Point(581, 1065);
             this.chiffreTonnesDataBaz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreTonnesDataBaz.Maximum = new decimal(new int[] {
             1000000,
@@ -430,7 +409,7 @@
             // chiffreNbPersonnes
             // 
             this.chiffreNbPersonnes.Font = new System.Drawing.Font("Orbitron Medium", 8F);
-            this.chiffreNbPersonnes.Location = new System.Drawing.Point(588, 1018);
+            this.chiffreNbPersonnes.Location = new System.Drawing.Point(581, 994);
             this.chiffreNbPersonnes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chiffreNbPersonnes.Name = "chiffreNbPersonnes";
             this.chiffreNbPersonnes.Size = new System.Drawing.Size(250, 28);
@@ -451,7 +430,7 @@
             // 
             this.dtpDateRetour.Font = new System.Drawing.Font("Orbitron Medium", 9F);
             this.dtpDateRetour.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateRetour.Location = new System.Drawing.Point(495, 637);
+            this.dtpDateRetour.Location = new System.Drawing.Point(488, 613);
             this.dtpDateRetour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDateRetour.Name = "dtpDateRetour";
             this.dtpDateRetour.Size = new System.Drawing.Size(342, 30);
@@ -463,7 +442,7 @@
             this.dtpDateDepart.Checked = false;
             this.dtpDateDepart.Font = new System.Drawing.Font("Orbitron Medium", 9F);
             this.dtpDateDepart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateDepart.Location = new System.Drawing.Point(495, 552);
+            this.dtpDateDepart.Location = new System.Drawing.Point(488, 528);
             this.dtpDateDepart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDateDepart.Name = "dtpDateDepart";
             this.dtpDateDepart.Size = new System.Drawing.Size(342, 30);
@@ -488,7 +467,7 @@
             this.lblBudget.AutoSize = true;
             this.lblBudget.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblBudget.Location = new System.Drawing.Point(100, 1152);
+            this.lblBudget.Location = new System.Drawing.Point(93, 1128);
             this.lblBudget.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBudget.Name = "lblBudget";
             this.lblBudget.Size = new System.Drawing.Size(121, 30);
@@ -500,7 +479,7 @@
             this.lblObjectifDatabaz.AutoSize = true;
             this.lblObjectifDatabaz.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObjectifDatabaz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblObjectifDatabaz.Location = new System.Drawing.Point(100, 1080);
+            this.lblObjectifDatabaz.Location = new System.Drawing.Point(93, 1056);
             this.lblObjectifDatabaz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObjectifDatabaz.Name = "lblObjectifDatabaz";
             this.lblObjectifDatabaz.Size = new System.Drawing.Size(284, 30);
@@ -512,7 +491,7 @@
             this.lblNombreMembres.AutoSize = true;
             this.lblNombreMembres.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreMembres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblNombreMembres.Location = new System.Drawing.Point(100, 1009);
+            this.lblNombreMembres.Location = new System.Drawing.Point(93, 985);
             this.lblNombreMembres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreMembres.Name = "lblNombreMembres";
             this.lblNombreMembres.Size = new System.Drawing.Size(301, 30);
@@ -524,7 +503,7 @@
             this.lblFeuilleRoute.AutoSize = true;
             this.lblFeuilleRoute.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeuilleRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblFeuilleRoute.Location = new System.Drawing.Point(100, 723);
+            this.lblFeuilleRoute.Location = new System.Drawing.Point(93, 699);
             this.lblFeuilleRoute.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeuilleRoute.Name = "lblFeuilleRoute";
             this.lblFeuilleRoute.Size = new System.Drawing.Size(233, 30);
@@ -536,7 +515,7 @@
             this.lblDateRetour.AutoSize = true;
             this.lblDateRetour.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateRetour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblDateRetour.Location = new System.Drawing.Point(100, 637);
+            this.lblDateRetour.Location = new System.Drawing.Point(93, 613);
             this.lblDateRetour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateRetour.Name = "lblDateRetour";
             this.lblDateRetour.Size = new System.Drawing.Size(220, 30);
@@ -548,7 +527,7 @@
             this.lblDateDépart.AutoSize = true;
             this.lblDateDépart.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateDépart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblDateDépart.Location = new System.Drawing.Point(100, 552);
+            this.lblDateDépart.Location = new System.Drawing.Point(93, 528);
             this.lblDateDépart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateDépart.Name = "lblDateDépart";
             this.lblDateDépart.Size = new System.Drawing.Size(224, 30);
@@ -560,7 +539,7 @@
             this.lblParamMissions.AutoSize = true;
             this.lblParamMissions.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParamMissions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblParamMissions.Location = new System.Drawing.Point(51, 451);
+            this.lblParamMissions.Location = new System.Drawing.Point(44, 427);
             this.lblParamMissions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblParamMissions.Name = "lblParamMissions";
             this.lblParamMissions.Size = new System.Drawing.Size(409, 30);
@@ -571,7 +550,7 @@
             // 
             this.cboChoixChef.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChoixChef.FormattingEnabled = true;
-            this.cboChoixChef.Location = new System.Drawing.Point(687, 346);
+            this.cboChoixChef.Location = new System.Drawing.Point(474, 319);
             this.cboChoixChef.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixChef.Name = "cboChoixChef";
             this.cboChoixChef.Size = new System.Drawing.Size(524, 28);
@@ -582,7 +561,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(51, 343);
+            this.label2.Location = new System.Drawing.Point(44, 319);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(398, 30);
@@ -594,7 +573,7 @@
             this.lblNomMission.AutoSize = true;
             this.lblNomMission.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomMission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblNomMission.Location = new System.Drawing.Point(100, 234);
+            this.lblNomMission.Location = new System.Drawing.Point(93, 210);
             this.lblNomMission.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomMission.Name = "lblNomMission";
             this.lblNomMission.Size = new System.Drawing.Size(263, 30);
@@ -619,7 +598,7 @@
             // 
             this.cboChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChoixPlanete.FormattingEnabled = true;
-            this.cboChoixPlanete.Location = new System.Drawing.Point(558, 143);
+            this.cboChoixPlanete.Location = new System.Drawing.Point(407, 117);
             this.cboChoixPlanete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChoixPlanete.Name = "cboChoixPlanete";
             this.cboChoixPlanete.Size = new System.Drawing.Size(454, 28);
@@ -630,7 +609,7 @@
             this.lblChoixPlanete.AutoSize = true;
             this.lblChoixPlanete.Font = new System.Drawing.Font("Orbitron Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoixPlanete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblChoixPlanete.Location = new System.Drawing.Point(51, 140);
+            this.lblChoixPlanete.Location = new System.Drawing.Point(44, 116);
             this.lblChoixPlanete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChoixPlanete.Name = "lblChoixPlanete";
             this.lblChoixPlanete.Size = new System.Drawing.Size(316, 30);
@@ -642,7 +621,7 @@
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Orbitron Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblTitre.Location = new System.Drawing.Point(22, 34);
+            this.lblTitre.Location = new System.Drawing.Point(15, 10);
             this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(288, 35);
@@ -782,7 +761,7 @@
             this.btnAuthentifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAuthentifier.Font = new System.Drawing.Font("Orbitron SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuthentifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(107)))), ((int)(((byte)(255)))));
-            this.btnAuthentifier.Location = new System.Drawing.Point(382, 654);
+            this.btnAuthentifier.Location = new System.Drawing.Point(175, 550);
             this.btnAuthentifier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAuthentifier.Name = "btnAuthentifier";
             this.btnAuthentifier.Size = new System.Drawing.Size(652, 115);
@@ -796,7 +775,7 @@
             this.lblVeuillezAuthentifiez.AutoSize = true;
             this.lblVeuillezAuthentifiez.Font = new System.Drawing.Font("Orbitron", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVeuillezAuthentifiez.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(260, 371);
+            this.lblVeuillezAuthentifiez.Location = new System.Drawing.Point(150, 150);
             this.lblVeuillezAuthentifiez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVeuillezAuthentifiez.Name = "lblVeuillezAuthentifiez";
             this.lblVeuillezAuthentifiez.Size = new System.Drawing.Size(616, 100);
@@ -1198,6 +1177,38 @@
             this.btnMenuStats.UseVisualStyleBackColor = true;
             this.btnMenuStats.Click += new System.EventHandler(this.btnMenuStats_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lblPersonnes);
+            this.panel1.Controls.Add(this.txtFeuilleRoute);
+            this.panel1.Controls.Add(this.btnValiderDebutMission);
+            this.panel1.Controls.Add(this.cboChoixChef);
+            this.panel1.Controls.Add(this.btnValiderPlanete);
+            this.panel1.Controls.Add(this.cboChoixPlanete);
+            this.panel1.Controls.Add(this.lblEuros);
+            this.panel1.Controls.Add(this.lblTonnes);
+            this.panel1.Controls.Add(this.chiffreBudget);
+            this.panel1.Controls.Add(this.chiffreTonnesDataBaz);
+            this.panel1.Controls.Add(this.chiffreNbPersonnes);
+            this.panel1.Controls.Add(this.dtpDateRetour);
+            this.panel1.Controls.Add(this.dtpDateDepart);
+            this.panel1.Controls.Add(this.lblBudget);
+            this.panel1.Controls.Add(this.lblObjectifDatabaz);
+            this.panel1.Controls.Add(this.lblNombreMembres);
+            this.panel1.Controls.Add(this.lblFeuilleRoute);
+            this.panel1.Controls.Add(this.lblDateRetour);
+            this.panel1.Controls.Add(this.lblDateDépart);
+            this.panel1.Controls.Add(this.lblParamMissions);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblNomMission);
+            this.panel1.Controls.Add(this.lblChoixPlanete);
+            this.panel1.Controls.Add(this.lblTitre);
+            this.panel1.Location = new System.Drawing.Point(7, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(943, 779);
+            this.panel1.TabIndex = 24;
+            // 
             // frmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1216,7 +1227,6 @@
             this.tabPagePrincipal.ResumeLayout(false);
             this.grpTableauBord.ResumeLayout(false);
             this.grpNouvMissionDevoile.ResumeLayout(false);
-            this.grpNouvMissionDevoile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chiffreBudget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiffreTonnesDataBaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiffreNbPersonnes)).EndInit();
@@ -1230,6 +1240,8 @@
             this.tabPageStatistiques.ResumeLayout(false);
             this.grpStatistiques.ResumeLayout(false);
             this.grpStatistiques.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1314,5 +1326,6 @@
         private System.Windows.Forms.NumericUpDown chiffreNbPersonnes;
         private System.Windows.Forms.Button btnToutesMissions;
         private System.Windows.Forms.Panel pnlTDBMission;
+        private System.Windows.Forms.Panel panel1;
     }
 }
