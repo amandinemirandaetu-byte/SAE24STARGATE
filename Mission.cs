@@ -106,7 +106,7 @@ namespace SAE24STARGATE
             }
             if(DateTime.Parse(m_dateDepart) > DateTime.Parse(aujoudhui))
             {
-                return -0;
+                return 1;
             }
             return 0;
         }
@@ -130,7 +130,7 @@ namespace SAE24STARGATE
 
                 if (parties[0].Length == 4)
                 {
-                    strDate = parties[0] + "/" + parties[1] + "/" + parties[2];
+                    strDate = parties[2] + "/" + parties[1] + "/" + parties[0];
                     return strDate;
                 }
             }

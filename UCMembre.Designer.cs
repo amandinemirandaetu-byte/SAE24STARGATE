@@ -111,7 +111,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UCMembre";
-            this.Size = new System.Drawing.Size(150, 200);
+            this.Size = new System.Drawing.Size(180, 200);
             this.Load += new System.EventHandler(this.UCMembre_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
