@@ -31,6 +31,9 @@ namespace SAE24STARGATE
         private void frmAccueil_Load(object sender, EventArgs e)
         {
 
+            dtpDateDepart.CustomFormat = "yyyy-MM-dd";
+            dtpDateRetour.CustomFormat = "yyyy-MM-dd";
+
             grpTableauBord.Visible = true;
 
             //AMANDINE
@@ -249,21 +252,31 @@ namespace SAE24STARGATE
             cboChoixPlanete.DataSource = vueTrieePlanete;
             cboChoixPlanete.DisplayMember = "nom";
 
+            List<ItemCombo> liste = new List<ItemCombo>();
 
-
-            foreach(DataRow ligne in monDS.Tables["Militaire"].Rows)
+            foreach (DataRow ligne in monDS.Tables["Militaire"].Rows)
             {
                 string resultat = "";
-                foreach(DataRow ligne2 in monDS.Tables["Membre"].Rows)
+
+                foreach (DataRow ligne2 in monDS.Tables["Membre"].Rows)
                 {
                     if (ligne["matriculeMembre"].ToString() == ligne2["matricule"].ToString())
                     {
-                        resultat += ligne2["nom"] + " " + ligne2["prenom"];
+                        resultat = ligne2["nom"] + " " + ligne2["prenom"];
+                        break;
                     }
                 }
-                resultat += " - " + ligne["grade"];
-                cboChoixChef.Items.Add(resultat);
+
+                liste.Add(new ItemCombo
+                {
+                    Texte = resultat + " - " + ligne["grade"],
+                    Valeur = ligne["matriculeMembre"].ToString()
+                });
             }
+
+            cboChoixChef.DataSource = liste;
+            cboChoixChef.DisplayMember = "Texte";
+            cboChoixChef.ValueMember = "Valeur";
 
 
         }
@@ -278,6 +291,7 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = true;
             // AMANDINE
         }
@@ -289,6 +303,7 @@ namespace SAE24STARGATE
             tabMenu.SelectedTab = tabPagePrincipal;
             grpInfosPlan.Visible = false;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = true;
             // AMANDINE
@@ -315,6 +330,7 @@ namespace SAE24STARGATE
             // Permet de changer de plan et de voir la tabPage principale, et d'afficher le bon groupBox (ici Infos Planètes)
             tabMenu.SelectedTab = tabPagePrincipal;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = true;
@@ -328,6 +344,7 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = true;
             // AMANDINE
         }
@@ -338,6 +355,7 @@ namespace SAE24STARGATE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Découverte des Races)
             grpInfosPlan.Visible = false;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = false;
             grpDecouvRaces.Visible = true;
             // AMANDINE
@@ -364,6 +382,7 @@ namespace SAE24STARGATE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Infos Planètes)
             grpDecouvRaces.Visible = false;
             grpNouvMissionCache.Visible = false;
+            grpNouvMissionDevoile.Visible = false;
             grpTableauBord.Visible = false;
             grpInfosPlan.Visible = true;
             // AMANDINE
@@ -1164,9 +1183,10 @@ namespace SAE24STARGATE
             }
         }
 
+        int indexMission = 1;
         private void btnValiderPlanete_Click(object sender, EventArgs e)
         {
-            int indexMission = 1;
+            lblNomMission.Text = "Nom de la mission :";
             foreach(DataRow ligne in monDS.Tables["Mission"].Rows)
             {
                 if(ligne["nomPlanete"].ToString() == cboChoixPlanete.Text)
@@ -1175,6 +1195,95 @@ namespace SAE24STARGATE
                 }
             }
             lblNomMission.Text += "    " + cboChoixPlanete.Text + "  -  " + indexMission.ToString();
+        }
+
+        string chefMission = "";
+        private void btnValiderDebutMission_Click(object sender, EventArgs e)
+        {
+            if(dtpDateRetour.Value < dtpDateDepart.Value)
+            {
+                MessageBox.Show("Veuillez choisir une date de retour postérieure à la date de départ");
+            }
+            else if(cboChoixPlanete.Text == "" || cboChoixChef.Text == "" || txtFeuilleRoute.Text == "" || chiffreBudget.Value == 0 || chiffreNbPersonnes.Value == 0 || chiffreTonnesDataBaz.Value == 0)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs s'il vous plaît !");
+            }
+            else
+            {
+                try
+                {
+                    maConnec.ConnectionString = connecString;
+                    maConnec.Open();
+
+                    string matricule = cboChoixChef.SelectedValue.ToString();
+
+                    chefMission = cboChoixChef.Text;
+
+                    string requete = @"insert into Mission ([nomPlanete], [numero], [nbMembreRequis], [dateDepart], [dateRetour], [matriculeChef], [feuilleDeRoute], [objectifDatabaz], [budget])
+                                       values ('" + cboChoixPlanete.Text + "', '" + indexMission + "', '" + chiffreNbPersonnes.Value + "', '" + dtpDateDepart.Text + "', '" + dtpDateRetour.Text + "', '" + matricule + "', '" + txtFeuilleRoute.Text + "', '" + chiffreTonnesDataBaz.Value + "', '" + chiffreBudget.Value + "')";
+
+                    SQLiteCommand cd = new SQLiteCommand(requete, maConnec);
+
+                    cd.ExecuteNonQuery();
+
+                    monDS.Clear();
+
+                    DataTable dtSchema = maConnec.GetSchema("Tables");
+
+                    for (int i = 0; i < dtSchema.Rows.Count; i++)
+                    {
+                        string nomTable = dtSchema.Rows[i]["TABLE_NAME"].ToString();
+
+                        string requete2 = "select * from " + nomTable;
+                        SQLiteCommand cd2 = new SQLiteCommand(requete2, maConnec);
+
+                        SQLiteDataAdapter da = new SQLiteDataAdapter();
+                        da.SelectCommand = cd2;
+
+                        da.Fill(monDS, nomTable);
+                    }
+
+                }
+                catch(Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+                finally
+                {
+                    maConnec.Close();
+
+                    frmNouvMissionSuite frm = new frmNouvMissionSuite(maConnec, monDS, chefMission, cboChoixPlanete.Text, indexMission, Convert.ToInt32(chiffreNbPersonnes.Value)-1);
+                    frm.ShowDialog();
+
+                    cboChoixPlanete.SelectedIndex = -1;
+                    cboChoixChef.SelectedIndex = -1;
+                    dtpDateDepart.Value = DateTime.Today;
+                    dtpDateRetour.Value = DateTime.Today;
+                    txtFeuilleRoute.Text = "";
+                    chiffreBudget.Value = 0;
+                    chiffreNbPersonnes.Value = 0;
+                    chiffreTonnesDataBaz.Value = 0;
+                    lblNomMission.Text = "Nom de la mission :";
+                }
+            }
+        }
+
+        public class ItemCombo
+        {
+            public string Texte { get; set; }
+            public string Valeur { get; set; }
+
+            public override string ToString()
+            {
+                return Texte;
+            }
+        }
+
+        public class idEnnemiNbCapture
+        {
+            public int idEnnemi { get; set; }
+            public int nbCapture { get; set; }
+
         }
     }
 }

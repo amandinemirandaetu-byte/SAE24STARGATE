@@ -91,7 +91,6 @@ namespace SAE24STARGATE
 
                     if (valide)
                     {
-                        MessageBox.Show("Accès autorisé", "Authentification");
                         this.Close();
                         frmAccueil.authentifie = true;
                     }

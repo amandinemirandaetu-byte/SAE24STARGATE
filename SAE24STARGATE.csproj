@@ -75,6 +75,12 @@
     <Compile Include="frmAuthentification.Designer.cs">
       <DependentUpon>frmAuthentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNouvMissionSuite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouvMissionSuite.Designer.cs">
+      <DependentUpon>frmNouvMissionSuite.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuthentification.resx">
       <DependentUpon>frmAuthentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouvMissionSuite.resx">
+      <DependentUpon>frmNouvMissionSuite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanete.resx">
       <DependentUpon>frmPlanete.cs</DependentUpon>
