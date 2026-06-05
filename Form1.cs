@@ -345,7 +345,7 @@ namespace SAE24STARGATE
             // AMANDINE
             // Permet de cacher toutes les groupBox qu'on veut invisibles (à défaut de savoir laquelle est actuellement visible), et d'afficher la bonne groupBox (ici Tableau de Bord)
             selectBtn(tabPagePrincipal, btnTbBord);
-            btnToutesMissions_Click(sender,e);
+            btnToutesMissions_Click(sender, e);
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpNouvMissionCache.Visible = false;
@@ -1094,8 +1094,8 @@ namespace SAE24STARGATE
                         }
                     }
                 }
-                
-                    
+
+
 
                 resultat += "Nom de code : " + kvp.Key + "\n"
                          + "Espèce de l'informateur : " + origineInformateur + "\n"
@@ -1111,8 +1111,126 @@ namespace SAE24STARGATE
             frmAuthent.FormClosed += verifAuthent;
             frmAuthent.ShowDialog();
         }
-    
-        
+
+
+        private void verifAuthent(object sender, FormClosedEventArgs e)
+        {
+            if (authentifie)
+            {
+                grpNouvMissionCache.Visible = false;
+                grpNouvMissionDevoile.Visible = true;
+            }
+            else
+            {
+                grpNouvMissionDevoile.Visible = false;
+                grpNouvMissionCache.Visible = true;
+            }
+        }
+
+        int indexMission = 1;
+        private void btnValiderPlanete_Click(object sender, EventArgs e)
+        {
+            lblNomMission.Text = "Nom de la mission :";
+            foreach (DataRow ligne in monDS.Tables["Mission"].Rows)
+            {
+                if (ligne["nomPlanete"].ToString() == cboChoixPlanete.Text)
+                {
+                    indexMission++;
+                }
+            }
+            lblNomMission.Text += "    " + cboChoixPlanete.Text + "  -  " + indexMission.ToString();
+        }
+
+        string chefMission = "";
+        private void btnValiderDebutMission_Click(object sender, EventArgs e)
+        {
+            if (dtpDateRetour.Value < dtpDateDepart.Value)
+            {
+                MessageBox.Show("Veuillez choisir une date de retour postérieure à la date de départ");
+            }
+            else if (cboChoixPlanete.Text == "" || cboChoixChef.Text == "" || txtFeuilleRoute.Text == "" || chiffreBudget.Value == 0 || chiffreNbPersonnes.Value == 0 || chiffreTonnesDataBaz.Value == 0)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs s'il vous plaît !");
+            }
+            else
+            {
+                try
+                {
+                    maConnec.ConnectionString = connecString;
+                    maConnec.Open();
+
+                    string matricule = cboChoixChef.SelectedValue.ToString();
+
+                    chefMission = cboChoixChef.Text;
+
+                    string requete = @"insert into Mission ([nomPlanete], [numero], [nbMembreRequis], [dateDepart], [dateRetour], [matriculeChef], [feuilleDeRoute], [objectifDatabaz], [budget])
+                                       values ('" + cboChoixPlanete.Text + "', '" + indexMission + "', '" + chiffreNbPersonnes.Value + "', '" + dtpDateDepart.Text + "', '" + dtpDateRetour.Text + "', '" + matricule + "', '" + txtFeuilleRoute.Text + "', '" + chiffreTonnesDataBaz.Value + "', '" + chiffreBudget.Value + "')";
+
+                    SQLiteCommand cd = new SQLiteCommand(requete, maConnec);
+
+                    cd.ExecuteNonQuery();
+
+                    monDS.Clear();
+
+                    DataTable dtSchema = maConnec.GetSchema("Tables");
+
+                    for (int i = 0; i < dtSchema.Rows.Count; i++)
+                    {
+                        string nomTable = dtSchema.Rows[i]["TABLE_NAME"].ToString();
+
+                        string requete2 = "select * from " + nomTable;
+                        SQLiteCommand cd2 = new SQLiteCommand(requete2, maConnec);
+
+                        SQLiteDataAdapter da = new SQLiteDataAdapter();
+                        da.SelectCommand = cd2;
+
+                        da.Fill(monDS, nomTable);
+                    }
+
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+                finally
+                {
+                    maConnec.Close();
+
+                    frmNouvMissionSuite frm = new frmNouvMissionSuite(maConnec, monDS, chefMission, cboChoixPlanete.Text, indexMission, Convert.ToInt32(chiffreNbPersonnes.Value) - 1);
+                    frm.ShowDialog();
+
+                    cboChoixPlanete.SelectedIndex = -1;
+                    cboChoixChef.SelectedIndex = -1;
+                    dtpDateDepart.Value = DateTime.Today;
+                    dtpDateRetour.Value = DateTime.Today;
+                    txtFeuilleRoute.Text = "";
+                    chiffreBudget.Value = 0;
+                    chiffreNbPersonnes.Value = 0;
+                    chiffreTonnesDataBaz.Value = 0;
+                    lblNomMission.Text = "Nom de la mission :";
+                }
+            }
+        }
+
+        public class ItemCombo
+        {
+            public string Texte { get; set; }
+            public string Valeur { get; set; }
+
+            public override string ToString()
+            {
+                return Texte;
+            }
+        }
+
+        public class idEnnemiNbCapture
+        {
+            public int idEnnemi { get; set; }
+            public int nbCapture { get; set; }
+
+        }
+
+
         ///Leo
         //                                          TABLEAU DE BORD
         //              EVENTS
@@ -1173,7 +1291,7 @@ namespace SAE24STARGATE
 
                 top += new UCMission().Height + 10;
                 Mission mission = new Mission(row, monDS);
-                UCMission UC = new UCMission(mission,monDS);
+                UCMission UC = new UCMission(mission, monDS);
                 UC.Top = top;
                 UC.Left = left;
 
@@ -1184,7 +1302,7 @@ namespace SAE24STARGATE
         {
             DataTable tbMembres = monDS.Tables["Membre"];
             DataTable table = monDS.Tables["Mission"];
-            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());           
+            String aujoudhui = formaterDate(System.DateTime.Today.Date.ToShortDateString());
 
             int top = 10 - new UCMission().Height;
             int left = 12;
@@ -1209,7 +1327,7 @@ namespace SAE24STARGATE
                     pnlTDBMission.Controls.Add(UC);
                 }
                 //mission passe
-                else if(temp < 0 && DateTime.Parse(dateArrivee) < DateTime.Parse(aujoudhui))
+                else if (temp < 0 && DateTime.Parse(dateArrivee) < DateTime.Parse(aujoudhui))
                 {
                     top += new UCMission().Height + 10;
                     Mission mission = new Mission(row, monDS);
@@ -1220,7 +1338,7 @@ namespace SAE24STARGATE
                     pnlTDBMission.Controls.Add(UC);
                 }
                 //mission en cours
-                else if(temp == 0 && DateTime.Parse(dateDepart) < DateTime.Parse(aujoudhui) && DateTime.Parse(dateArrivee) > DateTime.Parse(aujoudhui))
+                else if (temp == 0 && DateTime.Parse(dateDepart) < DateTime.Parse(aujoudhui) && DateTime.Parse(dateArrivee) > DateTime.Parse(aujoudhui))
                 {
                     top += new UCMission().Height + 10;
                     Mission mission = new Mission(row, monDS);
@@ -1232,18 +1350,18 @@ namespace SAE24STARGATE
 
                     pnlTDBMission.Controls.Add(UC);
                 }
-                
+
             }
 
-           
+
 
         }
         //                                              Fonctions customs
-        public void DetaillerMission(object sender, EventArgs e) 
+        public void DetaillerMission(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         //                              gestion format dates 
         public String formaterDate(DateTime date)
         {
@@ -1280,6 +1398,8 @@ namespace SAE24STARGATE
             return bonneLongueur && (annee1er || annee3eme);
 
         }
+    }
+}
 
 
 
@@ -1288,120 +1408,4 @@ namespace SAE24STARGATE
 
 
 
-        private void verifAuthent(object sender, FormClosedEventArgs e)
-        {
-            if (authentifie) {
-                grpNouvMissionCache.Visible = false;
-                grpNouvMissionDevoile.Visible = true;
-            }
-            else
-            {
-                grpNouvMissionDevoile.Visible = false;
-                grpNouvMissionCache.Visible = true;
-            }
-        }
-
-        int indexMission = 1;
-        private void btnValiderPlanete_Click(object sender, EventArgs e)
-        {
-            lblNomMission.Text = "Nom de la mission :";
-            foreach(DataRow ligne in monDS.Tables["Mission"].Rows)
-            {
-                if(ligne["nomPlanete"].ToString() == cboChoixPlanete.Text)
-                {
-                    indexMission++;
-                }
-            }
-            lblNomMission.Text += "    " + cboChoixPlanete.Text + "  -  " + indexMission.ToString();
-        }
-
-        string chefMission = "";
-        private void btnValiderDebutMission_Click(object sender, EventArgs e)
-        {
-            if(dtpDateRetour.Value < dtpDateDepart.Value)
-            {
-                MessageBox.Show("Veuillez choisir une date de retour postérieure à la date de départ");
-            }
-            else if(cboChoixPlanete.Text == "" || cboChoixChef.Text == "" || txtFeuilleRoute.Text == "" || chiffreBudget.Value == 0 || chiffreNbPersonnes.Value == 0 || chiffreTonnesDataBaz.Value == 0)
-            {
-                MessageBox.Show("Veuillez remplir tous les champs s'il vous plaît !");
-            }
-            else
-            {
-                try
-                {
-                    maConnec.ConnectionString = connecString;
-                    maConnec.Open();
-
-                    string matricule = cboChoixChef.SelectedValue.ToString();
-
-                    chefMission = cboChoixChef.Text;
-
-                    string requete = @"insert into Mission ([nomPlanete], [numero], [nbMembreRequis], [dateDepart], [dateRetour], [matriculeChef], [feuilleDeRoute], [objectifDatabaz], [budget])
-                                       values ('" + cboChoixPlanete.Text + "', '" + indexMission + "', '" + chiffreNbPersonnes.Value + "', '" + dtpDateDepart.Text + "', '" + dtpDateRetour.Text + "', '" + matricule + "', '" + txtFeuilleRoute.Text + "', '" + chiffreTonnesDataBaz.Value + "', '" + chiffreBudget.Value + "')";
-
-                    SQLiteCommand cd = new SQLiteCommand(requete, maConnec);
-
-                    cd.ExecuteNonQuery();
-
-                    monDS.Clear();
-
-                    DataTable dtSchema = maConnec.GetSchema("Tables");
-
-                    for (int i = 0; i < dtSchema.Rows.Count; i++)
-                    {
-                        string nomTable = dtSchema.Rows[i]["TABLE_NAME"].ToString();
-
-                        string requete2 = "select * from " + nomTable;
-                        SQLiteCommand cd2 = new SQLiteCommand(requete2, maConnec);
-
-                        SQLiteDataAdapter da = new SQLiteDataAdapter();
-                        da.SelectCommand = cd2;
-
-                        da.Fill(monDS, nomTable);
-                    }
-
-                }
-                catch(Exception err)
-                {
-                    MessageBox.Show(err.Message);
-                }
-                finally
-                {
-                    maConnec.Close();
-
-                    frmNouvMissionSuite frm = new frmNouvMissionSuite(maConnec, monDS, chefMission, cboChoixPlanete.Text, indexMission, Convert.ToInt32(chiffreNbPersonnes.Value)-1);
-                    frm.ShowDialog();
-
-                    cboChoixPlanete.SelectedIndex = -1;
-                    cboChoixChef.SelectedIndex = -1;
-                    dtpDateDepart.Value = DateTime.Today;
-                    dtpDateRetour.Value = DateTime.Today;
-                    txtFeuilleRoute.Text = "";
-                    chiffreBudget.Value = 0;
-                    chiffreNbPersonnes.Value = 0;
-                    chiffreTonnesDataBaz.Value = 0;
-                    lblNomMission.Text = "Nom de la mission :";
-                }
-            }
-        }
-
-        public class ItemCombo
-        {
-            public string Texte { get; set; }
-            public string Valeur { get; set; }
-
-            public override string ToString()
-            {
-                return Texte;
-            }
-        }
-
-        public class idEnnemiNbCapture
-        {
-            public int idEnnemi { get; set; }
-            public int nbCapture { get; set; }
-
-        }
-    }
-}
+       
