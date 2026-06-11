@@ -320,10 +320,20 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
-            grpNouvMissionCache.Visible = true;
-            frmAuthentification frmAuthent = new frmAuthentification();
-            frmAuthent.FormClosed += verifAuthent;
-            frmAuthent.ShowDialog();
+            if (authentifie)
+            {
+                grpNouvMissionCache.Visible = false;
+                grpNouvMissionDevoile.Visible = true;
+            }
+            if (!authentifie)
+            {
+                grpNouvMissionDevoile.Visible = false;
+                grpNouvMissionDevoile.Visible = false;
+                grpNouvMissionCache.Visible = true;
+                frmAuthentification frmAuthent = new frmAuthentification();
+                frmAuthent.FormClosed += verifAuthent;
+                frmAuthent.ShowDialog();
+            }
             // AMANDINE
         }
 
@@ -375,10 +385,19 @@ namespace SAE24STARGATE
             grpDecouvRaces.Visible = false;
             grpInfosPlan.Visible = false;
             grpTableauBord.Visible = false;
-            grpNouvMissionCache.Visible = true;
-            frmAuthentification frmAuthent = new frmAuthentification();
-            frmAuthent.FormClosed += verifAuthent;
-            frmAuthent.ShowDialog();
+            if (authentifie)
+            {
+                grpNouvMissionCache.Visible = false;
+                grpNouvMissionDevoile.Visible = true;
+            }
+            if (!authentifie)
+            {
+                grpNouvMissionDevoile.Visible = false;
+                grpNouvMissionCache.Visible = true;
+                frmAuthentification frmAuthent = new frmAuthentification();
+                frmAuthent.FormClosed += verifAuthent;
+                frmAuthent.ShowDialog();
+            }
 
             // AMANDINE
         }
@@ -426,7 +445,7 @@ namespace SAE24STARGATE
         {
             // AMANDINE
             // Permet de chercher les aliens selon quels zones sont remplies
-            if (txtNomAliens.Text == "" && cboCouleursAliens.SelectedIndex == 0)
+            if (txtNomAliens.Text == "" && (cboCouleursAliens.SelectedIndex == 0 || cboCouleursAliens.SelectedItem == null))
             {
                 panelAliens.Controls.Clear();
                 toutAfficher(sender, e);
@@ -438,13 +457,13 @@ namespace SAE24STARGATE
                 trierParNom(sender, e, txtNomAliens.Text);
             }
 
-            if (cboCouleursAliens.SelectedIndex != 0)
+            if (cboCouleursAliens.SelectedIndex != 0 && cboCouleursAliens.SelectedItem != null)
             {
                 panelAliens.Controls.Clear();
                 trierParCouleur(sender, e, cboCouleursAliens.SelectedItem.ToString());
             }
 
-            if (txtNomAliens.Text != "" && cboCouleursAliens.SelectedIndex != 0)
+            if (txtNomAliens.Text != "" && (cboCouleursAliens.SelectedIndex != 0 && cboCouleursAliens.SelectedItem != null))
             {
                 panelAliens.Controls.Clear();
                 trierParNomEtParCouleur(sender, e, txtNomAliens.Text, cboCouleursAliens.SelectedItem.ToString());

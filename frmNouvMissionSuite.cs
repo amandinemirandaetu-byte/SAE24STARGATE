@@ -106,19 +106,21 @@ namespace SAE24STARGATE
             cboAliens.ValueMember = "Valeur";
         }
 
+        private string lblBaseText = "4 - Affectation des membres - reste à affecter : ";
         private void btnAjouterMembre_Click(object sender, EventArgs e)
         {
-            if(cboChoixMembre.Text != "" && !(txtMembresMission.Text.Contains(cboChoixMembre.Text)))
+            if (cboChoixMembre.Text != "" && !txtMembresMission.Text.Contains(cboChoixMembre.Text))
             {
                 txtMembresMission.Text += cboChoixMembre.Text + "\r\n";
                 matricules.Add(cboChoixMembre.SelectedValue.ToString());
                 membresAjoutes++;
-                if(membresRequis - membresAjoutes >= 0)
+
+                int restants = membresRequis - membresAjoutes;
+                if (restants >= 0)
                 {
-                    lblAffectationMembre.Text = lblAffectationMembre.Text.Substring(0, lblAffectationMembre.Text.Length - 1);
-                    lblAffectationMembre.Text += (membresRequis - membresAjoutes);
+                    lblAffectationMembre.Text = lblBaseText + restants;
                 }
-            } 
+            }
         }
 
         private void btnValiderMembre_Click(object sender, EventArgs e)

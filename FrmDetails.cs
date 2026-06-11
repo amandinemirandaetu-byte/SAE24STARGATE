@@ -17,6 +17,8 @@ namespace SAE24STARGATE
         Mission m_mission;
         Planete m_planete;
         List<DataRow> m_listeJDB = new List<DataRow>();
+
+
         int m_index;
         public FrmDetails()
         {
@@ -54,7 +56,7 @@ namespace SAE24STARGATE
                     }
                 }
             }
-            
+
 
             String nomPlanete = m_mission.getPlanete();
             m_planete = new Planete(nomPlanete,20,0,m_monDS);
@@ -164,14 +166,15 @@ namespace SAE24STARGATE
                 labelDate.Left = 10;
                 labelDate.Font = new Font("Orbitron", 10);
                 pnlPrec.Controls.Add(labelDate);
-                //Label labelContenu = new Label();
-                //labelContenu.Text = m_mission.formaterDate(m_listeJDB[m_index][3].ToString()); //oui je triche mais la flemme de redefini formaterdate
-                //labelContenu.Height = 40;
-                //labelContenu.Width = 180;
-                //labelContenu.Left = 10;
-                //labelContenu.Top = 60;
-                //labelContenu.Font = new Font("Orbitron", 10);
-                //pnlPrec.Controls.Add(labelContenu);
+
+                Label labelContenu = new Label();
+                labelContenu.Text =m_listeJDB[m_index][3].ToString(); //oui je triche mais la flemme de redefini formaterdate
+                labelContenu.Height = 10000;
+                labelContenu.Width = 180;
+                labelContenu.Left = 10;
+                labelContenu.Top = 60;
+                labelContenu.Font = new Font("Orbitron", 10);
+                pnlPrec.Controls.Add(labelContenu);
 
             }
             if (m_listeJDB.Count > 1)
@@ -183,14 +186,15 @@ namespace SAE24STARGATE
                 labelDate.Left = 10;
                 labelDate.Font = new Font("Orbitron", 10);
                 pnlCour.Controls.Add(labelDate);
-                //Label labelContenu = new Label();
-                //labelContenu.Text = m_mission.formaterDate(m_listeJDB[m_index +1][3].ToString()); //oui je triche mais la flemme de redefini formaterdate
-                //labelContenu.Height = 40;
-                //labelContenu.Width = 180;
-                //labelContenu.Left = 10;
-                //labelContenu.Top = 60;
-                //labelContenu.Font = new Font("Orbitron", 10);
-                //pnlCour.Controls.Add(labelContenu);
+
+                Label labelContenu = new Label();
+                labelContenu.Text =m_listeJDB[m_index + 1][3].ToString(); //oui je triche mais la flemme de redefini formaterdate
+                labelContenu.Height = 10000;
+                labelContenu.Width = 180;
+                labelContenu.Left = 10;
+                labelContenu.Top = 60;
+                labelContenu.Font = new Font("Orbitron", 10);
+                pnlCour.Controls.Add(labelContenu);
 
             }
             if (m_listeJDB.Count > 2)
@@ -202,14 +206,15 @@ namespace SAE24STARGATE
                 labelDate.Left = 10;
                 labelDate.Font = new Font("Orbitron", 10);
                 pnlProc.Controls.Add(labelDate);
-                //Label labelContenu = new Label();
-                //labelContenu.Text = m_mission.formaterDate(m_listeJDB[m_index +2][3].ToString()); //oui je triche mais la flemme de redefini formaterdate
-                //labelContenu.Height = 40;
-                //labelContenu.Width = 180;
-                //labelContenu.Left = 10;
-                //labelContenu.Top = 60;
-                //labelContenu.Font = new Font("Orbitron", 10);
-                //pnlProc.Controls.Add(labelContenu);
+
+                Label labelContenu = new Label();
+                labelContenu.Text =m_listeJDB[m_index + 2][3].ToString(); //oui je triche mais la flemme de redefini formaterdate
+                labelContenu.Height = 10000;
+                labelContenu.Width = 180;
+                labelContenu.Left = 10;
+                labelContenu.Top = 60;
+                labelContenu.Font = new Font("Orbitron", 10);
+                pnlProc.Controls.Add(labelContenu);
             }
         }
         private void btnProc_Click(object sender, EventArgs e)
@@ -230,9 +235,9 @@ namespace SAE24STARGATE
                 pnlPrec.Controls.Add(creerLabelDateJDB(prec));
                 pnlCour.Controls.Add(creerLabelDateJDB(cour));
                 pnlProc.Controls.Add(creerLabelDateJDB(proc));
-                //pnlPrec.Controls.Add(creerLabelContenuJDB(prec));
-                //pnlCour.Controls.Add(creerLabelContenuJDB(cour));
-                //pnlProc.Controls.Add(creerLabelContenuJDB(proc));
+                pnlPrec.Controls.Add(creerLabelContenuJDB(prec));
+                pnlCour.Controls.Add(creerLabelContenuJDB(cour));
+                pnlProc.Controls.Add(creerLabelContenuJDB(proc));
 
             }
         }
@@ -254,9 +259,9 @@ namespace SAE24STARGATE
                 pnlPrec.Controls.Add(creerLabelDateJDB(prec));
                 pnlCour.Controls.Add(creerLabelDateJDB(cour));
                 pnlProc.Controls.Add(creerLabelDateJDB(proc));
-                //pnlPrec.Controls.Add(creerLabelContenuJDB(prec));
-                //pnlCour.Controls.Add(creerLabelContenuJDB(cour));
-                //pnlProc.Controls.Add(creerLabelContenuJDB(proc));
+                pnlPrec.Controls.Add(creerLabelContenuJDB(prec));
+                pnlCour.Controls.Add(creerLabelContenuJDB(cour));
+                pnlProc.Controls.Add(creerLabelContenuJDB(proc));
             }
         }
 
@@ -271,20 +276,25 @@ namespace SAE24STARGATE
             labelDate.Font = new Font("Orbitron", 10);
             return labelDate;
         }
-        //public Label creerLabelContenuJDB(int index)
-        //{
-        //    Label labelContenu = new Label();
-        //    foreach(DataRow row in m_listeJDB) {
-        //    labelContenu.Text = m_mission.formaterDate(m_listeJDB[index][3].ToString()); //oui je triche mais la flemme de redefini formaterdate
-        //    labelContenu.Height = 40;
-        //    labelContenu.Width = 180;
-        //    labelContenu.Left = 10;
-        //    labelContenu.Top = 60;
-        //    labelContenu.Font = new Font("Orbitron", 10);
-        //    return labelContenu;
-        //}
+        public Label creerLabelContenuJDB(int index)
+        {
+            Label labelContenu = new Label();
+
+            labelContenu.Text = m_listeJDB[index][3].ToString();
+            labelContenu.Height = 10000;
+            labelContenu.Width = 180;
+            labelContenu.Left = 10;
+            labelContenu.Top = 60;
+            labelContenu.Font = new Font("Orbitron", 10);
+
+
+            return labelContenu;
+        
+        }
         //fin gestion jdb
-        //fonctions auto vides pcq j'ai la flemme de les supprimer
+
+
+            //fonctions auto vides pcq j'ai la flemme de les supprimer
         private void pnlCour_Paint(object sender, PaintEventArgs e)
         {
 

@@ -77,9 +77,9 @@
             // 
             this.lblDepart.AutoSize = true;
             this.lblDepart.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblDepart.Location = new System.Drawing.Point(242, 95);
+            this.lblDepart.Location = new System.Drawing.Point(211, 95);
             this.lblDepart.Name = "lblDepart";
-            this.lblDepart.Size = new System.Drawing.Size(62, 17);
+            this.lblDepart.Size = new System.Drawing.Size(88, 25);
             this.lblDepart.TabIndex = 3;
             this.lblDepart.Text = "Depart";
             // 
@@ -87,9 +87,9 @@
             // 
             this.lblRetour.AutoSize = true;
             this.lblRetour.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblRetour.Location = new System.Drawing.Point(242, 176);
+            this.lblRetour.Location = new System.Drawing.Point(211, 176);
             this.lblRetour.Name = "lblRetour";
-            this.lblRetour.Size = new System.Drawing.Size(63, 17);
+            this.lblRetour.Size = new System.Drawing.Size(89, 25);
             this.lblRetour.TabIndex = 4;
             this.lblRetour.Text = "Retour";
             // 
@@ -99,7 +99,7 @@
             this.label1.Font = new System.Drawing.Font("Orbitron", 15F);
             this.label1.Location = new System.Drawing.Point(15, 244);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 25);
+            this.label1.Size = new System.Drawing.Size(186, 37);
             this.label1.TabIndex = 5;
             this.label1.Text = "Membres :";
             // 
@@ -107,9 +107,9 @@
             // 
             this.lblNbrMembres.AutoSize = true;
             this.lblNbrMembres.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblNbrMembres.Location = new System.Drawing.Point(448, 251);
+            this.lblNbrMembres.Location = new System.Drawing.Point(457, 251);
             this.lblNbrMembres.Name = "lblNbrMembres";
-            this.lblNbrMembres.Size = new System.Drawing.Size(81, 17);
+            this.lblNbrMembres.Size = new System.Drawing.Size(116, 25);
             this.lblNbrMembres.TabIndex = 11;
             this.lblNbrMembres.Text = "Membres";
             // 
@@ -117,9 +117,9 @@
             // 
             this.lblChef.AutoSize = true;
             this.lblChef.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblChef.Location = new System.Drawing.Point(242, 251);
+            this.lblChef.Location = new System.Drawing.Point(211, 251);
             this.lblChef.Name = "lblChef";
-            this.lblChef.Size = new System.Drawing.Size(52, 17);
+            this.lblChef.Size = new System.Drawing.Size(72, 25);
             this.lblChef.TabIndex = 10;
             this.lblChef.Text = "Chef :";
             // 
@@ -127,9 +127,9 @@
             // 
             this.lblBudget.AutoSize = true;
             this.lblBudget.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblBudget.Location = new System.Drawing.Point(448, 95);
+            this.lblBudget.Location = new System.Drawing.Point(457, 95);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(62, 17);
+            this.lblBudget.Size = new System.Drawing.Size(88, 25);
             this.lblBudget.TabIndex = 9;
             this.lblBudget.Text = "budget";
             // 
@@ -137,9 +137,9 @@
             // 
             this.lblQuota.AutoSize = true;
             this.lblQuota.Font = new System.Drawing.Font("Orbitron", 10F);
-            this.lblQuota.Location = new System.Drawing.Point(448, 176);
+            this.lblQuota.Location = new System.Drawing.Point(457, 176);
             this.lblQuota.Name = "lblQuota";
-            this.lblQuota.Size = new System.Drawing.Size(56, 17);
+            this.lblQuota.Size = new System.Drawing.Size(80, 25);
             this.lblQuota.TabIndex = 8;
             this.lblQuota.Text = "Quota";
             // 
@@ -147,9 +147,9 @@
             // 
             this.lblMission.AutoSize = true;
             this.lblMission.Font = new System.Drawing.Font("Orbitron", 15F);
-            this.lblMission.Location = new System.Drawing.Point(240, 20);
+            this.lblMission.Location = new System.Drawing.Point(209, 20);
             this.lblMission.Name = "lblMission";
-            this.lblMission.Size = new System.Drawing.Size(105, 25);
+            this.lblMission.Size = new System.Drawing.Size(157, 37);
             this.lblMission.TabIndex = 12;
             this.lblMission.Text = "Mission  ";
             // 
@@ -167,7 +167,7 @@
             this.lblCaptures.Font = new System.Drawing.Font("Orbitron", 15F);
             this.lblCaptures.Location = new System.Drawing.Point(622, 244);
             this.lblCaptures.Name = "lblCaptures";
-            this.lblCaptures.Size = new System.Drawing.Size(129, 25);
+            this.lblCaptures.Size = new System.Drawing.Size(195, 37);
             this.lblCaptures.TabIndex = 14;
             this.lblCaptures.Text = "Captures : ";
             // 
@@ -194,7 +194,7 @@
             this.grpJDB.Controls.Add(this.pnlCour);
             this.grpJDB.Controls.Add(this.pnlPrec);
             this.grpJDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.grpJDB.Location = new System.Drawing.Point(10, 10);
+            this.grpJDB.Location = new System.Drawing.Point(10, 1);
             this.grpJDB.Name = "grpJDB";
             this.grpJDB.Size = new System.Drawing.Size(820, 535);
             this.grpJDB.TabIndex = 16;
@@ -271,10 +271,10 @@
             // 
             // FrmDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(835, 538);
+            this.ClientSize = new System.Drawing.Size(829, 521);
             this.Controls.Add(this.grpJDB);
             this.Controls.Add(this.btnJDB);
             this.Controls.Add(this.lblCaptures);
